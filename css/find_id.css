@@ -1,0 +1,94 @@
+html,body{
+    height: 100%;
+    margin:0;
+}
+
+.d-none{
+    display: none !important;
+}
+
+#find-id-form{
+    display: flex;
+    flex-direction: column;
+    
+}
+    .find-id-form form{
+        display: inline-block;
+        
+    }
+
+    .find-id-form fieldset{
+        padding: 0;
+        padding-inline-start: 7px;
+        height: 40px;
+        width: 200px;
+    }
+        .find-id-form fieldset label{
+            font-size: 14px;
+            font-weight: bold;
+            flex-basis: 55px;
+            line-height: 45px;
+            text-align: center;
+        }
+        .find-id-form fieldset input[type=text],
+        .find-id-form fieldset input[type=tel],
+        .find-id-form fieldset input[type=number]
+        {
+            width: 120px;
+            flex-grow: 1;
+            border: 0;
+            padding-left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+.get-code-button,
+.other-button
+{
+    display: inline-block;
+}
+
+.other-button{
+    text-align: center;
+    line-height: 40px;
+}
+
+.find-pw-button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.title{
+    text-align: center;
+
+    font-family: "맑은 고딕";
+    font-size: 25px;
+    font-weight: bold;
+}
+.ex{
+    text-align: center;
+    margin-top: 30px;
+    font-family: "맑은 고딕";
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* --------------------------------------------------------------- */
+
+#root{
+    height: 100%; 
+    
+}
+#header{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}

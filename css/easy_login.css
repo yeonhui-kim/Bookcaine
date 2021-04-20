@@ -1,0 +1,36 @@
+html,body{
+    height: 100%;
+    margin:0;
+}
+
+.d-none{
+    display: none !important;
+}
+
+button{
+    appearance: none;    
+}
+
+/* --------------------------------------------------------------- */
+
+.contents{
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+.buttons{
+    display: inline-block;
+}
+
+
+/* --------------------------------------------------------------- */
+
+body{
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
