@@ -21,7 +21,7 @@ html,body{
         padding: 0;
         padding-inline-start: 7px;
         height: 40px;
-        width: 200px;
+        width: 210px;
     }
         .find-id-form fieldset label{
             font-size: 14px;
@@ -59,19 +59,20 @@ html,body{
 }
 
 
-.title{
+/* .title{
     text-align: center;
 
     font-family: "맑은 고딕";
     font-size: 25px;
     font-weight: bold;
-}
+} */
 .ex{
     text-align: center;
     margin-top: 30px;
     font-family: "맑은 고딕";
     font-size: 14px;
     font-weight: bold;
+    color: rgb(75, 75, 75);
 }
 
 
@@ -81,14 +82,35 @@ html,body{
     height: 100%; 
     
 }
-#header{
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-}
+
 #main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+#header{  
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+body{
+    background-color: #ebf6ff;
+}
+
+#header > a{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: none;
+    text-decoration: initial;
+    padding: 40px 40px 20px 40px;
+
+    color: rgb(92, 148, 100);
+}
+
+#header-line{
+    width: 100%;
+    border-top: 2px solid #8cba34;   
 }
