@@ -1,141 +1,103 @@
 <!DOCTYPE html>
-<html lnag="ko">
-    <head>
-        <meta charset="UTF-8">
-        <title>북카인 회원가입</title>
-        <link href="../css/Sign_Up.css" type="text/css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
-    </head>
-    <body>
-       
-        <div id="header">
-            <a href="메인화면링크 넣기" class="logo" target="_blank" title="메인화면링크">BookCaine</a>
-        </div>                                                                      
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북카인 회원가입</title>
+    <link href="../project/Sign_Up.css" type="text/css" rel="stylesheet">
+    <script src="Sign_up.js"></script>
+</head>
+<body>
+    <header id="header">
+        <a href="메인화면 링크~" title="메인화면">BookCaine</a>
+    </header>
 
-        <div id="visual">                      
+    <div class="line">
+
+    </div>
+
+    <div id="wrapper">
+
+        <div id="main">
+        <div>
+            <span class="box">
+                <input type="text" id="txt" class="ID_txt" value="" placeholder="아이디" maxlength="15">         
+            </span>
+        </div>
+
+            <span class="box">
+                <input type="password" id="txt" class="PW_txt" placeholder="비밀번호" maxlength="20">
+            </span>
+
+            <span class="box">
+                <input type="password" id="txt" class="PWR_txt" placeholder="비밀번호 재확인" maxlength="20">
+            </span>
+
+            <span class="box">
+                <input type="text" id="txt" class="NAME_txt" placeholder="이름" maxlength="10">
+            </span>
+
+<!------------------------------------------생년월일----------------------------------------------------->
+            <div class="date">
+            <span class="box box-yy">
+                <input type="text" id="txt" class="yy" placeholder="년(4자)" maxlength="4">
+            </span>
+
+            <span class="box box-mm">
+                <select class="mm">
+                    <option>월</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+            </span>
+
+            <span class="box box-dd">
+                <input type="text" id="txt" class="dd" placeholder="일" maxlength="2">
+            </span>
+    </div>
+
+    <div class="gender">
+        <h3>성별</h3>
+        <input type="checkbox" checked>남자
+        <input type="checkbox">여자
+    </div>
+<!----------------------------------------------------------------------------------------------------------->
+
+
+    <h3>휴대전화(선택)</h3>
+        <span class="box box-p">
+            <input type="text" id="txt" placeholder="선택입력" maxlength="15">
+        </span>
+
+        
+        <h3>이메일(선택)</h3>
+        <span class="box box-e">
+            <input type="text" id="txt" placeholder="선택입력" maxlength="30">
+        </span>
+
+        <!-- <input type="button" class="btn" value="회원가입 완료"> -->
+        <div class="btn_area">
+            <button type="button" onclick="location.href='PupUp.html' " class="btn">
+                <span>회원가입 완료</span>
+            </button>
         </div>
 
 
-      
-        <div id="wrapper">
+        </div>
 
-          
-            <div id="content">
-
-               
-                <div>
-                    <h3 class="join_title">
-                    </h3>
-                    <span class="box int_id">
-                        <input type="text" placeholder="아이디" id="id" class="int" maxlength="20">                    
-                    </span>
-                </div>
-
-               
-                <div>
-                    <h3 class="join_title"></h3>
-                    <span class="box int_pass">
-                        <input type="password" placeholder="비밀번호" id="pswd1" class="int" maxlength="20">
-                    </span>
-                </div>
-
-              
-                <div>
-                    <h3 class="join_title"></h3>
-                    <span class="box int_pass_check">
-                        <input type="password" placeholder="비밀번호 재확인" id="pswd2" class="int" maxlength="20">
-                    </span>
-                </div>
-
-                
-                <div>
-                    <h3 class="join_title"></h3>
-                    <span class="box int_name">
-                        <input type="text" placeholder="이름" id="name" class="int" maxlength="4">
-                    </span>
-                </div>
-
-               
-                <div>
-                    <h3 class="join_title"></h3>
-             
-
-                    <div id="bir_wrap">
-                      
-                        <div id="bir_yy">
-                            <span class="box">
-                                <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)">
-                            </span>
-                        </div>
-
-                     
-                        <div id="bir_mm">
-                            <span class="box">
-                                <select id="mm" class="sel">
-                                    <option>월</option>
-                                    <option value="01">1</option>
-                                    <option value="02">2</option>
-                                    <option value="03">3</option>
-                                    <option value="04">4</option>
-                                    <option value="05">5</option>
-                                    <option value="06">6</option>
-                                    <option value="07">7</option>
-                                    <option value="08">8</option>
-                                    <option value="09">9</option>                                    
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                            </span>
-                        </div>
-
-                      
-                        <div id="bir_dd">
-                            <span class="box">
-                                <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-
-          
-                <div>
-                    
-                    <h3 class="join_title"><label for="gender">성별</label></h3>
-                    <input type="checkbox" checked> 남자 
-                    <input type="checkbox"> 여자
-                </div>
-
-              
-                <div>
-                    <h3 class="join_title"><label for="phoneNo">휴대전화(선택)</label></h3>
-                    <span class="box int_mobile">
-                        <input type="tel" id="mobile" class="int" maxlength="16" placeholder="선택입력">
-                    </span>
-                </div>
-
-                  
-                   <div>
-                    <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional">(선택)</span></label></h3>
-                    <span class="box int_email">
-                        <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
-                    </span>
-                </div>
-
-
-                <div class="btn_area">
-                    <button type="button" onclick="location.href='PupUp.html' " id="btnJoin">
-                        <span>회원가입 완료</span>
-                    </button>
-                </div>
-                
-                
-
-            </div> 
-         
-
-        </div> 
+    </div>
     
-    </body>
+</body>
 </html>
