@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>북카인 회원가입</title>
     <link href="../css/Sign_Up.css" type="text/css" rel="stylesheet">
     <script src="Sign_up.js"></script>
@@ -68,11 +68,15 @@
             </span>
     </div>
 
-    <div class="gender">
-        <h3>성별</h3>
-        <input type="checkbox" checked>남자
-        <input type="checkbox">여자
-    </div>
+    <h3>성별</h3>
+            <div id="gender-box">
+                <span class="box-m gender">
+                    <input type="radio" id="man" name="gender" > <label for="man"> 남자 </label>
+                </span>
+                <span class="box-w gender">
+                    <input type="radio" id="woman" name="gender"> <label for="woman"> 여자 </label>
+                </span>   <!--라디오 버튼에서, 텍스트를 눌렀을때 같이 선택되게 하려면  id속성과 label for속성을 같게 설정한다. -->
+            </div>
 <!----------------------------------------------------------------------------------------------------------->
 
 

@@ -140,3 +140,40 @@ h3 { /*휴대전화, 이메일 선택자만 위에 텍스트 띄웠음*/
     }
 
 }
+
+/* -------------------------성별--------------------------------------- */
+
+#gender-box{
+    border: 1px solid #dadada;
+    border-radius: 8px;
+    display: flex;
+    background-color: white;
+}
+
+.gender{
+    border-right: 1px solid #dadada;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: white; */
+    /* border-radius: 8px; */
+
+}
+
+.gender > label {
+    display: block;
+    width: 100%; height: 100%;
+    padding: 10px 0;
+    text-align: center;
+    /* font-size: 0.8em; */
+    /* color: #666; */
+}
+
+input[type=radio]{
+    display: none;
+}
+
+
+.box-w{
+    border: none;
+}
