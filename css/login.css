@@ -30,6 +30,10 @@ ul, ol{
     margin: 4px;
     border-radius: 4px;
 }
+    .button:hover{
+        background-color: #347961;
+        transition: 0.5s;
+    }
 /* --------------------------------------------------------------- */
 .password{
     padding-top: 13px;

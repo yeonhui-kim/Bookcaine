@@ -7,6 +7,23 @@ html,body{
     display: none !important;
 }
 
+.button{
+    width:100px;
+    background-color: #8cba34;
+    border: none;
+    color:#fff;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 13px;
+    margin: 4px;
+    border-radius: 4px;
+}
+    .button:hover{
+        background-color: #347961;
+        transition: 0.5s;
+    }
+
+/*------------------------------------------------------------------------*/
 #find-id-form{
     display: flex;
     flex-direction: column;
@@ -40,6 +57,7 @@ html,body{
             padding-left: 10px;
             font-size: 18px;
             font-weight: bold;
+            background-color: #ebf6ff;
         }
 
 .get-code-button,
