@@ -46,6 +46,22 @@ img+li{
     width: 100px;
 }
 
+.button{
+    width:70px;
+    background-color: #8cba34;
+    border: none;
+    color:#fff;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 13px;
+    margin: 4px;
+    border-radius: 4px;
+}
+    .button:hover{
+        background-color: #347961;
+        transition: 0.25s;
+    }
+
 /* ------------------ header ------------------ */
 
 header{
@@ -81,7 +97,12 @@ header{
 .quick-menu>ul{
     display: flex;
     justify-content: space-around;
+    font-size: 14px;
 }
+    .quick-menu>ul>li:hover{
+        font-weight: bold;
+        transition: 0.25s;
+    }
 
 /* ------------------ main ------------------ */
 
@@ -116,6 +137,8 @@ header{
         width: 1000px;
         margin: 0 auto;
     }
+
+
 
     .quick-menu>ul{
         justify-content: unset;
