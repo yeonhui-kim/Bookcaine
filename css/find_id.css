@@ -20,7 +20,7 @@ html,body{
 }
     .button:hover{
         background-color: #347961;
-        transition: 0.5s;
+        transition: 0.25s;
     }
 
 /*------------------------------------------------------------------------*/
@@ -31,7 +31,6 @@ html,body{
 }
     .find-id-form form{
         display: inline-block;
-        
     }
 
     .find-id-form fieldset{
@@ -64,11 +63,12 @@ html,body{
 .other-button
 {
     display: inline-block;
+    margin-top: 5px;
 }
 
-.other-button{
-    text-align: center;
-    line-height: 40px;
+.tel-input, .code-input{
+    display: flex;
+    margin-top: 5px;
 }
 
 .find-pw-button{
@@ -76,14 +76,6 @@ html,body{
     justify-content: flex-end;
 }
 
-
-/* .title{
-    text-align: center;
-
-    font-family: "맑은 고딕";
-    font-size: 25px;
-    font-weight: bold;
-} */
 .ex{
     text-align: center;
     margin-top: 30px;
@@ -92,7 +84,6 @@ html,body{
     font-weight: bold;
     color: rgb(75, 75, 75);
 }
-
 
 /* --------------------------------------------------------------- */
 
