@@ -1,0 +1,34 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.d-none{
+    display: none !important;
+}
+
+/*-------------------------------*/
+
+.main_font{
+    height: 40px;
+    background-color: rgb(226, 221, 221);
+}
+
+.font{
+    color:gray;
+    font-size: 10px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.follower_name{
+    display: inline-block;
+}
+
+.follower_list{
+    display: flex;
+    position: absolute;
+    right: 0;
+}
