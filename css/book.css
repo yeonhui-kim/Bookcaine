@@ -28,7 +28,7 @@ li{
 
 /* ------------------ header ------------------ */
 
-header{
+/* header{
     background-color: #ccee8ed2;
 }
 
@@ -46,7 +46,7 @@ header{
 .quick-menu>ul{
     display: flex;
     justify-content: space-around;
-}
+} */
 
 /* ------------------ main ------------------ */
 #book-image{
@@ -107,13 +107,14 @@ img{
 }
 
 #challenge > div > input{
-    width: 95%;
+    width: 90%;
     height: 36px;
     display: block;
     margin: 0 auto;
     color: white;
     background-color: teal;
     border-radius: 6px;
+    border-color: teal;
 }
 
 #for-bottom-btn{

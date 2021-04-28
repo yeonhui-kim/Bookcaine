@@ -120,6 +120,10 @@ header{
         transition: 0.05s;
         border-bottom: 2px solid #347961;
     }
+    .home{
+        font-weight: bold;
+        border-bottom: 2px solid #347961;
+    }    
 
 /* ------------------ main ------------------ */
 
