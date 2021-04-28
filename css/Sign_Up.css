@@ -60,7 +60,7 @@ body{
 
 }
 
-#txt{ /*type = text*/
+.txt{ /*type = text*/
     /* display: block; */
     border: none;
     width: 100%;
@@ -204,6 +204,14 @@ input[type=radio]{
    
 }
 
+.hide{
+    color: red;
+    font-size: 12px;
+    display: block;
+}
 
 
 
+.d-none{
+    display: none;
+}
