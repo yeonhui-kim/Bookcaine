@@ -228,6 +228,8 @@ main{
     } */
 
     #main{
+        width: 960px;
+        margin: 0 auto;
         height: 100%;
         display: grid;
         grid-template-columns: 1fr 330px 330px 330px 1fr;
