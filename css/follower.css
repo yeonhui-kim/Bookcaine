@@ -11,6 +11,10 @@ html,body{
 
 /*-------------------------------*/
 
+#main{
+    display: inline-block;
+}
+
 .main_font{
     height: 40px;
     background-color: rgb(226, 221, 221);
@@ -23,12 +27,22 @@ html,body{
     margin-left: 10px;
 }
 
-.follower_name{
-    display: inline-block;
+.follower-list{
+    
 }
 
-.follower_list{
-    display: flex;
+.follower-img{
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+}  
+
+.follwer-button{
     position: absolute;
     right: 0;
+    border:teal solid 1px;
+    background-color: white;
+    color:teal;
+    margin-right: 10px;
+    margin-top: 25px;
 }
