@@ -19,7 +19,7 @@ html,body{
         text-align: left;
     }
 
-/*-------------------------------*/
+/*--------------------------*/
 
 .main_font{
     height: 40px;
@@ -68,8 +68,7 @@ html,body{
     width:100px;
 }
 
-
-.follwer-button{
+.follwing-button{
     border:teal solid 1px;
     background-color: white;
     color:teal; 
