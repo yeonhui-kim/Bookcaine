@@ -5,8 +5,9 @@ html,body{
 
 
 h1{
-    padding: 10px;
+    padding: 20px;
     margin: 0;
+    font-size: 25px;
 }
 /*------------------*/
 :root{
@@ -17,14 +18,8 @@ h1{
 /*---------------------------*/
 #root{
     height: 100%;
-    display: grid;
-     
-    grid-template-rows: 170px 70px 1fr 100px;
-    grid-template-areas: 
-    "header"
-    "aside"
-    "main"
-    "footer";
+    
+    
 }
 
 .table {
@@ -71,7 +66,7 @@ th{
     display: block;
     position: absolute;
     right: 10px;
-    top: 115px;
+    top: 265px;
 
 }
 
@@ -91,7 +86,7 @@ th{
     border-radius: 4px;
 }
 .email-ch{
-        margin-top: 10px;
+    margin-top: 10px;
     padding: 5px;
     background-color: var(--color-box);
     border-width: 1px;
@@ -110,4 +105,29 @@ p{
     margin-top: 12px;
     font-family: "맑은 고딕";
     
+}
+
+@media screen and (min-width: 690px){
+
+    .table, main>h1 {
+        width: 690px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .leave-button{
+        position: static;
+        display: inline-block;
+        margin-left: 400px;
+    }
+}
+
+@media screen and (min-width: 960px){
+    .table, main>h1 { 
+        width: 800px;
+    }
+
+    .leave-button{
+        margin-left: 500px;
+    }
 }
