@@ -41,7 +41,7 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    width: 500px;
+    width: 350px;
     height: 300px;
     
  
@@ -51,7 +51,7 @@ body{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    width: 460px;
+    width: 360px;
 }
 
 .btn-wrapper{
@@ -62,7 +62,7 @@ body{
 
 
 .Sign_Go{
-    width: 100%;
+    width: 90%;
     cursor: pointer;
     padding: 16px 0;
     margin-bottom: 15px;
@@ -78,7 +78,7 @@ body{
 }
 
 .Login_go{
-    width: 100%;
+    width: 90%;
     cursor: pointer;
     background-color: white;
     border: none;

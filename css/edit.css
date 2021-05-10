@@ -27,6 +27,17 @@ li{
 }
 
 /* --------------------------------------- */
+.icon-cog{
+    position: absolute;
+    font-size: 1.2rem;
+    top: 24px;
+    right: 30px;
+}
+
+.profile{
+    font-weight: bold;
+    border-bottom: 2px solid #347961;
+}
 
 body{
     margin-top: 8px;
@@ -49,6 +60,10 @@ form > section > span{
     font-size: 16px;
 }
 
+.profile-form{
+    margin-top: 30px;
+}
+
 form > img{
     width: 100px;
     height: 100px;
@@ -66,8 +81,14 @@ form .input{
 
 /* --------------------------------------- */
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 960px){
     form > section{
         justify-content: space-around;
+    }
+
+    .profile-form{
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
