@@ -129,6 +129,10 @@ img{
     height: 36px;
 }
 
+#friends{
+    margin-left: 20px;
+}
+
 /* ------------------ 반응형 ------------------ */
 
 @media screen and (min-width: 690px){
@@ -208,11 +212,6 @@ img{
         margin-right: auto;
     }
     
-
-    #friends{
-        grid-area: friends;
-        margin-left: 20px;
-    }
         #friends h1{
             margin-top: 40px;
         }
