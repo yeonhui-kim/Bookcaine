@@ -94,7 +94,17 @@
         <nav>
             <h1 class="section-title">BookCaine 추천</h1>
             <ul class="book-list">
-                <div>
+            <%for (int i=0; i<2; i++) { %>
+            <div>
+            	<%for (int j=0; j<3; j++) {%>
+	            	<a href="books/book1.html">
+	                        <img src="images/book<%=3*i+j+1+6 %>.jpg" alt="">
+	                        <li>시대를<br>매혹한 철학</li>
+	                </a>
+	            <%} %>
+            </div>
+            <%} %>
+                <!--<div>
                     <a href="#">
                         <img src="images/book7.jfif" alt="">
                         <li>지리의 힘</li>
@@ -121,14 +131,24 @@
                         <img src="images/book12.jfif" alt="">
                         <li>팩트풀니스</li>
                     </a>
-                </div>
+                </div> -->
 
             </ul>
         </nav>
         <nav>
             <h1 class="section-title">베스트셀러</h1>
             <ol class="book-list">
-                <div>
+	            <%for (int i=0; i<2; i++) { %>
+	            <div>
+	            	<%for (int j=0; j<3; j++) {%>
+		            	<a href="books/book1.html">
+		                        <img src="images/book<%=3*i+j+1+12 %>.jpg" alt="">
+		                        <li>시대를<br>매혹한 철학</li>
+		                </a>
+		            <%} %>
+	            </div>
+	            <%} %>
+                <!--<div>
                     <a href="">
                         <img src="images/book13.jfif" alt="">
                         <li>역사의 쓸모</li>
@@ -155,7 +175,7 @@
                         <img src="images/book18.jfif" alt="">
                         <li>미움받을<br>용기</li>
                     </a>
-                </div>
+                </div>-->
             </ol>
         </nav>
     </main>
