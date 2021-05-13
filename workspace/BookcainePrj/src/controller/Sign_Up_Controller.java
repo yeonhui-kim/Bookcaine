@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import entity.Member;
 import service.MemberService;
 
@@ -25,7 +26,12 @@ public class Sign_Up_Controller extends HttpServlet {
 		String pwd = req.getParameter("pwd");
 		String name = req.getParameter("name");
 		String gender = req.getParameter("gender");
-		String birthday = req.getParameter("birthday");
+		String birthday1 = req.getParameter("birthdayYY");
+		//String[] birthday2 = req.getParameterValues("birthdayMM");
+		String birthday2 = req.getParameter("birthdayMM");
+		String birthday3 = req.getParameter("birthdayDD");
+		String birthday = birthday1 + birthday2 + birthday3;
+		
 		String phone = req.getParameter("phone");
 		String email = req.getParameter("email");
 		
@@ -40,6 +46,7 @@ public class Sign_Up_Controller extends HttpServlet {
 			member.setBirthday(birthday);
 			member.setPhone(phone);
 			member.setEmail(email);
+			//member.setBirthdays(birthday2);
 			service.insert(member);
 			
 		} catch (ClassNotFoundException e) {
