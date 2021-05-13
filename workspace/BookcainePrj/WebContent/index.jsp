@@ -1,5 +1,20 @@
+<%@page import="com.bookcaine.web.entity.Book"%>
+<%@page import="com.bookcaine.web.service.BookService"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%
+String q = request.getParameter("q");
+
+	String query = "";
+
+	if (q != null && !q.equals(""))
+		query = q;
+	
+	BookService bookService = new BookService();
+	List<Book> list = bookService.getList(query);
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +42,9 @@
 
                 <section class="book-search-form">
                     <h1 class="d-none">도서검색폼</h1>
-                    <form action="">
+                    <form action="index.jsp" method="get">
                         <legend class="d-none">도서 검색 필드</legend>
-                        <input class="form-input" type="text" name="search" placeholder="제목,저자,출판사 검색">
+                        <input class="form-input" type="text" name="query" placeholder="제목,저자,출판사 검색">
                         <input class="button" type="submit" value="검색">
                     </form>
                 </section>
@@ -48,136 +63,51 @@
 
     <main>
         <h1 class="d-none">content</h1>
-        <nav>
+        <!--<nav>
             <h1 class="section-title">사람들이 지금 많이 읽고 있는 책</h1>
             <ol class="book-list">
             <%for (int i=0; i<2; i++) { %>
             <div>
             	<%for (int j=0; j<3; j++) {%>
 	            	<a href="books/book1.html">
-	                        <img src="images/book<%=3*i+j+1 %>.jpg" alt="">
-	                        <li>시대를<br>매혹한 철학</li>
+	                        <img src="images/book<%=list.get(3*i+j).getId()%>.jpg" alt="">
+	                        <li><%=list.get(3*i+j).getTitle() %></li>
 	                </a>
 	            <%} %>
             </div>
             <%} %>
-                <!--<div>
-                    <a href="books/book1.html">
-                        <img src="images/book1.jpg" alt="">
-                        <li>시대를<br>매혹한 철학</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book2.jfif" alt="">
-                        <li>12가지<br>인생의 법칙</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book3.jfif" alt="">
-                        <li>열한계단</li>
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="images/book4.jpg" alt="">
-                        <li>연을 쫓는<br>아이</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book5.jpg" alt="">
-                        <li>밤은<br>노래한다</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book6.jpg" alt="">
-                        <li>행복의 가설</li>
-                    </a>
-                </div> -->
             </ol>
-        </nav>
+        </nav>-->
         <nav>
             <h1 class="section-title">BookCaine 추천</h1>
             <ul class="book-list">
-            <%for (int i=0; i<2; i++) { %>
+            <%for (int i=0; i<6; i++) { %>
             <div>
             	<%for (int j=0; j<3; j++) {%>
-	            	<a href="books/book1.html">
-	                        <img src="images/book<%=3*i+j+1+6 %>.jpg" alt="">
-	                        <li>시대를<br>매혹한 철학</li>
+	            	<a href="books/detail.jsp?id=<%=list.get(3*i+j).getId()%>">
+	                        <img src="images/book<%=list.get(3*i+j).getId()%>.jpg" alt="">
+	                        <li><%=list.get(3*i+j).getTitle() %></li>
 	                </a>
 	            <%} %>
             </div>
             <%} %>
-                <!--<div>
-                    <a href="#">
-                        <img src="images/book7.jfif" alt="">
-                        <li>지리의 힘</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book8.jfif" alt="">
-                        <li>코스모스</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book9.jfif" alt="">
-                        <li>사피엔스</li>
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="images/book10.jfif" alt="">
-                        <li>총, 균, 쇠</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book11.jfif" alt="">
-                        <li>이기적<br>유전자</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book12.jfif" alt="">
-                        <li>팩트풀니스</li>
-                    </a>
-                </div> -->
-
             </ul>
         </nav>
-        <nav>
+        <!--<nav>
             <h1 class="section-title">베스트셀러</h1>
             <ol class="book-list">
 	            <%for (int i=0; i<2; i++) { %>
 	            <div>
 	            	<%for (int j=0; j<3; j++) {%>
 		            	<a href="books/book1.html">
-		                        <img src="images/book<%=3*i+j+1+12 %>.jpg" alt="">
-		                        <li>시대를<br>매혹한 철학</li>
+		                        <img src="images/book<%=list.get(3*i+j+12).getId()%>.jpg" alt="">
+		                        <li><%=list.get(3*i+j).getTitle() %></li>
 		                </a>
 		            <%} %>
 	            </div>
 	            <%} %>
-                <!--<div>
-                    <a href="">
-                        <img src="images/book13.jfif" alt="">
-                        <li>역사의 쓸모</li>
-                    </a>
-                    <a href="#">
-                        <img src="images/book14.jfif" alt="">
-                        <li>부의<br>추월차선</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book15.jfif" alt="">
-                        <li>정의란<br>무엇인가</li>
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="images/book16.jfif" alt="">
-                        <li>아주 작은<br>습관의 힘</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book17.jfif" alt="">
-                        <li>미라클 모닝</li>
-                    </a>
-                    <a href="">
-                        <img src="images/book18.jfif" alt="">
-                        <li>미움받을<br>용기</li>
-                    </a>
-                </div>-->
             </ol>
-        </nav>
+        </nav> -->
     </main>
 
 </body>

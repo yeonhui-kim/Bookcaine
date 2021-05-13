@@ -10,13 +10,13 @@ import java.util.List;
 
 import com.bookcaine.web.entity.Book;
 
-public class SearchService {
+public class BookService {
 	public List<Book> getList(String query) throws ClassNotFoundException, SQLException{
 		List<Book> list = new ArrayList<>();
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT * FROM BOOK WHERE TITLE LIKE '%" + query + "%'";
+		String sql = "SELECT * FROM BOOK WHERE TITLE LIKE '%" + query + "%' ORDER BY ID";
 
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
@@ -26,19 +26,53 @@ public class SearchService {
 		
 		while(rs.next()) {
 			Book book = new Book();
+			int id = rs.getInt("id");
 			String title = rs.getString("title");
 			String author = rs.getString("author");
-			int pubYear = rs.getInt("pubYear");
-			int readerNum = rs.getInt("readerNum");
 			
+			book.setId(id);
 			book.setTitle(title);
 			book.setAuthor(author);
-			book.setPubYear(pubYear);
-			book.setReaderNum(readerNum);
 			
 			list.add(book);
 		}
 		
+		rs.close();
+		st.close();
+		con.close();
+		
 		return list;
 	}
+	
+	public Book get(int id) throws SQLException, ClassNotFoundException {
+		
+		Book book = new Book();
+		
+		String sql = "SELECT * FROM BOOK WHERE ID=" + id;
+		
+		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
+		
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
+		
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+		
+		if(rs.next()) {
+			String title = rs.getString("title");
+			String author = rs.getString("author");
+			
+			book.setId(id);
+			book.setTitle(title);
+			book.setAuthor(author);
+		}
+
+		rs.close();
+		st.close();
+		con.close();
+
+		return book;
+		
+	}
+
 }

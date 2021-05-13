@@ -1,3 +1,18 @@
+<%@page import="com.bookcaine.web.entity.Book"%>
+<%@page import="com.bookcaine.web.service.BookService"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%
+	String id_ = request.getParameter("id");
+	int id = Integer.parseInt(id_);
+
+	BookService bookService = new BookService();
+	Book book = bookService.get(id);
+
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,14 +62,14 @@
     <main>
         <section id="book-image">
             <h1 class="d-none">book-image</h1>
-            <img src="../images/book1.jpg" alt="">
+            <img src="../images/book<%=id %>.jpg" alt="">
         </section>
         <hr>
 
         <section id="book-description">
             <h1 class="d-none">책 설명</h1>
-            <div id="book-name">시대를 매혹한 철학</div>
-            <div id="writer">야무차</div>
+            <div id="book-name"><%=book.getTitle() %></div>
+            <div id="writer"><%=book.getAuthor() %></div>
         </section>
         <hr>
 
