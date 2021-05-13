@@ -13,7 +13,7 @@
 </head>
 <body>
     <header id="header">
-        <a href="메인화면 링크~" title="메인화면">BookCaine</a>
+        <a href="../index.jsp" title="메인화면">BookCaine</a>
     </header>
 
     <div class="line">
