@@ -8,7 +8,16 @@ public class Member {
 	private String birthday;
 	private String phone;
 	private String email;
+//	private String birthdays[];
 	
+//	public String[] getBirthdays() {
+//		return birthdays;
+//	}
+
+//	public void setBirthdays(String[] birthdays) {
+//		this.birthdays = birthdays;
+//	}
+
 	public Member() {
 		// TODO Auto-generated constructor stub
 	}
@@ -63,8 +72,5 @@ public class Member {
 		return "{\"id\":" + id + ", \"pwd\":\"" + pwd + "\", \"name\":\"" + name + "\", \"gender\":\"" + gender
 	            + "\", \"birthday\":\"" + birthday + "\", \"phone\":" + phone + ", \"email\":\"" + email + "\"}";
 	}
-	
-	
-	
-	
+
 }

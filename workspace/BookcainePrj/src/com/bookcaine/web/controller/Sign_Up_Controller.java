@@ -9,8 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD:workspace/BookcainePrj/src/controller/Sign_Up_Controller.java
+
+import entity.Member;
+import service.MemberService;
+=======
 import com.bookcaine.web.entity.Member;
 import com.bookcaine.web.service.MemberService;
+>>>>>>> 70421bb2e7babb27f7e489c19d158357f66f18b9:workspace/BookcainePrj/src/com/bookcaine/web/controller/Sign_Up_Controller.java
 
 @WebServlet("/sign_up/Sign_Up")
 public class Sign_Up_Controller extends HttpServlet {
@@ -25,7 +31,12 @@ public class Sign_Up_Controller extends HttpServlet {
 		String pwd = req.getParameter("pwd");
 		String name = req.getParameter("name");
 		String gender = req.getParameter("gender");
-		String birthday = req.getParameter("birthday");
+		String birthday1 = req.getParameter("birthdayYY");
+		//String[] birthday2 = req.getParameterValues("birthdayMM");
+		String birthday2 = req.getParameter("birthdayMM");
+		String birthday3 = req.getParameter("birthdayDD");
+		String birthday = birthday1 + birthday2 + birthday3;
+		
 		String phone = req.getParameter("phone");
 		String email = req.getParameter("email");
 		
@@ -40,6 +51,7 @@ public class Sign_Up_Controller extends HttpServlet {
 			member.setBirthday(birthday);
 			member.setPhone(phone);
 			member.setEmail(email);
+			//member.setBirthdays(birthday2);
 			service.insert(member);
 			
 		} catch (ClassNotFoundException e) {

@@ -75,7 +75,7 @@ li{
     color: gray;
 }
 
-#wish > input{
+.btn input {
     padding: 0;
     width: 80%;
     height: 36px;
@@ -85,6 +85,16 @@ li{
     color: white;
     border: 1px solid tomato;
     border-radius: 8px;
+}
+
+#write{
+	margin-top: 10px;
+}
+
+#write input{
+	background-color: white;
+	border-color: tomato;
+	color: black;
 }
 
 #review{
@@ -166,7 +176,7 @@ li{
         margin-top: 30px;
     }
 
-    #challenge, #wish{
+    #challenge, #wish, #write{
         grid-area: wish;
         margin-top: 5px;
     }
@@ -179,11 +189,14 @@ li{
         }
     
     #challenge > div{
-        grid-area: wish;
         position: relative;
         top: 40px;
         width: 80%;
         margin: 0 auto;
+    }
+    
+    #write {
+        margin-top: 85px;
     }
 
     #friends{
@@ -214,7 +227,7 @@ li{
     }
     
     #challenge, #wish{
-        width: 80%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }

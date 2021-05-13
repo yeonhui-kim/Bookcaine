@@ -56,29 +56,29 @@
             <div class="date">
         
                 <span class="box box-yy">
-                    <input type="text" class="txt" id="yy"  placeholder="년(4자)" maxlength="4">
+                    <input type="text" name="birthdayYY" class="txt" id="yy"  placeholder="년(4자)" maxlength="4">
                 </span>
            
                 <span class="box box-mm">
-                    <select name="birthday" class="mm">
+                   <!--  <select name="birthdayMM" class="mm">
                         <option>월</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                    </select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>   -->              
+ 					<input type="text" name="birthdayMM" class="mm" id="dd" placeholder="월" maxlength="2">
                 </span>
-
                 <span class="box box-dd">
-                    <input type="text" name="birthday" class="txt" id="dd" placeholder="일" maxlength="2">
+                    <input type="text" name="birthdayDD" class="txt" id="dd" placeholder="일" maxlength="2">
                 </span>
             </div>
 
