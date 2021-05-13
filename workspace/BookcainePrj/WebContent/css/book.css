@@ -75,7 +75,7 @@ li{
     color: gray;
 }
 
-.btn > input{
+.btn input {
     padding: 0;
     width: 80%;
     height: 36px;
@@ -87,8 +87,11 @@ li{
     border-radius: 8px;
 }
 
-#write > input{
+#write{
 	margin-top: 10px;
+}
+
+#write input{
 	background-color: white;
 	border-color: tomato;
 	color: black;

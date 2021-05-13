@@ -78,7 +78,7 @@
         </div>
         
         <div id="write" class="btn">
-            <input type="button" value="리뷰를 남겨보세요!">
+            <a href="write.jsp"><input type="button" value="리뷰를 남겨보세요!"></a>
         </div>
 
         <br>
