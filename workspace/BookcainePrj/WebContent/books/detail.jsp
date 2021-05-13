@@ -73,8 +73,12 @@
         </section>
         <hr>
 
-        <div id="wish">
+        <div id="wish" class="btn">
             <input type="button" value="+ 읽고 싶어요">
+        </div>
+        
+        <div id="write" class="btn">
+            <input type="button" value="리뷰를 남겨보세요!">
         </div>
 
         <br>
