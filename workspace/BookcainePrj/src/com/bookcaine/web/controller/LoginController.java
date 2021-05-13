@@ -1,4 +1,4 @@
-package controller;
+package com.bookcaine.web.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.Member;
-import service.MemberService;
+import com.bookcaine.web.entity.Member;
+import com.bookcaine.web.service.MemberService;
 
 @WebServlet("/login/login")
 public class LoginController extends HttpServlet {

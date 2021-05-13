@@ -1,4 +1,4 @@
-package service;
+package com.bookcaine.web.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import entity.Member;
+import com.bookcaine.web.entity.Member;
 
 public class MemberService {
 	public List<Member> getList() throws ClassNotFoundException, SQLException {
