@@ -1,4 +1,4 @@
-package controller;
+package com.bookcaine.web.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.Member;
-import service.MemberService;
+import com.bookcaine.web.entity.Member;
+import com.bookcaine.web.service.MemberService;
 
-@WebServlet("/login/login")
-public class LoginController extends HttpServlet {
+@WebServlet("/sign_up/Sign_Up")
+public class Sign_Up_Controller extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,6 +23,11 @@ public class LoginController extends HttpServlet {
 		
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("pwd");
+		String name = req.getParameter("name");
+		String gender = req.getParameter("gender");
+		String birthday = req.getParameter("birthday");
+		String phone = req.getParameter("phone");
+		String email = req.getParameter("email");
 		
 		MemberService service = new MemberService();
 	
@@ -30,7 +35,11 @@ public class LoginController extends HttpServlet {
 			Member member = new Member();
 			member.setId(id);
 			member.setPwd(pwd);
-			
+			member.setName(name);
+			member.setGender(gender);
+			member.setBirthday(birthday);
+			member.setPhone(phone);
+			member.setEmail(email);
 			service.insert(member);
 			
 		} catch (ClassNotFoundException e) {
@@ -39,7 +48,7 @@ public class LoginController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		resp.sendRedirect("login.jsp");
+		resp.sendRedirect("Sign_Up.jsp");
 	
 	}
 	

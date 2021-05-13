@@ -1,4 +1,4 @@
-package entity;
+package com.bookcaine.web.entity;
 
 public class Member {
 	private String id;
