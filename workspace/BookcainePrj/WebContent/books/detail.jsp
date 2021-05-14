@@ -64,14 +64,14 @@
             <h1 class="d-none">book-image</h1>
             <img src="../images/book<%=id %>.jpg" alt="">
         </section>
-        <hr>
+        <hr class="temp-hr">
 
         <section id="book-description">
             <h1 class="d-none">책 설명</h1>
             <div id="book-name"><%=book.getTitle() %></div>
             <div id="writer"><%=book.getAuthor() %></div>
         </section>
-        <hr>
+        <hr class="temp-hr">
 
         <div id="wish" class="btn">
             <input type="button" value="+ 읽고 싶어요">
@@ -84,32 +84,34 @@
         <br>
 
         <section id="review">
+        	<article>
             <h1>리뷰</h1>
-            <ul>
-                <li>
-                    <div class="reviewer">이동진</div>
-                    <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim facilis mollitia
-                        consectetur
-                        repellat nemo sapiente accusamus. Dignissimos blanditiis quidem deserunt, nobis distinctio
-                        fugiat
-                        voluptas error impedit tempore sunt delectus soluta dicta vitae illo voluptates explicabo
-                        ducimus
-                        tenetur corporis perferendis quasi iure! Unde consectetur a itaque provident odio sapiente
-                        voluptatem!</article>
-                </li>
-                <hr>
-                <li>
-                    <div class="reviewer">하루키</div>
-                    <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim facilis mollitia
-                        consectetur
-                        repellat nemo sapiente accusamus. Dignissimos blanditiis quidem deserunt, nobis distinctio
-                        fugiat
-                        voluptas error impedit tempore sunt delectus soluta dicta vitae illo voluptates explicabo
-                        ducimus
-                        tenetur corporis perferendis quasi iure! Unde consectetur a itaque provident odio sapiente
-                        voluptatem!</article>
-                </li>
-            </ul>
+            	<%for(int i=0; i<3; i++){ %>
+            	<div class=review>
+	            	<article>
+	                    <div class="reviewer">이동진</div>
+	                    	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim facilis mollitia
+	                        consectetur
+	                        repellat nemo sapiente accusamus. Dignissimos blanditiis quidem deserunt, nobis distinctio
+	                        fugiat
+	                        voluptas error impedit tempore sunt delectus soluta dicta vitae illo voluptates explicabo
+	                        ducimus
+	                        tenetur corporis perferendis quasi iure! Unde consectetur a itaque provident odio sapiente
+	                        voluptatem!</p>
+	                        <div class="review-attr">
+	                        	<span>좋아요 0</span>
+	                        	<span>댓글 0</span>
+	                        </div>
+	                <hr>
+	                <div class="review-btn-group">
+	                	<input id="like-button" type="button" value="좋아요">
+	                	<a href="#">댓글</a>
+	                </div>
+	                </article>
+                </div>
+                <%} %>
+                </article>
+                
         </section>
 
         <section id="friends">

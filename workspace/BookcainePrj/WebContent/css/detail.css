@@ -15,7 +15,6 @@ html,body{
 
 a{
     text-decoration: none;
-    color: black;
 }
 
 ul{
@@ -24,10 +23,6 @@ ul{
 
 li{
     list-style: none;
-}
-
-hr{
-	margin-right: 12px;
 }
 
 /* ------------------ header ------------------ */
@@ -109,14 +104,41 @@ hr{
         margin-top: 20px;
     }
 
-
-    #review>ul>li{
-        margin: 16px;
+    #review .review{
+        margin: 24px;
+        background-color: #b6c2b7;
+        background-color: #e3e1e3;
+        border-radius: 3%;
+        padding-bottom: 8px;
     }
+    
+    #review .review .review-attr{
+        color: gray;
+        margin-left: 8px;
+        font-size: 13px;
+    }
+    
+    #review .review .review-btn-group{
+        margin-left: 8px;
+        color: tomato;
+    }
+    
+    #review .review .review-btn-group #like-button{
+  		all: unset;
+  		cursor: pointer;
+    }
+    
+    #review .review .review-btn-group #like-button:active{
+  		background-color: tomato;
+  		color: white;
+    }
+    
+    #review .review .review-btn-group a{
+  		color: tomato;
+    }
+    
 
 #review .reviewer{
-    text-align: right;
-    color: gray;
     margin: 8px;
     font-size: 15px;
 }
@@ -221,7 +243,7 @@ hr{
         "review review friends";
     }
 
-    hr{
+    .temp-hr{
         border: 0;
         margin: 0;
     }
