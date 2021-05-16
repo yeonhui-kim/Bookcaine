@@ -1,0 +1,47 @@
+.d-none{
+    display: none !important;
+    }
+
+/*------------------------------*/
+
+html, body{
+    width: 100%; 
+    /* display: flex;
+    justify-content: center;  */
+}  
+
+/*-------------------------------*/
+
+#header{
+    background-color: #b1d6c1;
+    
+}
+
+#header>h1{
+    font-family: "맑은 고딕";
+    font-size: 20px;
+    text-align: center;
+    color: #2e8b57;
+}
+
+.table{
+    width: 100%; 
+    border-collapse: collapse;
+    table-layout: fixed; 
+    text-align: left;
+}
+
+td .w1{
+    display: inline-block;
+}
+
+.one-input{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* .check{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+} */
