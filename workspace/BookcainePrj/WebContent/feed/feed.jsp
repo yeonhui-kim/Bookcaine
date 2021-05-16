@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,25 +15,25 @@
 <header id="header">
     <div class="float-content">
         <h1 class="logo">
-            <div class="logo-1">Ã¥¿¡ Áßµ¶µÇ´Â ¼ø°£</div> Bookcaine
+            <div class="logo-1">ì±…ì— ì¤‘ë…ë˜ëŠ” ìˆœê°„</div> Bookcaine
         </h1>
         <section>
-            <h1 class="d-none">Çì´õ</h1>
+            <h1 class="d-none">í—¤ë”</h1>
             <section class="book-search-form">
-                <h1 class="d-none">µµ¼­°Ë»öÆû</h1>
+                <h1 class="d-none">ë„ì„œê²€ìƒ‰í¼</h1>
                 <form action="">
-                    <legend class="d-none">µµ¼­ °Ë»ö ÇÊµå</legend>
-                    <input class="form-input" type="text" name="search" placeholder="Á¦¸ñ,ÀúÀÚ,ÃâÆÇ»ç °Ë»ö">
-                    <input class="button" type="submit" value="°Ë»ö">
+                    <legend class="d-none">ë„ì„œ ê²€ìƒ‰ í•„ë“œ</legend>
+                    <input class="form-input" type="text" name="search" placeholder="ì œëª©,ì €ìž,ì¶œíŒì‚¬ ê²€ìƒ‰">
+                    <input class="button" type="submit" value="ê²€ìƒ‰">
                 </form>
             </section>
 
             <nav class="quick-menu">
-                <h1 class="d-none">Äü¸Þ´º</h1>
+                <h1 class="d-none">í€µë©”ë‰´</h1>
                 <ul>
-                    <li><a href="../index.jsp">È¨</a></li>
-                    <li><a href="">µµÀü¹æ</a></li>
-                    <li><a href="../profile/profile.html">ÇÁ·ÎÇÊ</a></li>
+                    <li><a href="../index.jsp">í™ˆ</a></li>
+                    <li><a href="">ë„ì „ë°©</a></li>
+                    <li><a href="../profile/profile.html">í”„ë¡œí•„</a></li>
                 </ul>
             </nav>
         </section>
@@ -47,7 +47,7 @@
             <div class="profile">
                 <img class="profile-image" src="../images/user.PNG">
                 <div class="profile-flex">
-                    <a class="user-name">ÃÊ·Ï»ö·¹°í</a>
+                    <a class="user-name">ì´ˆë¡ìƒ‰ë ˆê³ </a>
                     <a class="date">2021-05-16</a>
                 </div>
             </div>
@@ -59,19 +59,19 @@
                 </div>
                 <a>[68p]</a>
                 <div>
-                    <a>¿©¸§Àº ¿À·¡ ±× °÷¿¡ ³²¾Æ</a>
+                    <a>ì—¬ë¦„ì€ ì˜¤ëž˜ ê·¸ ê³³ì— ë‚¨ì•„</a>
                 </div>
 
 
 
                 <div class="review-attr">
-                    <span>ÁÁ¾Æ¿ä 0</span>
-                    <span>´ñ±Û 0</span>
+                    <span>ì¢‹ì•„ìš” 0</span>
+                    <span>ëŒ“ê¸€ 0</span>
                 </div>
                 <hr>
                 <div class="review-btn-group">
-                    <input id="like-button" type="button" value="ÁÁ¾Æ¿ä">
-                    <a href="#">´ñ±Û</a>
+                    <input id="like-button" type="button" value="ì¢‹ì•„ìš”">
+                    <a href="#">ëŒ“ê¸€</a>
                 </div>
             </div>
         </article>
