@@ -27,7 +27,7 @@ ul,ol{
 }
 
 body{
-    font-family: "돋음", Arial, Helvetica, sans-serif;
+    font-family: "나눔고딕", Arial, Helvetica, sans-serif;
     font-size: 11px;
     color:var(--color-basic);
 }
@@ -119,16 +119,16 @@ a{
 
 .bookClub-main li{
     display: grid;
-    height: 200px;
-    /* width:100%; */
-    grid-template-columns: 200px 1fr;
+    height: 100px;
+    width: 450px;
+    grid-template-columns: 100px 1fr;
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
     "img title"
     "img price"
     "img info";
     
-    border-bottom: 1px solid var(--bd-color-basic);
+    
     padding:5px;
     /* align-items: center; */
   
@@ -150,7 +150,7 @@ a{
 
 .bookClub-main li>.title{
     grid-area: title;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     margin-top: 30px;
     margin-left: 30px;
