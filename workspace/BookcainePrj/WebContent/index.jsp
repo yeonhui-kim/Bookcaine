@@ -54,7 +54,7 @@ String q = request.getParameter("q");
                     <ul>
                         <li class="home"><a href="#">홈</a></li>
                         <li><a href="">도전방</a></li>
-                        <li><a href="profile/profile.html">프로필</a></li>
+                        <li><a href="profile/profile.jsp">프로필</a></li>
                     </ul>
                 </nav>
             </section>
