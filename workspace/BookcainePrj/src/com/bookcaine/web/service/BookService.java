@@ -11,6 +11,43 @@ import java.util.List;
 import com.bookcaine.web.entity.Book;
 
 public class BookService {
+	public List<Book> getList() throws ClassNotFoundException, SQLException{
+		List<Book> list = new ArrayList<>();
+		
+		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
+		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
+		String sql = "SELECT * FROM BOOK";
+
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
+		
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+		
+		while(rs.next()) {
+			Book book = new Book();
+			int id = rs.getInt("id");
+			String title = rs.getString("title");
+			String author = rs.getString("author");
+			String yn = rs.getString("yn");
+			String details = rs.getString("details");
+			
+			book.setId(id);
+			book.setTitle(title);
+			book.setAuthor(author);
+			book.setYn(yn);
+			book.setDetails(details);
+			
+			list.add(book);
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return list;
+	}
+	
 	public List<Book> getList(String query) throws ClassNotFoundException, SQLException{
 		List<Book> list = new ArrayList<>();
 		
@@ -29,10 +66,14 @@ public class BookService {
 			int id = rs.getInt("id");
 			String title = rs.getString("title");
 			String author = rs.getString("author");
+			String yn = rs.getString("yn");
+			String details = rs.getString("details");
 			
 			book.setId(id);
 			book.setTitle(title);
 			book.setAuthor(author);
+			book.setYn(yn);
+			book.setDetails(details);
 			
 			list.add(book);
 		}
