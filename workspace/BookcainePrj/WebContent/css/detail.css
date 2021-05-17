@@ -112,6 +112,10 @@ li{
         padding-bottom: 8px;
     }
     
+    #review .review p{
+    	padding: 12px;
+    }
+    
     #review .review .review-attr{
         color: gray;
         margin-left: 8px;
