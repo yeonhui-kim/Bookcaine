@@ -32,6 +32,7 @@ public class Sign_Up_Controller extends HttpServlet {
 		
 		String phone = req.getParameter("phone");
 		String email = req.getParameter("email");
+		String nickname = req.getParameter("nickname");
 		
 		MemberService service = new MemberService();
 	
@@ -44,6 +45,7 @@ public class Sign_Up_Controller extends HttpServlet {
 			member.setBirthday(birthday);
 			member.setPhone(phone);
 			member.setEmail(email);
+			member.setNickname(nickname);
 			//member.setBirthdays(birthday2);
 			service.insert(member);
 			

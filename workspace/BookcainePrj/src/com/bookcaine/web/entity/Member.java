@@ -4,10 +4,13 @@ public class Member {
 	private String id;
 	private String pwd;
 	private String name;
-	private String gender;
-	private String birthday;
+	
 	private String phone;
+	private String nickname;
 	private String email;
+	private String birthday;
+	private String gender;
+	
 //	private String birthdays[];
 	
 //	public String[] getBirthdays() {
@@ -65,6 +68,15 @@ public class Member {
 		this.email = email;
 	}
 	
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+
 	@Override
 	public String toString() {
 //		return "Member [id=" + id + ", pwd=" + pwd + ", name=" + name + ", gender=" + gender + ", birthday=" + birthday

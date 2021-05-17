@@ -30,6 +30,7 @@ window.addEventListener("load", function () {
     var pw = document.querySelector('#PW_txt');
     var pwr = document.querySelector('#PWR_txt');
     var name = document.querySelector("#NAME_txt");
+	var nickname = document.querySelector("#NICKNAME_txt");
     // var yy = document.querySelector("#yy");
     // var mm = document.querySelector("#mm");
     // var dd = document.querySelector("#dd");
@@ -39,6 +40,7 @@ window.addEventListener("load", function () {
     pw.addEventListener("focusout", checkpw);
     pwr.addEventListener("focusout", checkpwr);
     name.addEventListener("focusout", checkname);
+    nickname.addEventListener("focusout", checknickname);
     // yy.addEventListener("focusout", checkyy);
     // mm.addEventListener("focusout", checkmm);
     // dd.addEventListener("focusout", checkdd);
@@ -110,5 +112,17 @@ window.addEventListener("load", function () {
         }
     
     }
+
+	function checknickname(){
+		 if(nickname.value === ""){
+            error[4].innerHTML = "필수 정보입니다.";
+            error[4].style.display = "block";
+        }
+        else if(nickname.value !== ""){
+            error[4].innerHTML = nickname.value+" 좋은 별명이네요!!";
+            error[4].style.display = "block";
+            error[4].style.color = "green";
+        }
+	}
 
 });

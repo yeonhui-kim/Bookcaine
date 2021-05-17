@@ -52,6 +52,13 @@
                 </span>
                 <span class="hide"></span>
             </div>
+            
+             <div>
+                <span class="box">
+                    <input type="text" class="txt" id="NICKNAME_txt" name="nickname" placeholder="별명" maxlength="10">
+                </span>
+                <span class="hide"></span>
+            </div>
             <!------------------------------------------생년월일----------------------------------------------------->
             <div class="date">
         
