@@ -15,11 +15,11 @@
 </head>
 
 <body>
-    <form class="profile-form" action="detail.jsp?id=1" method="post">
+    <form class="profile-form" action="reg?id=<%=request.getParameter("id")%>" method="post">
         <h1 class="d-none">profile-edit</h1>
         <section>
             <h1 class="d-none">profile-edit-top</h1>
-            <a href="detail.jsp?id=1">취소</a>
+            <a href="detail.jsp?id=<%=request.getParameter("id")%>">취소</a>
             <span>리뷰 작성</span>
             <input class="submit" type="submit" value="확인">
         </section>

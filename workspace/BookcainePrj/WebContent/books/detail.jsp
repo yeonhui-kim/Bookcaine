@@ -1,3 +1,5 @@
+<%@page import="com.bookcaine.web.entity.Review"%>
+<%@page import="com.bookcaine.web.service.ReviewService"%>
 <%@page import="com.bookcaine.web.entity.Book"%>
 <%@page import="com.bookcaine.web.service.BookService"%>
 <%@page import="java.util.List"%>
@@ -10,7 +12,9 @@
 
 	BookService bookService = new BookService();
 	Book book = bookService.get(id);
-
+	
+	ReviewService reviewService = new ReviewService();
+	List<Review> list = reviewService.getList(id);
 %>
 
 <!DOCTYPE html>
@@ -78,7 +82,7 @@
         </div>
         
         <div id="write" class="btn">
-            <a href="reviewReg.jsp"><input type="button" value="리뷰를 남겨보세요!"></a>
+            <a href="reviewReg.jsp?id=<%=request.getParameter("id")%>"><input type="button" value="리뷰를 남겨보세요!"></a>
         </div>
 
         <br>
@@ -86,18 +90,11 @@
         <section id="review">
         	<article>
             <h1>리뷰</h1>
-            	<%for(int i=0; i<3; i++){ %>
+            	<%for(int i=0; i<list.size(); i++){ %>
             	<div class=review>
 	            	<article>
-	                    <div class="reviewer">이동진</div>
-	                    	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim facilis mollitia
-	                        consectetur
-	                        repellat nemo sapiente accusamus. Dignissimos blanditiis quidem deserunt, nobis distinctio
-	                        fugiat
-	                        voluptas error impedit tempore sunt delectus soluta dicta vitae illo voluptates explicabo
-	                        ducimus
-	                        tenetur corporis perferendis quasi iure! Unde consectetur a itaque provident odio sapiente
-	                        voluptatem!</p>
+	                    <div class="reviewer"><%=list.get(i).getMemberId() %></div>
+	                    	<p><%=list.get(i).getContent() %></p>
 	                        <div class="review-attr">
 	                        	<span>좋아요 0</span>
 	                        	<span>댓글 0</span>
