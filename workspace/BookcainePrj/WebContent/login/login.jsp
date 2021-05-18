@@ -1,19 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ 			
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
     <link href="../css/login.css" type="text/css" rel="stylesheet">
+	<script src="../js/login.js"></script>
+	 
+<%//아이디 비번 틀린 경우 화면에 메시지 표시
 
-    <script>
-        
-    </script>
+	String msg = request.getParameter("msg");
+	
+	if(msg != null && msg.equals("0")){
+		out.println("<br>");
+		out.println("<font color='red' size='5'>비밀번호를 확인해주세요.</font>");
+	}else if(msg != null && msg.equals("-1")){
+		out.println("<br>");
+		out.println("<font color='red' size='5'>아이디를 확인해주세요.</font>");
+	}
+	
+%>
+ 
 </head>
+
 <body>
+
     <div id="root"> 
         <header>
             <div id="header">
@@ -30,14 +45,14 @@
                         <fieldset>
                             <legend class="d-none">아이디입력필드</legend>
                             <label>아이디</label>
-                            <input type="text">
+                            <input class="id-input" type="text" name="id" maxlength="50">
                         </fieldset>
                     </form>
                     <form class="password">
                         <fieldset>
                             <legend class="d-none">비밀번호입력필드</legend>
                             <label>비밀번호</label>
-                            <input type="password">
+                            <input class="pw-input" type="password" name="pw" maxlength="50">
                         </fieldset>
                     </form>
                 </section>
@@ -53,7 +68,7 @@
             <div class="buttons">
                 <nav class="login-button">
                     <h1 class="d-none">로그인버튼</h1>
-                    <a class="login-button" href=""><input class="button" type="button" value="로그인"></a>
+                    <a class="login-button" href=""><input class="button" type="submit" value="로그인"></a>
                 </nav>
 
                 <nav class="other-button">

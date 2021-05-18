@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		resp.sendRedirect("login.jsp");
+		resp.sendRedirect("loginPro.jsp");
 	
 	}
 	
