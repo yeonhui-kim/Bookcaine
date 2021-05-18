@@ -18,7 +18,7 @@ public class ReviewService {
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT * FROM REVIEW WHERE BOOK_ID=" + bookId + " ORDER BY REGDATE DESC";
+		String sql = "SELECT R.*, M.NICKNAME FROM REVIEW R LEFT JOIN MEMBER M ON R.WRITER_ID = M.ID WHERE BOOK_ID = " + bookId + " ORDER BY REGDATE DESC";
 
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
@@ -31,11 +31,13 @@ public class ReviewService {
 			int id = rs.getInt("id");
 			String writerId = rs.getString("writer_id");
 			String content = rs.getString("content");
+			String nickname = rs.getString("nickname");
 			
 			review.setId(id);
 			review.setWriterId(writerId);
 			review.setBookId(bookId);
 			review.setContent(content);
+			review.setNickname(nickname);
 			
 			list.add(review);
 		}
@@ -50,7 +52,7 @@ public class ReviewService {
 	public int insert(Review review) throws ClassNotFoundException, SQLException {
 		int result = 0;
 		
-		String sql = "INSERT INTO Review(REVIEW_ID, WRITER_ID, BOOK_ID, CONTENT) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO REVIEW(ID, WRITER_ID, BOOK_ID, CONTENT) VALUES(?,?,?,?)";
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");

@@ -8,18 +8,20 @@ public class Review {
 	int bookId;
 	String content;
 	Date regDate;
+	String nickname;
 
 	public Review() {
 
 	}
 
-	public Review(int id, String writerId, int bookId, String content, Date regDate) {
+	public Review(int id, String writerId, int bookId, String content, Date regDate, String nickname) {
 		super();
 		this.id = id;
 		this.writerId = writerId;
 		this.bookId = bookId;
 		this.content = content;
 		this.regDate = regDate;
+		this.nickname = nickname;
 	}
 
 	public int getId() {
@@ -61,11 +63,19 @@ public class Review {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
+	
+	public String getNickname() {
+		return nickname;
+	}
+	
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 
 	@Override
 	public String toString() {
 		return "{\"id=\":" + id + ", \"writerId\":\"" + writerId + "\", \"bookId\":\"" + bookId
-				+ "\", \"content\":\"" + content + "\", \"regDate\":\"" + regDate + "\"}";
+				+ "\", \"content\":\"" + content + "\", \"regDate\":\"" + regDate + "\", \"nickname\":\"" + nickname + "\"}";
 	}
 
 }

@@ -12,24 +12,27 @@ import javax.servlet.http.HttpServletResponse;
 import com.bookcaine.web.entity.Review;
 import com.bookcaine.web.service.ReviewService;
 
-//@WebServlet("books/reg")
+@WebServlet("/books/reg")
 public class RegController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
 		String id = request.getParameter("id");
 		String content = request.getParameter("content");
 		
 		ReviewService service = new ReviewService();
 		
 		try {
-			
 			Review review = new Review();
-			review.setId(Integer.parseInt(id));
+			review.setBookId(Integer.parseInt(id));
 			review.setContent(content);
-			// 임시로 1로 고정
-			review.setMemberId(1);
+			// 임시로 '이동진'으로 고정
+			review.setWriterId("hongssi");
 			service.insert(review);
 			//service.insert(title, content);
 			
@@ -42,7 +45,6 @@ public class RegController extends HttpServlet {
 		}
 		
 		response.sendRedirect("detail.jsp?id=" + id);
-	
 	}
 	
 }
