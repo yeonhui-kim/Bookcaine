@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-    String q = request.getParameter("q");
+String q = request.getParameter("q");
 
 	String query = "";
 
@@ -13,7 +13,7 @@
 		query = q;
 	
 	BookService bookService = new BookService();
-	List<Book> list = bookService.getList(query); 
+	List<Book> list = bookService.getList(query);
 %>
 
 <!DOCTYPE html>
