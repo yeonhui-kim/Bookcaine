@@ -16,7 +16,7 @@
 <body>
     <header id="header">
         <div class="float-content">
-            <h1 class="logo"><div class="logo-1">책에 중독되는 순간</div> Bookcaine</h1>
+            <h1 class="logo"><a href="../index.jsp"><div class="logo-1">책에 중독되는 순간</div> Bookcaine</a></h1>
             <section>
                 <h1 class="d-none">헤더</h1>
                 <a href="../sign/singmeno.html"><i class="icon-cog"></i></a>
