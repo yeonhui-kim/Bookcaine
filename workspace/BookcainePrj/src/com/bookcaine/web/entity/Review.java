@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Review {
 	int id;
-	int memberId;
+	String writerId;
 	int bookId;
 	String content;
 	Date regDate;
@@ -13,10 +13,10 @@ public class Review {
 
 	}
 
-	public Review(int id, int memberId, int bookId, String content, Date regDate) {
+	public Review(int id, String writerId, int bookId, String content, Date regDate) {
 		super();
 		this.id = id;
-		this.memberId = memberId;
+		this.writerId = writerId;
 		this.bookId = bookId;
 		this.content = content;
 		this.regDate = regDate;
@@ -30,12 +30,12 @@ public class Review {
 		this.id = id;
 	}
 
-	public int getMemberId() {
-		return memberId;
+	public String getWriterId() {
+		return writerId;
 	}
 
-	public void setMemberId(int memberId) {
-		this.memberId = memberId;
+	public void setWriterId(String writerId) {
+		this.writerId = writerId;
 	}
 
 	public int getBookId() {
@@ -64,7 +64,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "{\"id=\":" + id + ", \"memberId\":\"" + memberId + "\", \"bookId\":\"" + bookId
+		return "{\"id=\":" + id + ", \"writerId\":\"" + writerId + "\", \"bookId\":\"" + bookId
 				+ "\", \"content\":\"" + content + "\", \"regDate\":\"" + regDate + "\"}";
 	}
 

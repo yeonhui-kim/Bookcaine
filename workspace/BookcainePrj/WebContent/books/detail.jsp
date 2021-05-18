@@ -93,7 +93,7 @@
             	<%for(int i=0; i<list.size(); i++){ %>
             	<div class=review>
 	            	<article>
-	                    <div class="reviewer"><%=list.get(i).getMemberId() %></div>
+	                    <div class="reviewer"><%=list.get(i).getWriterId() %></div>
 	                    	<p><%=list.get(i).getContent() %></p>
 	                        <div class="review-attr">
 	                        	<span>좋아요 0</span>

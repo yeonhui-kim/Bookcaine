@@ -29,11 +29,11 @@ public class ReviewService {
 		while(rs.next()) {
 			Review review = new Review();
 			int id = rs.getInt("id");
-			int memberId = rs.getInt("member_id");
+			String writerId = rs.getString("writer_id");
 			String content = rs.getString("content");
 			
 			review.setId(id);
-			review.setMemberId(memberId);
+			review.setWriterId(writerId);
 			review.setBookId(bookId);
 			review.setContent(content);
 			
@@ -50,7 +50,7 @@ public class ReviewService {
 	public int insert(Review review) throws ClassNotFoundException, SQLException {
 		int result = 0;
 		
-		String sql = "INSERT INTO Review(REVIEW_ID, MEMBER_ID, BOOK_ID, CONTENT) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO Review(REVIEW_ID, WRITER_ID, BOOK_ID, CONTENT) VALUES(?,?,?,?)";
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");
@@ -58,7 +58,7 @@ public class ReviewService {
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setInt(1, review.getId());
-		st.setInt(2, review.getMemberId());
+		st.setString(2, review.getWriterId());
 		st.setInt(3, review.getBookId());
 		st.setString(4, review.getContent());
 		
