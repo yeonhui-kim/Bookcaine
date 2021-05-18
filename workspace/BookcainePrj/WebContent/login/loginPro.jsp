@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@page import="com.bookcaine.web.service.LoginService"%>
+<%@page import="com.bookcaine.web.service.MemberService"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,11 +15,11 @@
 
 <%
 	//로그인 화면에 입력된 아이디 비번 가져오기
-	String id = request.getParameter("ID");
-	String pwd = request.getParameter("PWD");
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
 	//db에서 아이디, 비번 확인
-	LoginService service = new LoginService();
-	int check = service.loginCheck(id, pwd);
+	MemberService service = new MemberService();
+	int check = service.loginCheck(id, pw);
 	
 	String msg = ""; // url및 로그인관련 메시지
 	

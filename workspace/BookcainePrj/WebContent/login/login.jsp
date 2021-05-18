@@ -52,7 +52,7 @@
                         <fieldset>
                             <legend class="d-none">비밀번호입력필드</legend>
                             <label>비밀번호</label>
-                            <input class="pwd-input" type="password" name="pwd" maxlength="50">
+                            <input class="pw-input" type="password" name="pw" maxlength="50">
                         </fieldset>
                     </form>
                 </section>
