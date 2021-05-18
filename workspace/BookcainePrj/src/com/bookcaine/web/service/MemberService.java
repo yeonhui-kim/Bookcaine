@@ -77,56 +77,6 @@ public class MemberService {
 		return result;
 	}
 	
-	//로그인 시 아이디, 비밀번호 체크 메서드 // 아이디 비밀번호 인자로 받음
-	public int loginCheck(String id, String pw) throws ClassNotFoundException, SQLException {
-		
-		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
-		String sql = "SELECT * FROM USER_";
-		Class.forName("oracle.jdbc.OracleDriver");
-		
-		Connection con = null;
-		PreparedStatement st = null;
-		ResultSet rs = null;
-		
-		String dbPw = ""; //db에서 꺼낸 비밀번호 담는 변수
-		int x = -1;
-
-		try {
-			StringBuffer query = new StringBuffer(); // 입력된 아이디로 db에서 비번조회
-			query.append("SELECT PWD FROM USER_ WHERE ID=?");
-			
-			con = DriverManager.getConnection(url, "book", "12345");
-			st = con.prepareStatement(query.toString());
-			st.setString(1, id);
-			rs = st.executeQuery(sql);
-			
-			if(rs.next()) {//입력된 아이디에 해당하는 비번 있을 경우
-				dbPw = rs.getString("PWD");
-				
-				if(dbPw.equals(pw))
-					x = 1;
-				else
-					x = 0;
-			}else {//해당 아이디 없을 경우
-				x = -1;
-			}
-			
-			return x;
-			
-		}catch(Exception sqle) {
-			throw new RuntimeException(sqle.getMessage());
-		}finally {
-			try {
-				if(st != null) { st.close(); st = null;}
-				if(con != null) { con.close(); con = null;}
-			}catch(Exception e) {
-				throw new RuntimeException(e.getMessage());
-			}
-		}
-		
-		
-	}
-	
 	
 	
 }

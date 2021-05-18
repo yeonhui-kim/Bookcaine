@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bookcaine.web.entity.Member;
-import com.bookcaine.web.service.MemberService;
+import com.bookcaine.web.service.LoginService;
 
 @WebServlet("/login/login")
 public class LoginController extends HttpServlet {
@@ -21,10 +21,10 @@ public class LoginController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=UTF-8");
 		
-		String id = req.getParameter("id");
-		String pwd = req.getParameter("pwd");
+		String id = req.getParameter("ID");
+		String pwd = req.getParameter("PWD");
 		
-		MemberService service = new MemberService();
+		LoginService service = new LoginService();
 	
 		try {
 			Member member = new Member();
