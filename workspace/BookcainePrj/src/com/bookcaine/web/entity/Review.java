@@ -3,12 +3,12 @@ package com.bookcaine.web.entity;
 import java.util.Date;
 
 public class Review {
-	int id;
-	String writerId;
-	int bookId;
-	String content;
-	Date regDate;
-	String nickname;
+	private int id;
+	private String writerId;
+	private int bookId;
+	private String content;
+	private Date regDate;
+	private String nickname;
 
 	public Review() {
 
