@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
-encoding//WebContent/Management/book_detail.jsp=UTF-8
-encoding//WebContent/Management/list_total.jsp=UTF-8
+encoding//WebContent/Admin/book/detail.jsp=UTF-8
+encoding//WebContent/Admin/list/total.jsp=UTF-8
 encoding//WebContent/books/detail.jsp=UTF-8
 encoding//WebContent/books/reviewReg.jsp=UTF-8
 encoding//WebContent/css/detail.css=UTF-8
