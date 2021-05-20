@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.bookcaine.web.entity.Book;
 
-public class JdbcIndexService implements indexService {	
+public class JdbcBookService implements BookService {	
 	
 	public List<Book> getList() throws ClassNotFoundException, SQLException{
 	

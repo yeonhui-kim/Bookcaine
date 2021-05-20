@@ -7,17 +7,11 @@ import com.bookcaine.web.entity.Gathering;
 
 public interface ProfileService {
 	
-	/* int getFollowCount(String memberId); */
-	
 	int getFollowerCount(String memberId);
 	int getFollowingCount(String memberId);
 	List<Gathering> getGatheringList(String memberId);
 	int getBookCount(String memberId);
 	List<Book> getBookList(String memberId);
-	
 	int getReviewCount(String memberId);	
-	
-
-	
 
 }
