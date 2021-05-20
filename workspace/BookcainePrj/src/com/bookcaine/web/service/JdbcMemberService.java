@@ -11,7 +11,7 @@ import java.util.List;
 
 import com.bookcaine.web.entity.Member;
 
-public class JdbcMemberService {
+public class JdbcMemberService implements MemberService {
 	public List<Member> getList() throws ClassNotFoundException, SQLException {
 		List<Member> list = new ArrayList<>();
 

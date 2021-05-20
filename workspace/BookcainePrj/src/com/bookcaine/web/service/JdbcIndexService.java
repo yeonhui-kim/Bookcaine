@@ -10,13 +10,12 @@ import java.util.List;
 
 import com.bookcaine.web.entity.Book;
 
-public class JdbcBookService {	
+public class JdbcIndexService implements indexService {	
 	
 	public List<Book> getList() throws ClassNotFoundException, SQLException{
 	
 		return getList(1, "title", "");
 	}
-	
 	
 	public List<Book> getList(String query) throws ClassNotFoundException, SQLException{
 		List<Book> list = new ArrayList<>();

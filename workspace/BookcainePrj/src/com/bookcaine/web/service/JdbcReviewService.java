@@ -11,7 +11,7 @@ import java.util.List;
 
 import com.bookcaine.web.entity.Review;
 
-public class JdbcReviewService {
+public class JdbcReviewService implements ReviewService {
 	
 	public List<Review> getList(int bookId) throws ClassNotFoundException, SQLException{
 		List<Review> list = new ArrayList<>();
