@@ -62,13 +62,13 @@
             </form>
         </aside>
         <section class="book_total_content">
-            <h1><a href="list_total.jsp">책 전체 목록</a></h1>
+            <h1><a href="total.jsp">책 전체 목록</a></h1>
             <ul class="book_total_list"> 
             	<%for(Book b : list){%>
                 <li class="book_total">
                     <input class="check" type="checkbox">
-                    <a class="title" href="book_detail.html"><%=b.getTitle() %></a>
-                    <img class="img" src="../../images/book1.PNG">
+                    <a class="title" href="../book/detail.jsp?id=<%=b.getId()%>"><%=b.getTitle() %></a>
+                    <img class="img" src="../../images/book<%=b.getId()%>.jpg">
                     <span class="info">
                         <span>진열여부:Y</span>
                     </span>
