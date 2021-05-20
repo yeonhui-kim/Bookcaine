@@ -7,23 +7,23 @@
     
 <%
     String p = request.getParameter("p");
-        String f = request.getParameter("f");
-        String q = request.getParameter("q");
+    String f = request.getParameter("f");
+    String q = request.getParameter("q");
 
-        int page_ = 1;
-        String field = "title";
-        String query = "";
+    int page_ = 1;
+    String field = "title";
+    String query = "";
 
-        if (p!= null && !p.equals(""))
-        	page_ = Integer.parseInt(p);
-        if (f!= null && !f.equals(""))
-        	field = f;
-        if (q!= null && !q.equals(""))
-        	query = q;
+    if (p!= null && !p.equals(""))
+       	page_ = Integer.parseInt(p);
+    if (f!= null && !f.equals(""))
+        field = f;
+    if (q!= null && !q.equals(""))
+        query = q;
 
-        JdbcBookService bookService = new JdbcBookService();
-        List<Book> list = bookService.getList(page_, field, query);
-    %>
+    JdbcBookService bookService = new JdbcBookService();
+    List<Book> list = bookService.getList(page_, field, query);
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../css/list_total.css" type="text/css" rel="stylesheet">
+    <link href="../../css/list_total.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -68,7 +68,7 @@
                 <li class="book_total">
                     <input class="check" type="checkbox">
                     <a class="title" href="book_detail.html"><%=b.getTitle() %></a>
-                    <img class="img" src="../images/book1.PNG">
+                    <img class="img" src="../../images/book1.PNG">
                     <span class="info">
                         <span>진열여부:Y</span>
                     </span>
@@ -105,7 +105,7 @@
         </nav>
             <h1 class="d-none">상품 관리</h1>
             <form class="check_button">
-                <a href="book_detail.html"><input type="button" value="상세 페이지"></a>
+                <a href="../book/detail.jsp"><input type="button" value="상세 페이지"></a>
                 <a href="book_add.html"><input type="button" value="상품 등록"></a>
                 <input type="button" value="상품 수정">
                 <input type="button" value="상품 삭제">

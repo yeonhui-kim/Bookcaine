@@ -6,7 +6,7 @@
     
 <%
     JdbcBookService bookService = new JdbcBookService();
-        	List<Book> list = bookService.getList();
+    List<Book> list = bookService.getList();
     %>
 
 
@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookDetail</title>
-    <link rel="stylesheet" href="../css/book_detail.css">
+    <link rel="stylesheet" href="../../css/book_detail.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
     <main>
         <section id="book-image">
             <h1 class="d-none">book-image</h1>
-            <img src="../images/book1.PNG" alt="">
+            <img src="../../images/book1.PNG" alt="">
         </section>
         <section id="book-description">
             <h1 class="d-none">책 제목 저자</h1>
