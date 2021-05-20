@@ -1,3 +1,4 @@
+
 <%@page import="com.bookcaine.web.entity.Book"%>
 <%@page import="java.util.List"%>
 <%@page import="com.bookcaine.web.service.BookService"%>
@@ -5,8 +6,24 @@
     pageEncoding="UTF-8"%>
     
 <%
-	BookService bookService = new BookService();
-	List<Book> list = bookService.getList();
+String p = request.getParameter("p");
+String f = request.getParameter("f");
+String q = request.getParameter("q");
+
+int page_ = 1;
+String field = "title";
+String query = "";
+
+if (p!= null && !p.equals(""))
+	page_ = Integer.parseInt(p);
+if (f!= null && !f.equals(""))
+	field = f;
+if (q!= null && !q.equals(""))
+	query = q;
+
+BookService bookService = new BookService();
+List<Book> list = bookService.getList(page_, field, query);
+
 %>
 
 <!DOCTYPE html>
@@ -35,22 +52,23 @@
                 <p>도서관리><b>도서리스트</b></p>
             </div>
             <form class=aside-search>
-                <input type="search" value="">
-                <select>
-                    <option>전체</option>
-                    <option>분류</option>
-                    <option>제목</option>
-                    <option>작성자</option>
+                <select name="f">
+                    <option value="">전체</option>
+                    <option value="ctg">분류</option>
+                    <option value="title">제목</option>
+                    <option value="author">저자</option>
                 </select>
+                <input type="search" value="" name="q">
+                <input type="submit" value="검색">
             </form>
         </aside>
         <section class="book_total_content">
-            <h1>책 전체 목록</h1>
+            <h1><a href="list_total.jsp">책 전체 목록</a></h1>
             <ul class="book_total_list"> 
-            	<%for(Book b : list){ %>
+            	<%for(Book b : list){%>
                 <li class="book_total">
                     <input class="check" type="checkbox">
-                    <a class="title" href="book_detail.html"><%= b.getTitle() %></a>
+                    <a class="title" href="book_detail.html"><%=b.getTitle() %></a>
                     <img class="img" src="../images/book1.PNG">
                     <span class="info">
                         <span>진열여부:Y</span>
@@ -78,11 +96,11 @@
             <h1 class="d-none">페이저</h1>
             <div class="button">이전</div>
             <ul>
-                <li><a class="text-strong"" href="">1</a></li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li><a class="text-strong"" href="list_total.jsp?p=1&f=<%=field%>&q=<%=query%>">1</a></li>
+                <li><a href="list_total.jsp?p=2&f=<%=field%>&q=<%=query%>">2</a></li>
+                <li><a href="list_total.jsp?p=3&f=<%=field%>&q=<%=query%>">3</a></li>
+                <li><a href="list_total.jsp?p=4&f=<%=field%>&q=<%=query%>">4</a></li>
+                <li><a href="list_total.jsp?p=5&f=<%=field%>&q=<%=query%>">5</a></li>
             </ul>
             <div class="button">다음</div>
         </nav>

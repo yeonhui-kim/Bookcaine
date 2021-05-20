@@ -10,13 +10,20 @@ import java.util.List;
 
 import com.bookcaine.web.entity.Book;
 
-public class BookService {
+public class BookService {	
+	
 	public List<Book> getList() throws ClassNotFoundException, SQLException{
+	
+		return getList(1, "title", "");
+	}
+	
+	
+	public List<Book> getList(String query) throws ClassNotFoundException, SQLException{
 		List<Book> list = new ArrayList<>();
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT * FROM BOOK";
+		String sql = "SELECT * FROM BOOK WHERE TITLE LIKE '%" + query + "%' ORDER BY ID";
 
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
@@ -48,12 +55,20 @@ public class BookService {
 		return list;
 	}
 	
-	public List<Book> getList(String query) throws ClassNotFoundException, SQLException{
+	public List<Book> getList(int page, String field, String query) throws ClassNotFoundException, SQLException{
 		List<Book> list = new ArrayList<>();
 		
-		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
+		int size = 5;
+		int startN = 1+(page-1)*size;
+		int endN = page*size;
+		
+		String url	 = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT * FROM BOOK WHERE TITLE LIKE '%" + query + "%' ORDER BY ID";
+		String sql = "SELECT B.*, C.NAME "
+				+ "FROM BOOK B LEFT JOIN CATEGORY C "
+				+ "ON B.CATEGORY_ID = C.ID "
+				+ "WHERE "+field+" LIKE '%"+query+"%' "
+				+ "WHERE ID BETWEEN "+startN+" AND "+endN;
 
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
@@ -68,12 +83,14 @@ public class BookService {
 			String author = rs.getString("author");
 			String yn = rs.getString("yn");
 			String details = rs.getString("details");
+			String type = rs.getString("name");
 			
 			book.setId(id);
 			book.setTitle(title);
 			book.setAuthor(author);
 			book.setYn(yn);
 			book.setDetails(details);
+			book.setType(type);
 			
 			list.add(book);
 		}
