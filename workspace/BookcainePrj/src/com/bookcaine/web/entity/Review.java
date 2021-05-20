@@ -9,6 +9,7 @@ public class Review {
 	private String content;
 	private Date regDate;
 	private String nickname;
+	// 날짜별로 저장하는 저장소 만들고 + 쿼리를 날짜별로 해서 넣어주기  
 
 	public Review() {
 
