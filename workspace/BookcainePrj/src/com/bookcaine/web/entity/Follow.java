@@ -1,8 +1,8 @@
 package com.bookcaine.web.entity;
 
 public class Follow {
-	private int followingMember;
-	private int followedMember;
+	private String followingMember;
+	private String followedMember;
 	
 	
 	public Follow() {
@@ -13,19 +13,19 @@ public class Follow {
 		return "Follow [followingMember=" + followingMember + ", followedMember=" + followedMember + "]";
 	}
 	
-	public int getFollowingMember() {
+	public String getFollowingMember() {
 		return followingMember;
 	}
 	
-	public void setFollowingMember(int followingMember) {
+	public void setFollowingMember(String followingMember) {
 		this.followingMember = followingMember;
 	}
 	
-	public int getFollowedMember() {
+	public String getFollowedMember() {
 		return followedMember;
 	}
 	
-	public void setFollowedMember(int followedMember) {
+	public void setFollowedMember(String followedMember) {
 		this.followedMember = followedMember;
 	}
 	
