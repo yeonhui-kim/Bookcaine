@@ -1,8 +1,8 @@
 package com.bookcaine.web.entity;
 
 public class Attend {
-	String member_id;
-	int gathering_id;
+	String memberId;
+	int gatheringId;
 	
 	public Attend() {
 		// TODO Auto-generated constructor stub
@@ -10,21 +10,21 @@ public class Attend {
 	
 	public Attend(String member_id, int gathering_id) {
 		super();
-		this.member_id = member_id;
-		this.gathering_id = gathering_id;
+		this.memberId = member_id;
+		this.gatheringId = gathering_id;
 	}
 
 	public String getMember_id() {
-		return member_id;
+		return memberId;
 	}
 	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+		this.memberId = member_id;
 	}
 	public int getGathering_id() {
-		return gathering_id;
+		return gatheringId;
 	}
 	public void setGathering_id(int gathering_id) {
-		this.gathering_id = gathering_id;
+		this.gatheringId = gathering_id;
 	}
 	
 	
