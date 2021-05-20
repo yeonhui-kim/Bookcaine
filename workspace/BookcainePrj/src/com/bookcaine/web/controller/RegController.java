@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bookcaine.web.entity.Review;
-import com.bookcaine.web.service.ReviewService;
+import com.bookcaine.web.service.JdbcReviewService;
 
 @WebServlet("/books/reg")
 public class RegController extends HttpServlet {
@@ -25,7 +25,7 @@ public class RegController extends HttpServlet {
 		String id = request.getParameter("id");
 		String content = request.getParameter("content");
 		
-		ReviewService service = new ReviewService();
+		JdbcReviewService service = new JdbcReviewService();
 		
 		try {
 			Review review = new Review();

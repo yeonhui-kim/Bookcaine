@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bookcaine.web.entity.Member;
-import com.bookcaine.web.service.LoginService;
+import com.bookcaine.web.service.JdbcLoginService;
 
 @WebServlet("/login/login")
 public class LoginController extends HttpServlet {
@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
 		String id = req.getParameter("ID");
 		String pwd = req.getParameter("PWD");
 		
-		LoginService service = new LoginService();
+		JdbcLoginService service = new JdbcLoginService();
 	
 		try {
 			Member member = new Member();

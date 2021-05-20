@@ -1,19 +1,19 @@
 <%@page import="com.bookcaine.web.entity.Review"%>
-<%@page import="com.bookcaine.web.service.ReviewService"%>
+<%@page import="com.bookcaine.web.service.JdbcReviewService"%>
 <%@page import="com.bookcaine.web.entity.Book"%>
-<%@page import="com.bookcaine.web.service.BookService"%>
+<%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%
-	String id_ = request.getParameter("id");
+String id_ = request.getParameter("id");
 	int id = Integer.parseInt(id_);
 
-	BookService bookService = new BookService();
+	JdbcBookService bookService = new JdbcBookService();
 	Book book = bookService.get(id);
 	
-	ReviewService reviewService = new ReviewService();
+	JdbcReviewService reviewService = new JdbcReviewService();
 	List<Review> list = reviewService.getList(id);
 %>
 

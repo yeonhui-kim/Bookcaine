@@ -1,13 +1,13 @@
 <%@page import="com.bookcaine.web.entity.Book"%>
 <%@page import="java.util.List"%>
-<%@page import="com.bookcaine.web.service.BookService"%>
+<%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
-	BookService bookService = new BookService();
-	List<Book> list = bookService.getList();
-%>
+    JdbcBookService bookService = new JdbcBookService();
+        	List<Book> list = bookService.getList();
+    %>
 
 
 <!DOCTYPE html>

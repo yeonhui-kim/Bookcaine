@@ -1,30 +1,29 @@
 
 <%@page import="com.bookcaine.web.entity.Book"%>
 <%@page import="java.util.List"%>
-<%@page import="com.bookcaine.web.service.BookService"%>
+<%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
-String p = request.getParameter("p");
-String f = request.getParameter("f");
-String q = request.getParameter("q");
+    String p = request.getParameter("p");
+        String f = request.getParameter("f");
+        String q = request.getParameter("q");
 
-int page_ = 1;
-String field = "title";
-String query = "";
+        int page_ = 1;
+        String field = "title";
+        String query = "";
 
-if (p!= null && !p.equals(""))
-	page_ = Integer.parseInt(p);
-if (f!= null && !f.equals(""))
-	field = f;
-if (q!= null && !q.equals(""))
-	query = q;
+        if (p!= null && !p.equals(""))
+        	page_ = Integer.parseInt(p);
+        if (f!= null && !f.equals(""))
+        	field = f;
+        if (q!= null && !q.equals(""))
+        	query = q;
 
-BookService bookService = new BookService();
-List<Book> list = bookService.getList(page_, field, query);
-
-%>
+        JdbcBookService bookService = new JdbcBookService();
+        List<Book> list = bookService.getList(page_, field, query);
+    %>
 
 <!DOCTYPE html>
 <html lang="en">

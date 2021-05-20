@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.bookcaine.web.entity.Member;
-import com.bookcaine.web.service.MemberService;
+import com.bookcaine.web.service.JdbcMemberService;
 
 @WebServlet("/sign_up/Sign_Up")
 public class Sign_Up_Controller extends HttpServlet {
@@ -34,7 +34,7 @@ public class Sign_Up_Controller extends HttpServlet {
 		String email = req.getParameter("email");
 		String nickname = req.getParameter("nickname");
 		
-		MemberService service = new MemberService();
+		JdbcMemberService service = new JdbcMemberService();
 	
 		try {
 			Member member = new Member();
