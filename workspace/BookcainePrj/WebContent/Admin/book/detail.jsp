@@ -1,13 +1,23 @@
+<%@page import="com.bookcaine.web.entity.Author"%>
+<%@page import="com.bookcaine.web.service.JdbcAuthorService"%>
 <%@page import="com.bookcaine.web.entity.Book"%>
 <%@page import="java.util.List"%>
 <%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%
+<%	
+	String id_ = request.getParameter("id");
+	int id = Integer.parseInt(id_);
     JdbcBookService bookService = new JdbcBookService();
-    List<Book> list = bookService.getList();
-    %>
+    Book book = bookService.get(id);  
+ %>
+ 
+ <%--<%
+ 	JdbcAuthorService authorService = new JdbcAuthorService();
+ 	Author author = authorService.get(id);
+ --%>
+
 
 
 <!DOCTYPE html>
@@ -34,21 +44,21 @@
     <main>
         <section id="book-image">
             <h1 class="d-none">book-image</h1>
-            <img src="../../images/book1.PNG" alt="">
+            <img src="../../images/book<%=book.getId()%>.jpg" alt="">
         </section>
         <section id="book-description">
             <h1 class="d-none">책 제목 저자</h1>
-            <div class="book-name">해리포터</div>
-            <div class="writer">jk롤링</div>
+            <div class="book-name"><%=book.getTitle() %></div>
+            <div class="writer"><%=book.getAuthor() %></div>
         </section>
         <table id="table">
             <tr>
                 <th>분류</th>
-                <td>문학</td>
+                <td><%=book.getType() %></td>
             </tr>
             <tr>
                 <th>진열여부</th>
-                <td>Y</td>
+                <td><%=book.getYn() %></td>
             </tr>
             <tr>
                 <th>별점 평균</th>
@@ -70,15 +80,18 @@
             
         <section id="book-details">
             <h1 class="d-none">책 디테일</h1>
-            <div class="details">책 소개</div>
+            <div class="details">책 소개<br></div>
         </section>
         <section id="author-details">
             <h1 class="d-none">저자 디테일</h1>
-            <div class="details">저자 소개</div>
+            <div class="details">저자 소개<br></div>
         </section>
+        
+        
+<%--   <%=author.getDetails() %> --%>       
 
         <form class="check_button">
-            <a href="list_total.html"><input type="button" value="목록"></a>
+            <a href="../list/total.jsp"><input type="button" value="목록"></a>
             <input type="button" value="상품 수정">
             <input type="button" value="상품 삭제">
         </form>
