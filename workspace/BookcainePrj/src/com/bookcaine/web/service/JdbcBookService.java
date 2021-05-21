@@ -12,49 +12,53 @@ import com.bookcaine.web.entity.Book;
 
 public class JdbcBookService implements BookService {	
 	
-	public List<Book> getList() throws ClassNotFoundException, SQLException{
+	public List<Book> getList() {
 	
 		return getList(1, "title", "");
 	}
 	
-	public List<Book> getList(String query) throws ClassNotFoundException, SQLException{
+	public List<Book> getList(String query) {
 		List<Book> list = new ArrayList<>();
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
 		String sql = "SELECT * FROM BOOK WHERE TITLE LIKE '%" + query + "%' ORDER BY ID";
 
-		Class.forName("oracle.jdbc.OracleDriver");
-		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
-		
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery(sql);
-		
-		while(rs.next()) {
-			Book book = new Book();
-			int id = rs.getInt("id");
-			String title = rs.getString("title");
-			String author = rs.getString("author");
-			String yn = rs.getString("yn");
-			String details = rs.getString("details");
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 			
-			book.setId(id);
-			book.setTitle(title);
-			book.setAuthor(author);
-			book.setYn(yn);
-			book.setDetails(details);
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
 			
-			list.add(book);
+			while(rs.next()) {
+				Book book = new Book();
+				int id = rs.getInt("id");
+				String title = rs.getString("title");
+				String author = rs.getString("author");
+				String yn = rs.getString("yn");
+				String details = rs.getString("details");
+				
+				book.setId(id);
+				book.setTitle(title);
+				book.setAuthor(author);
+				book.setYn(yn);
+				book.setDetails(details);
+				
+				list.add(book);
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+		} catch (Exception e) {
+			throw new ServiceException();
 		}
-		
-		rs.close();
-		st.close();
-		con.close();
 		
 		return list;
 	}
 	
-	public List<Book> getList(int page, String field, String query) throws ClassNotFoundException, SQLException{
+	public List<Book> getList(int page, String field, String query) {
 		List<Book> list = new ArrayList<>();
 		
 //		int size = 5;
@@ -69,39 +73,44 @@ public class JdbcBookService implements BookService {
 				+ "WHERE "+field+" LIKE '%"+query+"%' ";
 //				+ "WHERE ID BETWEEN "+startN+"AND"+endN;
 
-		Class.forName("oracle.jdbc.OracleDriver");
-		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 		
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery(sql);
-		
-		while(rs.next()) {
-			Book book = new Book();
-			int id = rs.getInt("id");
-			String title = rs.getString("title");
-			String author = rs.getString("author");
-			String yn = rs.getString("yn");
-			String details = rs.getString("details");
-			String type = rs.getString("name");
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 			
-			book.setId(id);
-			book.setTitle(title);
-			book.setAuthor(author);
-			book.setYn(yn);
-			book.setDetails(details);
-			book.setType(type);
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
 			
-			list.add(book);
+			while(rs.next()) {
+				Book book = new Book();
+				int id = rs.getInt("id");
+				String title = rs.getString("title");
+				String author = rs.getString("author");
+				String yn = rs.getString("yn");
+				String details = rs.getString("details");
+				String type = rs.getString("name");
+				
+				book.setId(id);
+				book.setTitle(title);
+				book.setAuthor(author);
+				book.setYn(yn);
+				book.setDetails(details);
+				book.setType(type);
+				
+				list.add(book);
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+		} catch (Exception e) {
+			throw new ServiceException();
 		}
-		
-		rs.close();
-		st.close();
-		con.close();
 		
 		return list;
 	}
 	
-	public Book get(int id) throws SQLException, ClassNotFoundException {
+	public Book get(int id) {
 		
 		Book book = new Book();
 		
@@ -109,25 +118,30 @@ public class JdbcBookService implements BookService {
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		
-		Class.forName("oracle.jdbc.OracleDriver");
-		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 		
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery(sql);
-		
-		if(rs.next()) {
-			String title = rs.getString("title");
-			String author = rs.getString("author");
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 			
-			book.setId(id);
-			book.setTitle(title);
-			book.setAuthor(author);
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			
+			if(rs.next()) {
+				String title = rs.getString("title");
+				String author = rs.getString("author");
+				
+				book.setId(id);
+				book.setTitle(title);
+				book.setAuthor(author);
+			}
+	
+			rs.close();
+			st.close();
+			con.close();
+		} catch (Exception e) {
+			throw new ServiceException();
 		}
-
-		rs.close();
-		st.close();
-		con.close();
-
+		
 		return book;
 		
 	}

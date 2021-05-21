@@ -7,8 +7,9 @@ import com.bookcaine.web.entity.Book;
 
 public interface BookService {
 
-	List<Book> getList() throws ClassNotFoundException, SQLException;
-	List<Book> getList(String query) throws ClassNotFoundException, SQLException;
-	Book get(int id) throws SQLException, ClassNotFoundException;
+	List<Book> getList();
+	List<Book> getList(String query);
+	List<Book> getList(int page, String field, String query);
+	Book get(int id);
 	
 }
