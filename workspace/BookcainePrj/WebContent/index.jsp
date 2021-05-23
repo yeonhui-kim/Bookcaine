@@ -2,6 +2,7 @@
 <%@page import="com.bookcaine.web.entity.Book"%>
 <%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@page import="java.util.List"%>
+<%@page import="com.bookcaine.web.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -15,6 +16,9 @@ String q = request.getParameter("q");
 	
 	JdbcBookService bookService = new JdbcBookService();
 	List<Book> list = bookService.getList(query);
+	
+	Member member = (Member) request.getSession().getAttribute("loginMember");
+	
 %>
 
 <!DOCTYPE html>
@@ -36,8 +40,13 @@ String q = request.getParameter("q");
                 <h1 class="d-none">헤더</h1>
                 <nav id="user">
                     <ul>
-                        <li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
-                        <li><a href="login/login.html"><input class="button" type="button" value="로그인"></a></li>
+                    	<%if (member != null ) { %>
+			            	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
+			            	<li><a href="login/logoutPro.jsp"><input class="button" type="button" value="로그아웃"></a></li>
+			            <%} else { %>
+                        	<li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
+                        	<li><a href="login/login.jsp"><input class="button" type="button" value="로그인"></a></li>
+                        <%} %>
                     </ul>
                 </nav>
 
