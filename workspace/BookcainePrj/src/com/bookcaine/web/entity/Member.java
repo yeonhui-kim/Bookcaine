@@ -10,6 +10,8 @@ public class Member {
 	private String email;
 	private String birthday;
 	private String gender;
+	private String imageUrl;
+	private String joinDate;
 	
 //	private String birthdays[];
 	
@@ -20,6 +22,7 @@ public class Member {
 //	public void setBirthdays(String[] birthdays) {
 //		this.birthdays = birthdays;
 //	}
+
 
 	public Member() {
 		// TODO Auto-generated constructor stub
@@ -74,6 +77,21 @@ public class Member {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	
+	public String getJoinDate() {
+		return joinDate;
+	}
+	
+	public void setJoinDate(String joinDate) {
+		this.joinDate = joinDate;
 	}
 
 
