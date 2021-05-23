@@ -107,7 +107,7 @@
             <form class="check_button">
                 <a href="../book/detail.jsp"><input type="button" value="상세 페이지"></a>
                 <a href="book_add.html"><input type="button" value="상품 등록"></a>
-                <input type="button" value="상품 수정">
+                <a href="../book/edit.jsp"><input type="button" value="상품 수정"></a>
                 <input type="button" value="상품 삭제">
             </form>
     </div>

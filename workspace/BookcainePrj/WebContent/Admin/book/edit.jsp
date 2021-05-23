@@ -1,3 +1,16 @@
+<%@page import="com.bookcaine.web.entity.Book"%>
+<%@page import="com.bookcaine.web.service.JdbcBookService"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%	
+	String id_ = request.getParameter("id");
+	int id = Integer.parseInt(id_);
+    JdbcBookService bookService = new JdbcBookService();
+    Book book = bookService.get(id);  
+ %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookDetail</title>
-    <link rel="stylesheet" href="../css/book_edit2.css">
+    <link rel="stylesheet" href="../../css/book_edit2.css">
 </head>
 
 <body>
@@ -20,10 +33,10 @@
     </header>
     
     <main>
-        <form id="form">
+        <form id="form" action="edit" method="post">
             <section id="book-image">
                 <h1 class="d-none">book-image</h1>
-                <img src="../images/book1.PNG" alt="">
+                <img src="../../images/book<%=book.getId()%>.jpg" alt="">
             </section>
             <div class="zero">
                 <div class="d-none">이미지</div>
@@ -31,8 +44,8 @@
             </div> 
             <section id="book-description">
                 <h1 class="d-none">책 제목 저자</h1>
-                <input class="book-name" type="text" value="해리포터">
-                <input class="writer" type="text" value="jk롤링">
+                <input class="book-name" type="text" value="<%=book.getTitle() %>">
+                <input class="writer" type="text" value="<%=book.getAuthor() %>">
             </section>
             <table id="table">
                 <tr>
@@ -82,21 +95,24 @@
                     <td>478명</td>
                 </tr>
             </table>
-                
+      
             <section id="book-details">
                 <h1 class="d-none">책 디테일</h1>
-                <textarea class="details">책 소개</textarea>
+                <textarea class="details" name="bookDetails">책 소개</textarea>
             </section>
             <section id="author-details">
                 <h1 class="d-none">저자 디테일</h1>
-                <textarea class="details">저자 소개</textarea>
+                <textarea class="details" name="authorDetails">저자 소개</textarea>
             </section>
-        </form>
 
-        <form class="check_button">
-            <a href="list_total.html"><input type="button" value="목록"></a>
-            <input type="button" value="상품 수정">
-            <input type="button" value="상품 삭제">
+			
+	        <section class="check_button">
+	        	<input type="hidden" name="id" value="<%=id %>">
+	            <a href="../list/total.jsp"><input type="button" value="목록"></a>
+	            <input type="submit" value="저장">
+	            <a href="detail.jsp?id=<%=id%>"><input type="button" value="취소"></a>
+	            <input type="button" value="상품 삭제">
+        	</section>
         </form>
 
     </main>

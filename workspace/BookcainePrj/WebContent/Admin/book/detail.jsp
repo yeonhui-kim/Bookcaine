@@ -14,7 +14,7 @@
  %>
  
  <%--<%
- 	JdbcAuthorService authorService = new JdbcAuthorService();
+ 	AuthorService authorService = new JdbcAuthorService();
  	Author author = authorService.get(id);
  --%>
 
@@ -92,7 +92,7 @@
 
         <form class="check_button">
             <a href="../list/total.jsp"><input type="button" value="목록"></a>
-            <input type="button" value="상품 수정">
+            <a href="edit.jsp?id=<%=id%>"><input type="button" value="상품 수정"></a>
             <input type="button" value="상품 삭제">
         </form>
 

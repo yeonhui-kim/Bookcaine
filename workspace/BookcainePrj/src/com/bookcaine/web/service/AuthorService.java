@@ -6,5 +6,5 @@ import com.bookcaine.web.entity.Author;
 
 public interface AuthorService {
 
-	Author get (int id) throws ClassNotFoundException, SQLException;
+	Author get (int id);
 }
