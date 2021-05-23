@@ -10,5 +10,4 @@ public interface ReviewService {
 	List<Review> getList(int bookId) throws ClassNotFoundException, SQLException;
 	int insert(Review review) throws ClassNotFoundException, SQLException;
 	
-	
 }

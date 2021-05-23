@@ -52,17 +52,16 @@ public class JdbcReviewService implements ReviewService {
 	public int insert(Review review) throws ClassNotFoundException, SQLException {
 		int result = 0;
 		
-		String sql = "INSERT INTO REVIEW(ID, WRITER_ID, BOOK_ID, CONTENT) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO REVIEW(WRITER_ID, BOOK_ID, CONTENT) VALUES(?,?,?)";
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 		
 		PreparedStatement st = con.prepareStatement(sql);
-		st.setInt(1, review.getId());
-		st.setString(2, review.getWriterId());
-		st.setInt(3, review.getBookId());
-		st.setString(4, review.getContent());
+		st.setString(1, review.getWriterId());
+		st.setInt(2, review.getBookId());
+		st.setString(3, review.getContent());
 		
 		result = st.executeUpdate(); // ex.Query():Select, ex.Update(): UPdate/Delete/Insert
 		// 업데이트된 개수를 반환
