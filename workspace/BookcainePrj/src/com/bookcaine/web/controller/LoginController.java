@@ -8,11 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bookcaine.web.entity.Member;
 import com.bookcaine.web.service.JdbcLoginService;
 
-@WebServlet("/login/login")
+@WebServlet("/login/login.do")
 public class LoginController extends HttpServlet {
 
 	@Override
@@ -21,27 +22,35 @@ public class LoginController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=UTF-8");
 		
-		String id = req.getParameter("ID");
-		String pwd = req.getParameter("PWD");
+		HttpSession session = req.getSession();
+		
+		String id = req.getParameter("id");
+		String pwd = req.getParameter("pwd");
 		
 		JdbcLoginService service = new JdbcLoginService();
 	
+		String msg = ""; // url및 로그인관련 메시지
+		
 		try {
-			Member member = new Member();
-			member.setId(id);
-			member.setPwd(pwd);
+			Member member = service.actionLogin(id, pwd);
 			
-			service.insert(member);
+			session.removeAttribute("loginMember");
+			//로그인 성공한 경우 세션에 현재 아이디 세팅
+			if(member != null){
+				session.setAttribute("loginMember", member);
+				msg = "../index.jsp";
+			}else if(member == null){//비번틀린경우
+				msg = "login.jsp?msg=0";
+			}
 			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 		
-		resp.sendRedirect("loginPro.jsp");
+		resp.sendRedirect(msg);
 	
 	}
+	
 	
 	
 
