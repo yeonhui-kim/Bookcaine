@@ -1,5 +1,10 @@
+<%@page import="com.bookcaine.web.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+    
+<% Member member = (Member) request.getSession().getAttribute("loginMember"); %>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +52,7 @@
         <section class="main-profile">
             <!-- <i class="icon-user-circle-o"></i> -->
             <img src="../images/user.PNG" alt="profile-image">
-            <div class="user-name">홍길동</div>
+            <div class="user-name">${sessionScope.loginMember.name }</div>
             <div class="status">책을 좋아하는 사람 :)</div>
             <nav class="follow">
                 <a href="follower.html">
