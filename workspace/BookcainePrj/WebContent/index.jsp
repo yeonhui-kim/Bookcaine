@@ -94,7 +94,7 @@ String q = request.getParameter("q");
             <%for (int i=0; i<6; i++) { %>
             <div>
             	<%for (int j=0; j<3; j++) {%>
-	            	<a href="books/detail.jsp?id=<%=list.get(3*i+j).getId()%>">
+	            	<a href="books/detail?id=<%=list.get(3*i+j).getId()%>">
 	                        <img src="images/book<%=list.get(3*i+j).getId()%>.jpg" alt="">
 	                        <li><%=list.get(3*i+j).getTitle() %></li>
 	                </a>

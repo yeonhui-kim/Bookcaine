@@ -7,14 +7,13 @@
     pageEncoding="UTF-8"%>
 
 <%
-String id_ = request.getParameter("id");
-	int id = Integer.parseInt(id_);
 
-	JdbcBookService bookService = new JdbcBookService();
-	Book book = bookService.get(id);
+	String id_ = request.getParameter("id");
+	int id = Integer.parseInt(id_);
 	
 	JdbcReviewService reviewService = new JdbcReviewService();
 	List<Review> list = reviewService.getList(id);
+
 %>
 
 <!DOCTYPE html>
@@ -66,14 +65,14 @@ String id_ = request.getParameter("id");
     <main>
         <section id="book-image">
             <h1 class="d-none">book-image</h1>
-            <img src="../images/book<%=id %>.jpg" alt="">
+            <img src="../images/book${book.id}.jpg" alt="">
         </section>
         <hr class="temp-hr">
 
         <section id="book-description">
             <h1 class="d-none">책 설명</h1>
-            <div id="book-name"><%=book.getTitle() %></div>
-            <div id="writer"><%=book.getAuthor() %></div>
+            <div id="book-name">${book.title}</div>
+            <div id="writer">${book.author}</div>
         </section>
         <hr class="temp-hr">
 
@@ -82,7 +81,7 @@ String id_ = request.getParameter("id");
         </div>
         
         <div id="write" class="btn">
-            <a href="reviewReg.jsp?id=<%=request.getParameter("id")%>"><input type="button" value="리뷰를 남겨보세요!"></a>
+            <a href="reviewReg.jsp?id=${book.id}"><input type="button" value="리뷰를 남겨보세요!"></a>
         </div>
 
         <br>
