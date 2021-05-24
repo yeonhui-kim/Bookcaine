@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- 			
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,20 +34,25 @@
 
         <main id="main">
             <div id="login-info-form">
-                <section class="login-form">
-                    <h1 class="d-none">로그인폼</h1> 
-                    <form id="loginForm" method="post" action="/login/login.do">
-                        <label>아이디</label>
-                        <input class="id-input" type="text" name="id" maxlength="50">
-                        <label>비밀번호</label>
-                        <input class="pwd-input" type="password" name="pwd" maxlength="50">
-                    </form>
-                    <%if(msg != null && msg.equals("0")){%>
-                		<script type="text/javascript">
-                			alert("아이디, 비밀번호를 다시 확인해주세요");
-						</script>
-                	<%} %>
-                </section>
+                
+                <h1 class="d-none">로그인폼</h1> 
+                <form id="loginForm" method="post" action="/login/login.do">
+                    <div class="idForm">
+	                    <label>아이디</label>
+	                    <input class="id-input" type="text" name="id" maxlength="50">
+                    </div>
+                    <div class="pwdForm">
+	                    <label>비밀번호</label>
+	                    <input class="pwd-input" type="password" name="pwd" maxlength="50">
+                    </div>
+                </form>
+                
+                <%if(msg != null && msg.equals("0")){%>
+              		<script type="text/javascript">
+              			alert("아이디, 비밀번호를 다시 확인해주세요");
+					</script>
+               	<%} %>
+                
             
                 <section>
                     <label class="login-check"><input type="checkbox"> 로그인 상태유지</label>
