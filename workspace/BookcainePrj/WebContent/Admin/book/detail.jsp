@@ -6,12 +6,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%	
-	String id_ = request.getParameter("id");
-	int id = Integer.parseInt(id_);
-    JdbcBookService bookService = new JdbcBookService();
-    Book book = bookService.get(id);  
- %>
  
  <%--<%
  	AuthorService authorService = new JdbcAuthorService();
@@ -44,21 +38,21 @@
     <main>
         <section id="book-image">
             <h1 class="d-none">book-image</h1>
-            <img src="../../images/book<%=book.getId()%>.jpg" alt="">
+            <img src="../../images/book${book.id}.jpg" alt="">
         </section>
         <section id="book-description">
             <h1 class="d-none">책 제목 저자</h1>
-            <div class="book-name"><%=book.getTitle() %></div>
-            <div class="writer"><%=book.getAuthor() %></div>
+            <div class="book-name">${book.title}</div>
+            <div class="writer">${book.author}</div>
         </section>
         <table id="table">
             <tr>
                 <th>분류</th>
-                <td><%=book.getType() %></td>
+                <td>${book.type}</td>
             </tr>
             <tr>
                 <th>진열여부</th>
-                <td><%=book.getYn() %></td>
+                <td>${book.yn}</td>
             </tr>
             <tr>
                 <th>별점 평균</th>
@@ -92,7 +86,7 @@
 
         <form class="check_button">
             <a href="../list/total.jsp"><input type="button" value="목록"></a>
-            <a href="edit.jsp?id=<%=id%>"><input type="button" value="상품 수정"></a>
+            <a href="edit?id=${book.id}"><input type="button" value="상품 수정"></a>
             <input type="button" value="상품 삭제">
         </form>
 

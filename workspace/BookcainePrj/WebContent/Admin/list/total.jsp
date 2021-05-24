@@ -67,7 +67,7 @@
             	<%for(Book b : list){%>
                 <li class="book_total">
                     <input class="check" type="checkbox">
-                    <a class="title" href="../book/detail.jsp?id=<%=b.getId()%>"><%=b.getTitle() %></a>
+                    <a class="title" href="../book/detail?id=<%=b.getId()%>"><%=b.getTitle() %></a>
                     <img class="img" src="../../images/book<%=b.getId()%>.jpg">
                     <span class="info">
                         <span>진열여부:Y</span>
@@ -105,9 +105,9 @@
         </nav>
             <h1 class="d-none">상품 관리</h1>
             <form class="check_button">
-                <a href="../book/detail.jsp"><input type="button" value="상세 페이지"></a>
+                <a href="../book/detail"><input type="button" value="상세 페이지"></a>
                 <a href="book_add.html"><input type="button" value="상품 등록"></a>
-                <a href="../book/edit.jsp"><input type="button" value="상품 수정"></a>
+                <a href="../book/edit"><input type="button" value="상품 수정"></a>
                 <input type="button" value="상품 삭제">
             </form>
     </div>

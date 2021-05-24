@@ -2,15 +2,8 @@
 <%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
     
-<%	
-	String id_ = request.getParameter("id");
-	int id = Integer.parseInt(id_);
-    JdbcBookService bookService = new JdbcBookService();
-    Book book = bookService.get(id);  
- %>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +29,7 @@
         <form id="form" action="edit" method="post">
             <section id="book-image">
                 <h1 class="d-none">book-image</h1>
-                <img src="../../images/book<%=book.getId()%>.jpg" alt="">
+                <img src="../../images/book${book.id}.jpg" alt="">
             </section>
             <div class="zero">
                 <div class="d-none">이미지</div>
@@ -44,8 +37,8 @@
             </div> 
             <section id="book-description">
                 <h1 class="d-none">책 제목 저자</h1>
-                <input class="book-name" type="text" value="<%=book.getTitle() %>">
-                <input class="writer" type="text" value="<%=book.getAuthor() %>">
+                <input class="book-name" type="text" value="${book.title}">
+                <input class="writer" type="text" value="${book.author}">
             </section>
             <table id="table">
                 <tr>
@@ -107,10 +100,10 @@
 
 			
 	        <section class="check_button">
-	        	<input type="hidden" name="id" value="<%=id %>">
+	        	<input type="hidden" name="id" value="${book.id}">
 	            <a href="../list/total.jsp"><input type="button" value="목록"></a>
 	            <input type="submit" value="저장">
-	            <a href="detail.jsp?id=<%=id%>"><input type="button" value="취소"></a>
+	            <a href="detail.jsp?id=${book.id}"><input type="button" value="취소"></a>
 	            <input type="button" value="상품 삭제">
         	</section>
         </form>
