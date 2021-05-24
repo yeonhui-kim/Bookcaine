@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 			if(member != null){
 				session.setAttribute("loginMember", member);
 				msg = "../index.jsp";
-			}else if(member == null){//비번틀린경우
+			}else if(member == null){//아이디,비번틀린경우
 				msg = "login.jsp?msg=0";
 			}
 			
@@ -50,6 +50,13 @@ public class LoginController extends HttpServlet {
 		resp.sendRedirect(msg);
 	
 	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doGet(req, resp);
+	}
+	
 	
 	
 	

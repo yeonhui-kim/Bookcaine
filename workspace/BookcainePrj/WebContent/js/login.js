@@ -19,9 +19,11 @@ window.addEventListener("load", function(){
 			return;
 		}
 			
-		
 		loginForm.submit();
+		
+		
 	}
+	
 	
 	
 	

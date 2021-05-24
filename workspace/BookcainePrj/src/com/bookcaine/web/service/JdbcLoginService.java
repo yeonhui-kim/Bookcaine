@@ -167,6 +167,6 @@ public class JdbcLoginService {
 		
 		return loginMember;
 	}
-
-
+	
+	
 }

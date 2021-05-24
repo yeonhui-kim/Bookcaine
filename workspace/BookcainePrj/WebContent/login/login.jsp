@@ -11,17 +11,10 @@
     <link href="../css/login.css" type="text/css" rel="stylesheet">
 	<script src="../js/login.js"></script>
 	 
-<%//아이디 비번 틀린 경우 화면에 메시지 표시
+<%
+//아이디 비번 틀린 경우 화면에 메시지 표시
 
 	String msg = request.getParameter("msg");
-	
-	if(msg != null && msg.equals("0")){
-		out.println("<br>");
-		out.println("<font color='red' size='5'>비밀번호를 확인해주세요.</font>");
-	}else if(msg != null && msg.equals("-1")){
-		out.println("<br>");
-		out.println("<font color='red' size='5'>아이디를 확인해주세요.</font>");
-	}
 	
 %>
  
@@ -40,24 +33,22 @@
         <main id="main">
             <div id="login-info-form">
                 <section class="login-form">
-                    <h1 class="d-none">로그인폼</h1>
+                    <h1 class="d-none">로그인폼</h1> 
                     <form id="loginForm" method="post" action="/login/login.do">
-<!--                        <fieldset> -->
-<!--                            <legend class="d-none">아이디입력필드</legend> -->
-                           <label>아이디</label>
-                           <input class="id-input" type="text" name="id" maxlength="50">
-<!--                        </fieldset> -->
-<!--                        <fieldset> -->
-<!--                            <legend class="d-none">비밀번호입력필드</legend> -->
-                           <label>비밀번호</label>
-                           <input class="pwd-input" type="password" name="pwd" maxlength="50">
-<!--                        </fieldset> -->
+                        <label>아이디</label>
+                        <input class="id-input" type="text" name="id" maxlength="50">
+                        <label>비밀번호</label>
+                        <input class="pwd-input" type="password" name="pwd" maxlength="50">
                     </form>
+                    <%if(msg != null && msg.equals("0")){%>
+                		<script type="text/javascript">
+                			alert("아이디, 비밀번호를 다시 확인해주세요");
+						</script>
+                	<%} %>
                 </section>
             
                 <section>
-<!--                         <legend class="d-none">로그인상태유지체크박스</legend> -->
-                        <label class="login-check"><input type="checkbox"> 로그인 상태유지</label>
+                    <label class="login-check"><input type="checkbox"> 로그인 상태유지</label>
                 </section>
             </div>
             
