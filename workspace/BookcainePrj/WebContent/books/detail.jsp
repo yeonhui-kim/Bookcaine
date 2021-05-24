@@ -1,20 +1,6 @@
-<%@page import="com.bookcaine.web.entity.Review"%>
-<%@page import="com.bookcaine.web.service.JdbcReviewService"%>
-<%@page import="com.bookcaine.web.entity.Book"%>
-<%@page import="com.bookcaine.web.service.JdbcBookService"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<%
-
-	String id_ = request.getParameter("id");
-	int id = Integer.parseInt(id_);
-	
-	JdbcReviewService reviewService = new JdbcReviewService();
-	List<Review> list = reviewService.getList(id);
-
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,11 +75,12 @@
         <section id="review">
         	<article>
             <h1>리뷰</h1>
-            	<%for(int i=0; i<list.size(); i++){ %>
+            
+            	<c:forEach var="n" items="${list}">
             	<div class=review>
 	            	<article>
-	                    <div class="reviewer"><%=list.get(i).getNickname() %></div>
-	                    	<p><%=list.get(i).getContent() %></p>
+	                    <div class="reviewer">${n.nickname}</div>
+	                    	<p>${n.content}</p>
 	                        <div class="review-attr">
 	                        	<span>좋아요 0</span>
 	                        	<span>댓글 0</span>
@@ -105,7 +92,8 @@
 	                </div>
 	                </article>
                 </div>
-                <%} %>
+                </c:forEach>
+                
                 </article>
                 
         </section>

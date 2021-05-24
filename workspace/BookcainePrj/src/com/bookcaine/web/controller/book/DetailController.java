@@ -24,8 +24,8 @@ public class DetailController extends HttpServlet{
 		JdbcBookService bookService = new JdbcBookService();
 		Book book = bookService.get(id);
 		
-		JdbcReviewService reviewService = new JdbcReviewService();
 		List<Review> list = null;
+		JdbcReviewService reviewService = new JdbcReviewService();
 		try {
 			list = reviewService.getList(id);
 		} catch (ClassNotFoundException e) {
@@ -37,7 +37,7 @@ public class DetailController extends HttpServlet{
 		}
 		
 		request.setAttribute("book", book);
-		request.setAttribute("review", list);
+		request.setAttribute("list", list);
 		
 		request.getRequestDispatcher("detail.jsp").forward(request, response);
 		
