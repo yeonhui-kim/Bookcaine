@@ -13,7 +13,7 @@ import com.bookcaine.web.entity.Book;
 
 public class JdbcBookService implements BookService {	
 	
-	public List<Book> getList() {
+	public List<Book> getList() throws ClassNotFoundException, SQLException {
 	
 		return getList(1, "title", "");
 	}
@@ -59,7 +59,7 @@ public class JdbcBookService implements BookService {
 		return list;
 	}
 	
-	public List<Book> getList(int page, String field, String query) {
+	public List<Book> getList(int page, String field, String query) throws ClassNotFoundException, SQLException {
 		List<Book> list = new ArrayList<>();
 		
 //		int size = 5;
@@ -68,14 +68,10 @@ public class JdbcBookService implements BookService {
 		
 		String url	 = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT B.*, C.NAME "
-				+ "FROM BOOK B LEFT JOIN CATEGORY C "
-				+ "ON B.CATEGORY_ID = C.ID "
-				+ "WHERE "+field+" LIKE '%"+query+"%' ";
-//				+ "WHERE ID BETWEEN "+startN+"AND"+endN;
+		String sql = "SELECT * FROM TYPE_VIEW"
+				+ " WHERE "+field+" LIKE '%"+query+"%'";
+//				+ " WHERE ID BETWEEN "+startN+" AND " +endN;
 
-		
-		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 			
@@ -104,9 +100,6 @@ public class JdbcBookService implements BookService {
 			rs.close();
 			st.close();
 			con.close();
-		} catch (Exception e) {
-			throw new ServiceException();
-		}
 		
 		return list;
 	}
@@ -146,11 +139,39 @@ public class JdbcBookService implements BookService {
 		return book;
 		
 	}
+	
+public int getCount(String field, String query) throws ClassNotFoundException, SQLException {
+		
+		int count = 0;
+	
+		String sql = "SELECT COUNT(ID) COUNT"
+				+ " FROM BOOK"
+				+ " WHERE "+field+" LIKE '% "+query+" %'";
+		
+		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
+		
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+		
+		while(rs.next())
+			count = rs.getInt("COUNT");
+
+		rs.close();
+		st.close();
+		con.close();
+		
+		return count;
+		
+	}
+	
+	
 
 	public int update (Book book) throws ClassNotFoundException, SQLException {
 		int result = 0;
 		
-		String sql = "UPDATE BOOK SET TITLE=[], AUTHOR=[], YN=[], DETAILS=?, category_id=[] WHERE ID=?";
+		String sql = "UPDATE BOOK SET DETAILS=? WHERE ID=?";
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";		
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
@@ -164,5 +185,30 @@ public class JdbcBookService implements BookService {
 		return result;
 		
 	}
+	
+	public int insert(Book book) throws ClassNotFoundException, SQLException {		
+		int result = 0;
+		
+		String sql = "INSERT INTO BOOK(TITLE, AUTHOR, DETAILS, YN) VALUES(?,?,?,?)";
+		
+		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "NEWLEC", "11111");
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, book.getTitle());
+		st.setString(2, book.getAuthor());
+		st.setString(3, book.getDetails());
+		st.setString(4, book.getYn());
+		
+		result = st.executeUpdate(); // ex..Query():Select , ex..Update(): Update/Delete/Insert
+		
+		st.close();
+		con.close();
+		
+		return result;
+	}	
+	
+	
 	
 }

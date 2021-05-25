@@ -8,9 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bookcaine.web.entity.Author;
 import com.bookcaine.web.entity.Book;
+import com.bookcaine.web.entity.TypeView;
+import com.bookcaine.web.service.AuthorService;
 import com.bookcaine.web.service.BookService;
+import com.bookcaine.web.service.JdbcAuthorService;
 import com.bookcaine.web.service.JdbcBookService;
+import com.bookcaine.web.service.JdbcTypeViewService;
 
 @WebServlet("/Admin/book/detail")
 public class BookDetailController extends HttpServlet {
@@ -23,13 +28,22 @@ public class BookDetailController extends HttpServlet {
 		
 	    BookService bookService = new JdbcBookService();
 	    Book book = null;
-	    		
 	    book = bookService.get(id); 
 	    
+	    AuthorService authorService = new JdbcAuthorService();
+	 	Author author = authorService.get(id);
+	 	
+	 	JdbcTypeViewService typeVIewService = new JdbcTypeViewService();
+	 	TypeView typeView = typeVIewService.get(id);
+	 	
 	    request.setAttribute("book", book); // "" 안에가 key값
+	    request.setAttribute("author", author);
+	    request.setAttribute("typeView", typeView);
 	    request.getRequestDispatcher("detail.jsp").forward(request, response);
 	    
-	
+
+	    
+	    
 	    
 		
 		

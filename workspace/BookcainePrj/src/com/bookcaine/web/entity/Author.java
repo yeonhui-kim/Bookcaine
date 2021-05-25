@@ -3,14 +3,14 @@ package com.bookcaine.web.entity;
 public class Author {
 
 	private String name;
-	private String id;
+	private int id;
 	private String details;
 	
 	public Author() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Author(String name, String id, String details) {
+	public Author(String name, int id, String details) {
 		super();
 		this.name = name;
 		this.id = id;
@@ -25,11 +25,11 @@ public class Author {
 		this.name = name;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -1,30 +1,9 @@
-
-<%@page import="com.bookcaine.web.entity.Book"%>
-<%@page import="java.util.List"%>
-<%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%
-    String p = request.getParameter("p");
-    String f = request.getParameter("f");
-    String q = request.getParameter("q");
-
-    int page_ = 1;
-    String field = "title";
-    String query = "";
-
-    if (p!= null && !p.equals(""))
-       	page_ = Integer.parseInt(p);
-    if (f!= null && !f.equals(""))
-        field = f;
-    if (q!= null && !q.equals(""))
-        query = q;
-
-    JdbcBookService bookService = new JdbcBookService();
-    List<Book> list = bookService.getList(page_, field, query);
-%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,56 +36,58 @@
                     <option value="title">제목</option>
                     <option value="author">저자</option>
                 </select>
-                <input type="search" value="" name="q">
+                <input type="search" name="q" value="${param.q}">
                 <input type="submit" value="검색">
             </form>
         </aside>
         <section class="book_total_content">
             <h1><a href="total.jsp">책 전체 목록</a></h1>
-            <ul class="book_total_list"> 
-            	<%for(Book b : list){%>
-                <li class="book_total">
-                    <input class="check" type="checkbox">
-                    <a class="title" href="../book/detail?id=<%=b.getId()%>"><%=b.getTitle() %></a>
-                    <img class="img" src="../../images/book<%=b.getId()%>.jpg">
-                    <span class="info">
-                        <span>진열여부:Y</span>
-                    </span>
-                    <span class="customer">
-                        <span>별점평균:9.8점 |</span>
-                        <span>등록리뷰:387건</span>
-                    </span>
-                    <span class="meetup">
-                        <span>개설모임:1개 |</span>
-                        <span>모임참가자:478명</span>
-                    </span>
-                </li>
-                <% } %>
-            </ul>
+            <c:forEach var="b" items="${list}">
+            	<ul class="book_total_list"> 
+	                <li class="book_total">
+	                    <input class="check" type="checkbox">
+	                    <a class="title" href="../book/detail?id=${b.id}">${b.title}</a>
+	                    <img class="img" src="../../images/book${b.id}.jpg">
+	                    <span class="info">
+	                        <span>진열여부:Y</span>
+	                    </span>
+	                    <span class="customer">
+	                        <span>별점평균:9.8점 |</span>
+	                        <span>등록리뷰:387건</span>
+	                    </span>
+	                    <span class="meetup">
+	                        <span>개설모임:1개 |</span>
+	                        <span>모임참가자:478명</span>
+	                    </span>
+	                </li>
+            	</ul>
+            </c:forEach>
         </section>
 
         <section class="page-status mt-3">
             <h1 class="d-none">현재 페이지 정보</h1>
             <div>
-                 <span class="text-strong">1</span> / 2 pages
+				 <c:set var="lastPage" value="${count/10 + (count%10==0?0:1)}"/>
+				 <c:set var="lastPage" value="${fn:substringBefore(lastPage,'.')}" />
+            	<span class="text-strong">${empty param.p?1:param.p}</span> / ${lastPage} pages
             </div>
         </section>
         <nav class="pager mt-3">
             <h1 class="d-none">페이저</h1>
             <div class="button">이전</div>
             <ul>
-                <li><a class="text-strong"" href="list_total.jsp?p=1&f=<%=field%>&q=<%=query%>">1</a></li>
-                <li><a href="list_total.jsp?p=2&f=<%=field%>&q=<%=query%>">2</a></li>
-                <li><a href="list_total.jsp?p=3&f=<%=field%>&q=<%=query%>">3</a></li>
-                <li><a href="list_total.jsp?p=4&f=<%=field%>&q=<%=query%>">4</a></li>
-                <li><a href="list_total.jsp?p=5&f=<%=field%>&q=<%=query%>">5</a></li>
+           	<c:forEach var="num" begin="1" end="5">
+           		<c:if test="${num <= lastPage}">
+                <li><a class="${(page==num)?"text-strong":""}" href="total?p=${num}&f=${param.f}&q=${param.q}">${num}</a></li>
+            	</c:if>
+            </c:forEach>
             </ul>
             <div class="button">다음</div>
         </nav>
             <h1 class="d-none">상품 관리</h1>
             <form class="check_button">
                 <a href="../book/detail"><input type="button" value="상세 페이지"></a>
-                <a href="book_add.html"><input type="button" value="상품 등록"></a>
+                <a href="../book/add"><input type="button" value="상품 등록"></a>
                 <a href="../book/edit"><input type="button" value="상품 수정"></a>
                 <input type="button" value="상품 삭제">
             </form>

@@ -1,8 +1,16 @@
+<%@page import="com.bookcaine.web.entity.Author"%>
+<%@page import="com.bookcaine.web.service.JdbcAuthorService"%>
+<%@page import="com.bookcaine.web.service.AuthorService"%>
 <%@page import="com.bookcaine.web.entity.Book"%>
 <%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%
+	String id_ = request.getParameter("id");
+	int id = Integer.parseInt(id_);
+ 	AuthorService authorService = new JdbcAuthorService();
+ 	Author author = authorService.get(id);
+%>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -95,13 +103,13 @@
             </section>
             <section id="author-details">
                 <h1 class="d-none">저자 디테일</h1>
-                <textarea class="details" name="authorDetails">저자 소개</textarea>
+                <textarea class="details" name="authorDetails">저자 소개<br><%=author.getDetails()%></textarea>
             </section>
 
 			
 	        <section class="check_button">
 	        	<input type="hidden" name="id" value="${book.id}">
-	            <a href="../list/total.jsp"><input type="button" value="목록"></a>
+	            <a href="../list/total"><input type="button" value="목록"></a>
 	            <input type="submit" value="저장">
 	            <a href="detail.jsp?id=${book.id}"><input type="button" value="취소"></a>
 	            <input type="button" value="상품 삭제">

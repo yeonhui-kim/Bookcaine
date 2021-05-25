@@ -1,6 +1,7 @@
 package com.bookcaine.web.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,25 +20,65 @@ import com.bookcaine.web.service.JdbcBookService;
 public class BookEditController extends HttpServlet {
 
 	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id_ = request.getParameter("id");
+		int id = Integer.parseInt(id_);
+		String bD = request.getParameter("bookDetails");
+		String aD = request.getParameter("authorDetails");
+	
+	    BookService bookService = new JdbcBookService();
+	    Book book = bookService.get(id); 
+	    book.setDetails(bD);
+	    
+	    AuthorService authorService = new JdbcAuthorService();
+	    Author author = authorService.get(id);
+	    author.setDetails(aD);
+	    
+	    request.setAttribute("book", book);
+	    request.setAttribute("author", author);
+	    request.getRequestDispatcher("edit.jsp").forward(request, response);
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String id_ = request.getParameter("id");
 		int id = Integer.parseInt(id_);
 		String bD = request.getParameter("bookDetails");
-		String aD = request.getParameter("authorDeatils");
+		String aD = request.getParameter("authorDetails");
 	
 	    BookService bookService = new JdbcBookService();
 	    Book book = bookService.get(id); 
+	    book.setDetails(bD);
+	    try {
+			bookService.update(book);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	    
 	    AuthorService authorService = new JdbcAuthorService();
 	    Author author = authorService.get(id);
+	    author.setDetails(aD);
+	    try {
+			authorService.update(author);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	    
-	    request.setAttribute("book", book);
-	    request.setAttribute("author", author);
-	    request.getRequestDispatcher("edit.jsp").forward(request, response);
+	    
+//	    request.setAttribute("book", book);
+//	    request.setAttribute("author", author);
+//	    request.getRequestDispatcher("edit.jsp").forward(request, response);
 	  
-		bookService.update(book);
-		response.sendRedirect("/Adimin/book/detail?id="+id);
+		response.sendRedirect("/Admin/book/detail?id="+id);
 		
 		
 	

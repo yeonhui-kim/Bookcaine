@@ -1,3 +1,5 @@
+<%@page import="com.bookcaine.web.service.BookService"%>
+<%@page import="com.bookcaine.web.service.AuthorService"%>
 <%@page import="com.bookcaine.web.entity.Author"%>
 <%@page import="com.bookcaine.web.service.JdbcAuthorService"%>
 <%@page import="com.bookcaine.web.entity.Book"%>
@@ -6,14 +8,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
- 
- <%--<%
- 	AuthorService authorService = new JdbcAuthorService();
- 	Author author = authorService.get(id);
- --%>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +42,7 @@
         <table id="table">
             <tr>
                 <th>분류</th>
-                <td>${book.type}</td>
+                <td>${typeView.name}</td>
             </tr>
             <tr>
                 <th>진열여부</th>
@@ -74,18 +68,16 @@
             
         <section id="book-details">
             <h1 class="d-none">책 디테일</h1>
-            <div class="details">책 소개<br></div>
+            <div class="details">책 소개<br>${book.details}</div>
         </section>
         <section id="author-details">
             <h1 class="d-none">저자 디테일</h1>
-            <div class="details">저자 소개<br></div>
+            <div class="details">저자 소개<br>${author.details}</div>
         </section>
-        
-        
-<%--   <%=author.getDetails() %> --%>       
+     
 
         <form class="check_button">
-            <a href="../list/total.jsp"><input type="button" value="목록"></a>
+            <a href="../list/total"><input type="button" value="목록"></a>
             <a href="edit?id=${book.id}"><input type="button" value="상품 수정"></a>
             <input type="button" value="상품 삭제">
         </form>
