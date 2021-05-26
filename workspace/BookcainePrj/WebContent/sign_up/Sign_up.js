@@ -47,9 +47,12 @@ window.addEventListener("load", function () {
     // mm.addEventListener("focusout", checkmm);
     // dd.addEventListener("focusout", checkdd);
 
+var idcheck = /[a-zA-Z0-9_-]{5,20}/; //영문,숫자만 허용하는 정규표현식
+var pwchek = /[a-zA-Z0-9_-]{8,16}/;
+
     function checkId() {
 
-    var idcheck = /[a-zA-Z0-9_-]{5,20}/; //영문,숫자만 허용하는 정규표현식
+    
     if(id.value === "") {
         error[0].innerHTML = "필수 정보입니다.";
         error[0].style.display = "block";
@@ -67,7 +70,7 @@ window.addEventListener("load", function () {
 
     function checkpw(){
 
-        var pwchek = /[a-zA-Z0-9_-]{8,16}/;
+        
         if(pw.value === ""){
             error[1].innerHTML = "필수 정보입니다.";
             error[1].style.display = "block";
@@ -132,16 +135,25 @@ window.addEventListener("load", function () {
 		var pwd_ = pw.value;
 		var name_ = name.value;
 		var nickname_ = nickname.value;
-		
+			
 		if(id_ == null || id_ == "") {
 			alert("아이디를 입력하세요");
 			return;
 		}
+		else if(!idcheck.test(id.value)) {
+        alert("5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.");
+        return;
+    }
 		
 		if(pwd_ == null || pwd_ =="") {
 			alert("비밀번호를 입력하세요");	
 			return;
 		}
+		else if(!pwchek.test(pw.value)){
+
+			alert("8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.");	
+			return;
+        }
 		
 		if(name_ == null || name_ =="") {
 			alert("이름을 입력하세요");	
@@ -152,6 +164,18 @@ window.addEventListener("load", function () {
 			alert("별명을 입력하세요");	
 			return;
 		}
+		
+		
+        if(pw.value === ""){
+           alert("비밀번호를 입력하세요");	
+			return;
+        }
+        
+        else{
+            error[1].innerHTML = "사용 가능한 비밀번호입니다.";
+            error[1].style.color = "green";
+        }
+		
 		
 		signForm.submit();
 	}
