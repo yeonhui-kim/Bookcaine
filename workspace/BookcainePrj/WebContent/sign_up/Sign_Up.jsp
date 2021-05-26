@@ -116,9 +116,9 @@
 
             <!-- <input type="button" class="btn" value="회원가입 완료"> -->
             <div class="btn_area">
-                <button type="submit" href="javascript:void(0);" class="btn">
+                <a href="javascript:void(0);"><button type="submit"  class="btn">
                     <span>회원가입 완료</span>
-                </button>
+                </button></a>
             </div>
 
 			</form>
