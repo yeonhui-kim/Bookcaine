@@ -23,7 +23,7 @@
     <div id="wrapper">
 
         <div id="main">
-			<form action="Sign_Up" method="post">
+			<form action="Sign_Up" method="post" id="signForm">
             <div>
                 <span class="box">
                     <input type="text" class="txt" id="ID_txt" name="id" value="" placeholder="아이디" maxlength="15">
@@ -116,7 +116,7 @@
 
             <!-- <input type="button" class="btn" value="회원가입 완료"> -->
             <div class="btn_area">
-                <button type="submit" onclick="location.href='PupUp.html' " class="btn">
+                <button type="submit" href="javascript:void(0);" class="btn">
                     <span>회원가입 완료</span>
                 </button>
             </div>

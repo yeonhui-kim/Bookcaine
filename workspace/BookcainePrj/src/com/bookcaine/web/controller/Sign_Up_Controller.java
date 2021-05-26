@@ -55,7 +55,7 @@ public class Sign_Up_Controller extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		resp.sendRedirect("Sign_Up.jsp");
+		resp.sendRedirect("PupUp.html");
 	
 	}
 	

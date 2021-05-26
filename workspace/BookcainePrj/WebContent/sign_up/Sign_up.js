@@ -31,6 +31,8 @@ window.addEventListener("load", function () {
     var pwr = document.querySelector('#PWR_txt');
     var name = document.querySelector("#NAME_txt");
 	var nickname = document.querySelector("#NICKNAME_txt");
+	let btn = document.querySelector(".btn")
+	let signForm = document.querySelector("#signForm");
     // var yy = document.querySelector("#yy");
     // var mm = document.querySelector("#mm");
     // var dd = document.querySelector("#dd");
@@ -123,6 +125,35 @@ window.addEventListener("load", function () {
             error[4].style.display = "block";
             error[4].style.color = "green";
         }
+	}
+	
+	btn.onclick = function(e){
+		var id_ = id.value;
+		var pwd_ = pw.value;
+		var name_ = name.value;
+		var nickname_ = nickname.value;
+		
+		if(id_ == null || id_ == "") {
+			alert("아이디를 입력하세요");
+			return;
+		}
+		
+		if(pwd_ == null || pwd_ =="") {
+			alert("비밀번호를 입력하세요");	
+			return;
+		}
+		
+		if(name_ == null || name_ =="") {
+			alert("이름을 입력하세요");	
+			return;
+		}
+		
+		if(nickname_ == null || nickname_ =="") {
+			alert("별명을 입력하세요");	
+			return;
+		}
+		
+		signForm.submit();
 	}
 
 });
