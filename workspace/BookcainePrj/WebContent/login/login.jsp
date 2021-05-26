@@ -27,7 +27,7 @@
     <div id="root"> 
         <header>
             <div id="header">
-                <a href="../index.html" class="logo" target="_blank" title="메인화면링크">BookCaine</a>
+                <a href="../index.jsp" class="logo" target="_blank" title="메인화면링크">BookCaine</a>
             </div>
         </header>
         <div id="header-line"></div>

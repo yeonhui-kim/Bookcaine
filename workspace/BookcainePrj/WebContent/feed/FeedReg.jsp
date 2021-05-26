@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="../css/feed.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="../header/header.css">
+    <script src="../js/Feed.js"></script>
 </head>
 
 <header id="header">
@@ -41,17 +41,16 @@
 </header>
 
 <main id="wrapper">
+    
 
     <div id="main">
-        <article>
-            <div class="profile">
-                <img class="profile-image" src="../images/user.PNG">
-                <div class="profile-flex">
-                    <a class="user-name">초록색레고</a>
-                    <a class="date">2021-05-16</a>
-                </div>
-            </div>
 
+        <div class="btn-box">
+            <a href="../BookFeed/FeedReg.html">
+                <img class="reg-img" src="../images/047add1_99902.png">
+            </a>
+        </div>
+        <article class="box">
             <div class="content">
 
                 <div class="book-img">
@@ -62,20 +61,24 @@
                     <a>여름은 오래 그 곳에 남아</a>
                 </div>
 
-
-
                 <div class="review-attr">
                     <span>좋아요 0</span>
                     <span>댓글 0</span>
                 </div>
                 <hr>
                 <div class="review-btn-group">
-                    <input id="like-button" type="button" value="좋아요">
-                    <a href="#">댓글</a>
+                    <!-- <input class="like" id="like-button" type="button" value="좋아요"> -->
+                    <a class="text">여러분의 댓글을 남겨주세요.</a>
                 </div>
+            <div class="comment-box d-none">
+                <form>
+                    <input type="text" id="comment-txt">
+                    <input type="submit" value="확인" id="btn">
+                </form>
+            </div>
             </div>
         </article>
-
+       
 
     </div>
 
