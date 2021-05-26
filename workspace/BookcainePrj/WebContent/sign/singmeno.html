@@ -47,14 +47,14 @@
                         <tr>
                             <th class="user-name">이름</th>
                             <td>
-                                <span class="user-name">홍길동</span>
+                                <span class="user-name">${sessionScope.loginMember.name }</span>
                                 <a href="signout.html" class="leave-button">회원탈퇴</a>
                             </td>
                         </tr>
                         <tr>
                             <th>아이디</th>
                             <td>
-                                <span class="id-name">Hong</span>
+                                <span class="id-name">${sessionScope.loginMember.id }</span>
                             </td>
                         </tr>
 
@@ -62,7 +62,7 @@
                             <th>이메일</th>
                             <td>
                                 <div>
-                                    <p>hong@gmail.com</p>
+                                    <p>${sessionScope.loginMember.email }</p>
                                     <p class="email">인증된 이메일 주소입니다.</p>
 
                                     
