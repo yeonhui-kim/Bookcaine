@@ -46,7 +46,7 @@
             </tr>
             <tr>
                 <th>진열여부</th>
-                <td>${book.yn}</td>
+                <td>Y</td>
             </tr>
             <tr>
                 <th>별점 평균</th>
