@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bookcaine.web.entity.Member;
 import com.bookcaine.web.service.JdbcMemberService;
 
-@WebServlet("/sign_up/Sign_Up")
+@WebServlet("/Sign_up")
 public class Sign_Up_Controller extends HttpServlet {
 
 	@Override
