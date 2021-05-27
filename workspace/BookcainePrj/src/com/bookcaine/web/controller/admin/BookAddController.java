@@ -21,7 +21,7 @@ public class BookAddController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("add.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/Admin/book/add.jsp").forward(request, response);
 		
 	}
 	

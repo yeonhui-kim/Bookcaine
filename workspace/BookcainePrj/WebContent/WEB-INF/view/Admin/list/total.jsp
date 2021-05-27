@@ -87,7 +87,7 @@
             <h1 class="d-none">상품 관리</h1>
             <form class="check_button">
                 <a href="../book/detail"><input type="button" value="상세 페이지"></a>
-                <a href="../book/add"><input type="button" value="상품 등록"></a>
+                <a href="/Admin/book/add"><input type="button" value="상품 등록"></a>
                 <a href="../book/edit"><input type="button" value="상품 수정"></a>
                 <input type="button" value="상품 삭제">
             </form>

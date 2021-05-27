@@ -191,7 +191,7 @@ public int getCount(String field, String query) throws ClassNotFoundException, S
 	public int insert(Book book) throws ClassNotFoundException, SQLException {		
 		int result = 0;
 		
-		String sql = "INSERT INTO BOOK(TITLE, AUTHOR, DETAILS, YN) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO BOOK(TITLE, AUTHOR, DETAILS, YN, CATEGORY_ID) VALUES(?,?,?,?,?)";
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");
@@ -202,6 +202,7 @@ public int getCount(String field, String query) throws ClassNotFoundException, S
 		st.setString(2, book.getAuthor());
 		st.setString(3, book.getDetails());
 		st.setString(4, book.getYn());
+		st.setInt(5, book.getCategory_id());
 		
 		result = st.executeUpdate(); // ex..Query():Select , ex..Update(): Update/Delete/Insert
 		

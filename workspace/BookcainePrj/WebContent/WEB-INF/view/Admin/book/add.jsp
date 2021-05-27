@@ -69,7 +69,6 @@
                         <option>N</option>
                     </select>
                 </div>
-            
 	            <section>
                     <input type="button" value="미리보기">
                     <input type="submit" value="상품 등록">
