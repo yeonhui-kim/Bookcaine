@@ -54,7 +54,7 @@
         </button>
 
 
-        <button type="button"  onclick="location.href='/login/login.do'" class="aside-login">
+        <button type="button"  onclick="location.href='/login'" class="aside-login">
             <span>로그인페이지로 이동</span>
         </button>
 
