@@ -1,4 +1,7 @@
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@page import="com.bookcaine.web.entity.Member"%>    
+<% Member member = (Member) request.getSession().getAttribute("loginMember"); %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,26 +18,26 @@
     <div id="root">
         <header id="header">
             <div class="float-content">
-                <h1 class="logo"><div class="logo-1">ì±…ì— ì¤‘ë…ë˜ëŠ” ìˆœê°„</div> Bookcaine</h1>
+                <h1 class="logo"><div class="logo-1">Ã¥¿¡ Áßµ¶µÇ´Â ¼ø°£</div> Bookcaine</h1>
                 <section>
-                    <h1 class="d-none">í—¤ë”</h1>
-                    <a href="../sign/singmeno.html"><i class="icon-cog"></i></a>
+                    <h1 class="d-none">Çì´õ</h1>
+                    <a href="../sign/singmeno.jsp"><i class="icon-cog"></i></a>
                     
                     <section class="book-search-form">
-                        <h1 class="d-none">ë„ì„œê²€ìƒ‰í¼</h1>
+                        <h1 class="d-none">µµ¼­°Ë»öÆû</h1>
                         <form action="">
-                            <legend class="d-none">ë„ì„œ ê²€ìƒ‰ í•„ë“œ</legend>
-                            <input class="form-input" type="text" name="search" placeholder="ì œëª©,ì €ìž,ì¶œíŒì‚¬ ê²€ìƒ‰">
-                            <input class="button" type="submit" value="ê²€ìƒ‰">
+                            <legend class="d-none">µµ¼­ °Ë»ö ÇÊµå</legend>
+                            <input class="form-input" type="text" name="search" placeholder="Á¦¸ñ,ÀúÀÚ,ÃâÆÇ»ç °Ë»ö">
+                            <input class="button" type="submit" value="°Ë»ö">
                         </form>
                     </section>
         
                     <nav class="quick-menu">
-                        <h1 class="d-none">í€µë©”ë‰´</h1>
+                        <h1 class="d-none">Äü¸Þ´º</h1>
                         <ul>
-                            <li><a href="../index.jsp">í™ˆ</a></li>
-                            <li><a href="">ë„ì „ë°©</a></li>
-                            <li class="profile"><a href="../profile/profile.jsp">í”„ë¡œí•„</a></li>
+                            <li><a href="../index">È¨</a></li>
+                            <li><a href="">µµÀü¹æ</a></li>
+                            <li class="profile"><a href="../profile/profile.jsp">ÇÁ·ÎÇÊ</a></li>
                         </ul>
                     </nav>
                 </section>
@@ -42,45 +45,45 @@
         </header>
 
         <main>
-            <h1>ì •ë³´ë³€ê²½</h1>
+            <h1>Á¤º¸º¯°æ</h1>
                 <div>
                     <table class="table">
                     
                         <tr>
-                            <th class="user-name">ì´ë¦„</th>
+                            <th class="user-name">ÀÌ¸§</th>
                             <td>
                                 <span class="user-name">${sessionScope.loginMember.name }</span>
-                                <a href="signout.html" class="leave-button">íšŒì›íƒˆí‡´</a>
+                                <a href="signout.html" class="leave-button">È¸¿øÅ»Åð</a>
                             </td>
                         </tr>
                         <tr>
-                            <th>ì•„ì´ë””</th>
+                            <th>¾ÆÀÌµð</th>
                             <td>
                                 <span class="id-name">${sessionScope.loginMember.id }</span>
                             </td>
                         </tr>
 
                         <tr>
-                            <th>ì´ë©”ì¼</th>
+                            <th>ÀÌ¸ÞÀÏ</th>
                             <td>
                                 <div>
                                     <p>${sessionScope.loginMember.email }</p>
-                                    <p class="email">ì¸ì¦ëœ ì´ë©”ì¼ ì£¼ì†Œìž…ë‹ˆë‹¤.</p>
+                                    <p class="email">ÀÎÁõµÈ ÀÌ¸ÞÀÏ ÁÖ¼ÒÀÔ´Ï´Ù.</p>
 
                                     
                                 </div>
                                 <div>
-                                    <button class="email-ch">ì´ë©”ì¼ ë³€ê²½</button>
+                                    <button class="email-ch">ÀÌ¸ÞÀÏ º¯°æ</button>
                                 </div>
                             </td>
                         </tr>
 
                         <tr>
-                            <th>ë¹„ë°€ë²ˆí˜¸ ë³€ê²½</th>
+                            <th>ºñ¹Ð¹øÈ£ º¯°æ</th>
                             <td>
                                 <form>
                                     <div class="password">
-                                        <input type="password" class="password-in" title="í˜„ìž¬ë¹„ë°€ë²ˆí˜¸ìž…ë ¥">
+                                        <input type="password" class="password-in" title="ÇöÀçºñ¹Ð¹øÈ£ÀÔ·Â">
                                     </div>
 
                                     <div class="password">
@@ -93,7 +96,7 @@
                                     
                                     <div class="password">
                                         <button type="submit" form="password-form" class="password-ch" >
-                                         ë¹„ë°€ë²ˆí˜¸ ë³€ê²½
+                                         ºñ¹Ð¹øÈ£ º¯°æ
                                         </button>
                                     </div>
                                 </form>

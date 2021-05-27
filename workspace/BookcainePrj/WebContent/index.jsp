@@ -69,6 +69,7 @@
                         <li class="home"><a href="index.jsp">홈</a></li>
                         <li><a href="">도전방</a></li>
                         <li><a href="profile/profile">프로필</a></li>
+                        
                     </ul>
                 </nav>
             </section>

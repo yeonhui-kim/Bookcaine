@@ -24,7 +24,7 @@
             <h1 class="logo"><a href="../index"><div class="logo-1">책에 중독되는 순간</div> Bookcaine</a></h1>
             <section>
                 <h1 class="d-none">헤더</h1>
-                <a href="../sign/singmeno.html"><i class="icon-cog"></i></a>
+                <a href="../sign/singmeno.jsp"><i class="icon-cog"></i></a>
                 
                 <section class="book-search-form">
                     <h1 class="d-none">도서검색폼</h1>
