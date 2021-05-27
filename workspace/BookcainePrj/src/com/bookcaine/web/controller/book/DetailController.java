@@ -39,7 +39,7 @@ public class DetailController extends HttpServlet{
 		request.setAttribute("book", book);
 		request.setAttribute("list", list);
 		
-		request.getRequestDispatcher("detail.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/books/detail.jsp").forward(request, response);
 		
 	}
 }

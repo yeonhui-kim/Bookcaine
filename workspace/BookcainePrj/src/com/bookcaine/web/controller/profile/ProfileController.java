@@ -11,20 +11,20 @@ import javax.servlet.http.HttpSession;
 
 import com.bookcaine.web.entity.Member;
 
-@WebServlet("/profile/main")
+@WebServlet("/profile")
 public class ProfileController extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 만약 현재 사용자가 login 프로세스를 통해 인증되지 않았다면
-		HttpSession session = req.getSession();
+		HttpSession session = request.getSession();
 		
-		Member member = (Member) req.getSession().getAttribute("loginMember");
+		Member member = (Member) request.getSession().getAttribute("loginMember");
 		//인증하고 오세요
 		if(member == null) {
-			resp.sendRedirect("/login/login.jsp?returnURL=/profile/main");
+			response.sendRedirect("/login/login.do?returnURL=/profile/main");
 			return;	
 		}
 		
-		resp.sendRedirect("/profile/main.jsp");
+		request.getRequestDispatcher("/WEB-INF/view/profile/profile.jsp").forward(request, response);
 	}
 }

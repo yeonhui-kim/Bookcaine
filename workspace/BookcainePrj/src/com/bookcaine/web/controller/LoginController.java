@@ -45,7 +45,7 @@ public class LoginController extends HttpServlet {
 					return;
 				}
 			}else if(member == null){//아이디,비번틀린경우
-				msg = "login.jsp?msg=0";
+				msg = "/WEB-INF/view/login/login.jsp?msg=0";
 			}
 			
 		} catch (Exception e) {
@@ -57,8 +57,8 @@ public class LoginController extends HttpServlet {
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/view/login/login.jsp").forward(request, response);
 	}
 	
 	

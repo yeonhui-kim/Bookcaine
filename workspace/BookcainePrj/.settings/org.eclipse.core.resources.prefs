@@ -1,10 +1,10 @@
 eclipse.preferences.version=1
-encoding//WebContent/Admin/book/add.jsp=UTF-8
-encoding//WebContent/Admin/book/detail.jsp=UTF-8
-encoding//WebContent/Admin/book/edit.jsp=UTF-8
-encoding//WebContent/Admin/list/total.jsp=UTF-8
-encoding//WebContent/books/detail.jsp=UTF-8
-encoding//WebContent/books/reviewReg.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/Admin/book/add.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/Admin/book/detail.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/Admin/book/edit.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/Admin/list/total.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/books/detail.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/books/reviewReg.jsp=UTF-8
 encoding//WebContent/css/detail.css=UTF-8
 encoding//WebContent/css/signout.css=UTF-8
 encoding//WebContent/css/style.css=UTF-8

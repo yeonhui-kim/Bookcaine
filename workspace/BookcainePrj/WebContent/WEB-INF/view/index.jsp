@@ -44,10 +44,10 @@
                     	
                     	<%if (member != null ) { %>
 			            	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
-			            	<li><a href="login/logoutPro.jsp"><input class="button" type="button" value="로그아웃"></a></li>
+			            	<li><a href="logout"><input class="button" type="button" value="로그아웃"></a></li>
 			            <%} else { %>
                         	<li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
-                        	<li><a href="login/login.jsp"><input class="button" type="button" value="로그인"></a></li>
+                        	<li><a href="/login/login.do"><input class="button" type="button" value="로그인"></a></li>
                         <%} %>
                         
                         
@@ -66,9 +66,9 @@
                 <nav class="quick-menu">
                     <h1 class="d-none">퀵메뉴</h1>
                     <ul>
-                        <li class="home"><a href="index.jsp">홈</a></li>
+                        <li class="home"><a href="index">홈</a></li>
                         <li><a href="">도전방</a></li>
-                        <li><a href="profile/main">프로필</a></li>
+                        <li><a href="profile">프로필</a></li>
                         
                     </ul>
                 </nav>
