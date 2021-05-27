@@ -46,7 +46,7 @@
             	<ul class="book_total_list"> 
 	                <li class="book_total">
 	                    <input class="check" type="checkbox">
-	                    <a class="title" href="../book/detail?id=${b.id}">${b.title}</a>
+	                    <a class="title" href="/Admin/book/detail?id=${b.id}">${b.title}</a>
 	                    <img class="img" src="../../images/book${b.id}.jpg">
 	                    <span class="info">
 	                        <span>진열여부:Y</span>

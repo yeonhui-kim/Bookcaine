@@ -36,7 +36,7 @@ public class BookEditController extends HttpServlet {
 	    
 	    request.setAttribute("book", book);
 	    request.setAttribute("author", author);
-	    request.getRequestDispatcher("edit.jsp").forward(request, response);
+	    request.getRequestDispatcher("/WEB-INF/view/Admin/book/edit.jsp").forward(request, response);
 	}
 	
 	@Override

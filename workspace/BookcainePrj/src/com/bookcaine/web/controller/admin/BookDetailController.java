@@ -39,7 +39,7 @@ public class BookDetailController extends HttpServlet {
 	    request.setAttribute("book", book); // "" 안에가 key값
 	    request.setAttribute("author", author);
 	    request.setAttribute("typeView", typeView);
-	    request.getRequestDispatcher("detail.jsp").forward(request, response);
+	    request.getRequestDispatcher("/WEB-INF/view/Admin/book/detail.jsp").forward(request, response);
 	    
 
 	    

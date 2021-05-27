@@ -65,8 +65,9 @@ public class BookTotalController extends HttpServlet {
 		
 		request.setAttribute("list", list);
 		request.setAttribute("count", count);
-		request.getRequestDispatcher("total.jsp").forward(request, response);
 		
+		
+		request.getRequestDispatcher("/WEB-INF/view/Admin/list/total.jsp").forward(request, response);
 	}
 	
 	
