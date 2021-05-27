@@ -21,7 +21,7 @@
                 <h1 class="logo"><div class="logo-1">책에 중독되는 순간</div> Bookcaine</h1>
                 <section>
                     <h1 class="d-none">헤더</h1>
-                    <a href="../sign/singmeno.jsp"><i class="icon-cog"></i></a>
+                    <a href="/account/edit"><i class="icon-cog"></i></a>
                     
                     <section class="book-search-form">
                         <h1 class="d-none">도서검색폼</h1>
@@ -53,7 +53,7 @@
                             <th class="user-name">이름</th>
                             <td>
                                 <span class="user-name">${sessionScope.loginMember.name }</span>
-                                <a href="signout.jsp" class="leave-button">회원탈퇴</a>
+                                <a href="/sign/signout" class="leave-button">회원탈퇴</a>
                             </td>
                         </tr>
                         <tr>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.bookcaine.web.entity.Member;
 import com.bookcaine.web.service.JdbcLoginService;
 
-@WebServlet("/login/login.do")
+@WebServlet("/login")
 public class LoginController extends HttpServlet {
 
 	@Override
