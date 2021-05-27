@@ -1,3 +1,4 @@
+<%@page import="com.bookcaine.web.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -24,7 +25,7 @@
             <input class="submit" type="submit" value="확인">
         </section>
         <hr>
-        <textarea name="content" placeholder="홍길동님의 생각을 글로 남겨주세요 :)"></textarea>
+        <textarea name="content" placeholder="이동진님의 생각을 글로 남겨주세요 :)"></textarea>
         <!-- <img src="../images/user.PNG" alt="profile-image">
         <p>
         <div>이름</div>
