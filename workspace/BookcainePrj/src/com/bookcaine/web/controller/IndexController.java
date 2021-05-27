@@ -34,7 +34,7 @@ public class IndexController extends HttpServlet {
 		request.setAttribute("list", list);
 		request.setAttribute("member", member);
 		
-		request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/view/index.jsp").forward(request, response);
 		
 	}
 }
