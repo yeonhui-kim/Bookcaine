@@ -1,4 +1,4 @@
-package com.bookcaine.web.controller;
+package com.bookcaine.web.controller.admin;
 
 import java.io.IOException;
 import java.sql.SQLException;
