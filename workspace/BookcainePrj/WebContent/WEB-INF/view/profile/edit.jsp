@@ -1,5 +1,9 @@
+<%@page import="com.bookcaine.web.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    
+<% Member member = (Member) request.getSession().getAttribute("loginMember"); %>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,33 +17,6 @@
 </head>
 
 <body>
-    <!--<header id="header">
-        <div class="float-content">
-            <h1 class="logo"><div class="logo-1">책에 중독되는 순간</div> Bookcaine</h1>
-            <section>
-                <h1 class="d-none">헤더</h1>
-                <a href="../sign/singmeno.html"><i class="icon-cog"></i></a>
-                
-                <section class="book-search-form">
-                    <h1 class="d-none">도서검색폼</h1>
-                    <form action="">
-                        <legend class="d-none">도서 검색 필드</legend>
-                        <input class="form-input" type="text" name="search" placeholder="제목,저자,출판사 검색">
-                        <input class="button" type="submit" value="검색">
-                    </form>
-                </section>
-    
-                <nav class="quick-menu">
-                    <h1 class="d-none">퀵메뉴</h1>
-                    <ul>
-                        <li><a href="../index.html">홈</a></li>
-                        <li><a href="">도전방</a></li>
-                        <li class="profile"><a href="profile/profile.html">프로필</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
-    </header>-->
 
     <form class="profile-form" action="profile.html">
         <h1 class="d-none">profile-edit</h1>
@@ -53,7 +30,7 @@
         <img src="../images/user.PNG" alt="profile-image">
         <p>
         <div>닉네임</div>
-        <input class="input" type="text" name="name" value="홍길동">
+        <input class="input" type="text" name="name" value="${sessionScope.loginMember.name }">
         </p>
         <p>
         <div>소개</div>

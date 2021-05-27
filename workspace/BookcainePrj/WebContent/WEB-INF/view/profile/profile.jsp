@@ -88,16 +88,16 @@
             <nav class="books-done-list">
                 <h1 class="d-none">읽은 책 리스트</h1>
                 <ul>
-                    <a href="../books/book1.html">
+                    <a href="/books/detail?id=1">
                         <img src="../images/book1.jpg" alt="">
                         <li>시대를 매혹한 철학</li>
                     </a>
-                    <a href="">
-                        <img src="../images/book2.jfif" alt="">
+                    <a href="/books/detail?id=2">
+                        <img src="../images/book2.jpg" alt="">
                         <li>12가지 인생의 법칙</li>
                     </a>
-                    <a href="">
-                        <img src="../images/book3.jfif" alt="">
+                    <a href="/books/detail?id=3">
+                        <img src="../images/book3.jpg" alt="">
                         <li>열한계단</li>
                     </a>
                 </ul>

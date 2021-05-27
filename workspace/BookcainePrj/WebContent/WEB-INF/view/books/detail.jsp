@@ -67,7 +67,7 @@
         </div>
         
         <div id="write" class="btn">
-            <a href="reviewReg.jsp?id=${book.id}"><input type="button" value="리뷰를 남겨보세요!"></a>
+            <a href="/reviewReg?id=${book.id}"><input type="button" value="리뷰를 남겨보세요!"></a>
         </div>
 
         <br>

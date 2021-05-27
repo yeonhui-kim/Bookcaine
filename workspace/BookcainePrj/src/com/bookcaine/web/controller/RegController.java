@@ -32,7 +32,7 @@ public class RegController extends HttpServlet {
 			review.setBookId(Integer.parseInt(id));
 			review.setContent(content);
 			// 임시로 '이동진'으로 고정
-			review.setWriterId("hongssi");
+			review.setWriterId("dong");
 			service.insert(review);
 			//service.insert(title, content);
 			
