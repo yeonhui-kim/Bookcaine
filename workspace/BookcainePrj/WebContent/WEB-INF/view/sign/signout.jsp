@@ -55,7 +55,7 @@
 
 
     <main>
-        <form class="form" method="post" action="/sign/signout">
+        <form class="form" method="get" action="/index">
             <section>
                 <h1 class="signout">회원탈퇴</h1>
             </section>
@@ -71,7 +71,7 @@
             
             
                <h1 class="title">본인 확인을 위해 비밀번호를 입력해주세요.</h1>
-               <input id="" class="password"  placeholder="비밀번호 재입력" type="password" name="password" value="비밀번호 입력">
+               <input id="" class="password"  placeholder="비밀번호 재입력" type="password"  value="">
                
 
                <div class="full-aticle">

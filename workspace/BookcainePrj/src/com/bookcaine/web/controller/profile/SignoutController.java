@@ -15,18 +15,18 @@ import com.bookcaine.web.service.JdbcSignoutService;
 @WebServlet("/sign/signout")
 public class SignoutController extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html; charset=UTF-8");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		
-		HttpSession session = req.getSession();
+		HttpSession session = request.getSession();
 		
-		String id = req.getParameter("id");
-		String pwd = req.getParameter("pwd");
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
 		
 		JdbcSignoutService service = new JdbcSignoutService();
 		
-		resp.sendRedirect("/WEB-INF/view/sign/signout.jsp");
+		request.getRequestDispatcher("/WEB-INF/view/sign/signout.jsp").forward(request, response);
 	}
 }
