@@ -65,7 +65,7 @@ public class BookAddController extends HttpServlet {
 		
 		// 파일 부분
 		
-		response.sendRedirect("total");
+		response.sendRedirect("/Admin/list/total");
 
 	}
 

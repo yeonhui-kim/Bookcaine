@@ -26,7 +26,7 @@
             </div>
         </aside>
         <main id="main">
-            <form id="form" action="/Admin/list/add" method="post">
+            <form id="form" action="/Admin/book/add" method="post">
                 <div class="zero">
                     <div class="w-1">이미지</div>
                     <input class="m-1" type="file">
