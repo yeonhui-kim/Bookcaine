@@ -212,6 +212,26 @@ public int getCount(String field, String query) throws ClassNotFoundException, S
 		return result;
 	}	
 	
+	public int delete(int id) throws ClassNotFoundException, SQLException {		
+		int result = 0;
+		
+		String sql = "DELETE FROM BOOK WHERE ID=?";
+		
+		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setInt(1, id);
+		
+		result = st.executeUpdate(); // ex..Query():Select , ex..Update(): Update/Delete/Insert
+		
+		st.close();
+		con.close();
+		
+		return result;
+	}	
+	
 	
 	
 }

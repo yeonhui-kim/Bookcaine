@@ -14,5 +14,6 @@ public interface BookService {
 	int getCount(String field, String query) throws ClassNotFoundException, SQLException;
 	int update (Book book) throws ClassNotFoundException, SQLException;
 	int insert(Book book) throws ClassNotFoundException, SQLException;
+	int delete(int id) throws ClassNotFoundException, SQLException;
 	
 }

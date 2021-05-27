@@ -79,7 +79,7 @@
         <form class="check_button">
             <a href="../list/total"><input type="button" value="목록"></a>
             <a href="edit?id=${book.id}"><input type="button" value="상품 수정"></a>
-            <input type="button" value="상품 삭제">
+            <a href="/del?id=${book.id}" onclick="if(!confirm('삭제하시겠습니까?')) return false;"><input type="button" value="상품 삭제"></a>
         </form>
 
     </main>
