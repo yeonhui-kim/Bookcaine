@@ -12,6 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 public class EditController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/view/profile/edit.jsp");
+		request.getRequestDispatcher("/WEB-INF/view/profile/edit.jsp").forward(request, response);
 	}
 }
