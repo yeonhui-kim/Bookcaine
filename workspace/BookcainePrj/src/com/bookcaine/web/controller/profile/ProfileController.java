@@ -21,7 +21,7 @@ public class ProfileController extends HttpServlet {
 		Member member = (Member) request.getSession().getAttribute("loginMember");
 		//인증하고 오세요
 		if(member == null) {
-			response.sendRedirect("/login/login.do?returnURL=/profile");
+			response.sendRedirect("/login?returnURL=/profile");
 			return;	
 		}
 		

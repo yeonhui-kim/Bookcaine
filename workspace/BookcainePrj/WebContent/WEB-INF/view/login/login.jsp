@@ -36,7 +36,7 @@
             <div id="login-info-form">
                 
                 <h1 class="d-none">로그인폼</h1> 
-                <form id="loginForm" method="post" action="/login/login.do">
+                <form id="loginForm" method="post" action="/login">
                     <div class="idForm">
 	                    <label>아이디</label>
 	                    <input class="id-input" type="text" name="id" maxlength="50">
@@ -67,8 +67,8 @@
 
                 <nav class="other-button">
                     <h1 class="d-none">그 외 버튼</h1>
-                    <a class="signup-button" href="../sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a>
-                    <a class="find-idpw-button" href="../login/find_id/find_id.html"><input class="button" type="button" value="ID/PW찾기"></a>
+                    <a class="signup-button" href="/Sign_up"><input class="button" type="button" value="회원가입"></a>
+                    <a class="find-idpw-button" href="#"><input class="button" type="button" value="ID/PW찾기"></a>
                 </nav>
             </div>
         </main>
