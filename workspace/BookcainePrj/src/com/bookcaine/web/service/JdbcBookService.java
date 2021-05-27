@@ -123,10 +123,12 @@ public class JdbcBookService implements BookService {
 			if(rs.next()) {
 				String title = rs.getString("title");
 				String author = rs.getString("author");
+				String details = rs.getString("details");
 				
 				book.setId(id);
 				book.setTitle(title);
 				book.setAuthor(author);
+				book.setDetails(details);
 			}
 	
 			rs.close();
