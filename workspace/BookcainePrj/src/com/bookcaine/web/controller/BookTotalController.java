@@ -20,6 +20,8 @@ public class BookTotalController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		response.setCharacterEncoding("UTF-8");
+		
 	    String p = request.getParameter("p");
 	    String f = request.getParameter("f");
 	    String q = request.getParameter("q");

@@ -42,6 +42,8 @@ public class BookEditController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
+		
 		String id_ = request.getParameter("id");
 		int id = Integer.parseInt(id_);
 		String bD = request.getParameter("bookDetails");
