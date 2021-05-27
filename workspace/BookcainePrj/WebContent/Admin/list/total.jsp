@@ -41,7 +41,7 @@
             </form>
         </aside>
         <section class="book_total_content">
-            <h1><a href="total.jsp">책 전체 목록</a></h1>
+            <h1><a href="total">책 전체 목록</a></h1>
             <c:forEach var="b" items="${list}">
             	<ul class="book_total_list"> 
 	                <li class="book_total">
@@ -67,8 +67,8 @@
         <section class="page-status mt-3">
             <h1 class="d-none">현재 페이지 정보</h1>
             <div>
-				 <c:set var="lastPage" value="${count/10 + (count%10==0?0:1)}"/>
-				 <c:set var="lastPage" value="${fn:substringBefore(lastPage,'.')}" />
+				 <c:set var="lastPage" value="${count/10 + (count%10==0?0:1)}"/> 
+				 <c:set var="lastPage" value="${fn:substringBefore(lastPage,'.')}"/>
             	<span class="text-strong">${empty param.p?1:param.p}</span> / ${lastPage} pages
             </div>
         </section>
@@ -78,7 +78,7 @@
             <ul>
            	<c:forEach var="num" begin="1" end="5">
            		<c:if test="${num <= lastPage}">
-                <li><a class="${(page==num)?"text-strong":""}" href="total?p=${num}&f=${param.f}&q=${param.q}">${num}</a></li>
+                	<li><a class="${(page==num)?"text-strong":""}" href="total?p=${num}&f=${param.f}&q=${param.q}">${num}</a></li>
             	</c:if>
             </c:forEach>
             </ul>

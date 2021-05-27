@@ -31,11 +31,13 @@ public class BookAddController extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		
-//		String name = request.getParameter("category");
+		String category_ = request.getParameter("category");
+		int category = Integer.parseInt(category_);
 //		JdbcTypeViewService typeVIewService = new JdbcTypeViewService();
 //		TypeView typeView = new TypeView();
 //		typeView.setName(name);
 //		typeVIewService.insert(typeView);
+		
 		
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
@@ -45,6 +47,7 @@ public class BookAddController extends HttpServlet {
 
 		BookService bookService = new JdbcBookService();
 		Book book = new Book();
+		book.setCategory_id(category);
 		book.setTitle(title);
 		book.setAuthor(author);
 		book.setDetails(bookDetails);

@@ -26,24 +26,24 @@
             </div>
         </aside>
         <main id="main">
-            <form id="form" method="post">
+            <form id="form" action="/Admin/list/add" method="post">
                 <div class="zero">
                     <div class="w-1">이미지</div>
                     <input class="m-1" type="file">
                 </div> 
                 <div class="one">
                     <div class="w-1">분류 선택</div>
-                    <select class="m">
-                        <option>종합</option>
-                        <option>소설</option>
-                        <option>비소설</option>
-                        <option>시사</option>
-                        <option>자기계발</option>
-                        <option>인문</option>
-                        <option>역사</option>
-                        <option>외국어</option>
-                        <option>유아</option>
-                        <option>기타</option>
+                    <select class="m" name="category">
+                        <option value="1">소설</option>
+                        <option value="2">비소설</option>
+                        <option value="3">사회과학</option>
+                        <option value="4">시사</option>
+                        <option value="5">자기계발</option>
+                        <option value="6">인문</option>
+                        <option value="7">역사</option>
+                        <option value="8">외국어</option>
+                        <option value="9">유아</option>
+                        <option value="10">기타</option>
                     </select> 
                 </div>
                 <div class="two">
@@ -69,13 +69,12 @@
                         <option>N</option>
                     </select>
                 </div>
-            </form>
-            <section>
-                <form class="check">
+            
+	            <section>
                     <input type="button" value="미리보기">
                     <input type="submit" value="상품 등록">
-                </form>
-            </section>
+	            </section>
+              </form>
         </main>
     </div>      
 </body>

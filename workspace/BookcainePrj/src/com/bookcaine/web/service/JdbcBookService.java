@@ -62,15 +62,15 @@ public class JdbcBookService implements BookService {
 	public List<Book> getList(int page, String field, String query) throws ClassNotFoundException, SQLException {
 		List<Book> list = new ArrayList<>();
 		
-//		int size = 5;
-//		int startN = 1+(page-1)*size;
-//		int endN = page*size;
+		int size = 5;
+		int startN = 1+(page-1)*size;
+		int endN = page*size;
 		
 		String url	 = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT * FROM TYPE_VIEW"
-				+ " WHERE "+field+" LIKE '%"+query+"%'";
-//				+ " WHERE ID BETWEEN "+startN+" AND " +endN;
+		String sql = "SELECT * FROM (SELECT * FROM TYPE_VIEW"
+				+ " WHERE "+field+" LIKE '%"+query+"%')"
+				+ " WHERE ID BETWEEN "+startN+" AND " +endN;
 
 			Class.forName("oracle.jdbc.OracleDriver");
 			Connection con = DriverManager.getConnection(url, "BOOK", "12345");
@@ -146,7 +146,7 @@ public int getCount(String field, String query) throws ClassNotFoundException, S
 	
 		String sql = "SELECT COUNT(ID) COUNT"
 				+ " FROM BOOK"
-				+ " WHERE "+field+" LIKE '% "+query+" %'";
+				+ " WHERE "+field+" LIKE '%"+query+"%'";
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");
