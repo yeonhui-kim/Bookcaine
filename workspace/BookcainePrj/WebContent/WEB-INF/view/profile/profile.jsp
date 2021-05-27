@@ -75,7 +75,7 @@
 
         <nav class="profile-edit">
             <h1 class="d-none">profile-edit</h1>
-            <a href="/feed"><button>프로필 수정</button></a>
+            <a href="/profile/edit"><button>프로필 수정</button></a>
             <!-- <a href="#" class="button button-rounded button-tiny">프로필 수정</a> -->
         </nav>
 
@@ -107,7 +107,7 @@
         <nav class="history">
             <h1 class="d-none">지난 활동</h1>
             <ul>
-                <li><a href="">나의 리뷰></a></li>
+                <li><a href="/feed">나의 리뷰></a></li>
                 <li><a href="">좋아요 누른 글></a></li>
             </ul>
         </nav>
