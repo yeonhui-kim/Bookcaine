@@ -23,7 +23,7 @@
     <div id="wrapper">
 
         <div id="main">
-			<form action="/Sign_Up" method="post" id="signForm">
+			<form action="/Sign_up" method="post" id="signForm">
             <div>
                 <span class="box">
                     <input type="text" class="txt" id="ID_txt" name="id" value="" placeholder="아이디" maxlength="15">

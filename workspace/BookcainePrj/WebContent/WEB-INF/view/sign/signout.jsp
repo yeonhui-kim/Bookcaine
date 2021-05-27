@@ -74,25 +74,25 @@
                <input id="" class="password"  placeholder="비밀번호 재입력" type="password"  value="">
                
 
-               <div class="full-aticle">
-                   <article class="article">
-                       <span  class="article-icon"></span> 
-                       <p class="p">탈퇴가 완료된 계정은 다시 복구할 수 없습니다.</p>
-                   </article>
-               </div>
+            <div class="full-aticle">
+                <article class="article">
+                    <span  class="article-icon"></span> 
+                    <p class="p">탈퇴가 완료된 계정은 다시 복구할 수 없습니다.</p>
+                </article>
+            </div>
 
-               <fieldset class="fieldset2" >
-                   <legend class="Hidden-yes">회원탈퇴 동의</legend>
-                       <input type="checkbox">
-                   <label class="end-ckeckbox-txt">위 내용을 이해했으며, 모두 동의 합니다.</label>
-               </fieldset>
+            <fieldset class="fieldset2" >
+                <legend class="Hidden-yes">회원탈퇴 동의</legend>
+                    <input type="checkbox">
+                <label class="end-ckeckbox-txt">위 내용을 이해했으며, 모두 동의 합니다.</label>
+            </fieldset>
 
-               <div class="button-group">
-                   <button class="cancel-button">취소</button>
-                   <a class="out-button" href="javascript:void(0);">
-                   		<button id="btnSignout" class="button" type="button">회원탈퇴</button>
-                   </a>
-               </div>  
+            <div class="button-group">
+                <button class="cancel-button">취소</button>
+                <a class="out-button" href="javascript:void(0);">
+                		<button id="btnSignout" class="button" type="button">회원탈퇴</button>
+                </a>
+            </div>  
             
         </form>
     </main>
