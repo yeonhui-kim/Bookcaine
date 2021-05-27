@@ -5,18 +5,11 @@
 <%@page import="com.bookcaine.web.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 
 <%
-String q = request.getParameter("q");
 
-	String query = "";
-
-	if (q != null && !q.equals(""))
-		query = q;
-	
-	JdbcBookService bookService = new JdbcBookService();
-	List<Book> list = bookService.getList(query);
-	
 	Member member = (Member) request.getSession().getAttribute("loginMember");
 	
 %>
@@ -40,6 +33,15 @@ String q = request.getParameter("q");
                 <h1 class="d-none">헤더</h1>
                 <nav id="user">
                     <ul>
+                    	<%-- <c:if test="${member} != null" >
+                    	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
+			            	<li><a href="login/logoutPro.jsp"><input class="button" type="button" value="로그아웃"></a></li>
+                    	<c:otherwise>
+                    		<li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
+                        	<li><a href="login/login.jsp"><input class="button" type="button" value="로그인"></a></li>
+                    	</c:otherwise>
+                    	</c:if> --%>
+                    	
                     	<%if (member != null ) { %>
 			            	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
 			            	<li><a href="login/logoutPro.jsp"><input class="button" type="button" value="로그아웃"></a></li>
@@ -73,25 +75,21 @@ String q = request.getParameter("q");
 
     <main>
         <h1 class="d-none">content</h1>
-        <!--<nav>
-            <h1 class="section-title">사람들이 지금 많이 읽고 있는 책</h1>
-            <ol class="book-list">
-            <%for (int i=0; i<2; i++) { %>
-            <div>
-            	<%for (int j=0; j<3; j++) {%>
-	            	<a href="books/book1.html">
-	                        <img src="images/book<%=list.get(3*i+j).getId()%>.jpg" alt="">
-	                        <li><%=list.get(3*i+j).getTitle() %></li>
-	                </a>
-	            <%} %>
-            </div>
-            <%} %>
-            </ol>
-        </nav>-->
+        
         <nav>
             <h1 class="section-title">BookCaine 추천</h1>
             <ul class="book-list">
-            <%for (int i=0; i<6; i++) { %>
+            	<c:forEach var="i" begin="0" end="5">
+            		<div>
+	                	<c:forEach var="j" begin="0" end="2">
+		                	<a href="books/detail?id=${list.get(3*i+j).id}">
+		                        <img src="images/book${list.get(3*i+j).id}.jpg" alt="">
+		                        <li>${list.get(3*i+j).title}</li>
+		                	</a>
+	                	</c:forEach>
+                	</div>
+                </c:forEach>
+           <%--  <%for (int i=0; i<6; i++) { %>
             <div>
             	<%for (int j=0; j<3; j++) {%>
 	            	<a href="books/detail?id=<%=list.get(3*i+j).getId()%>">
@@ -100,24 +98,10 @@ String q = request.getParameter("q");
 	                </a>
 	            <%} %>
             </div>
-            <%} %>
+            <%} %> --%>
             </ul>
         </nav>
-        <!--<nav>
-            <h1 class="section-title">베스트셀러</h1>
-            <ol class="book-list">
-	            <%for (int i=0; i<2; i++) { %>
-	            <div>
-	            	<%for (int j=0; j<3; j++) {%>
-		            	<a href="books/book1.html">
-		                        <img src="images/book<%=list.get(3*i+j+12).getId()%>.jpg" alt="">
-		                        <li><%=list.get(3*i+j).getTitle() %></li>
-		                </a>
-		            <%} %>
-	            </div>
-	            <%} %>
-            </ol>
-        </nav> -->
+        
     </main>
 
 </body>
