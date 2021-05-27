@@ -44,7 +44,7 @@ public class RegController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("detail.jsp?id=" + id);
+		response.sendRedirect("/books/detail?id=" + id);
 	}
 	
 }

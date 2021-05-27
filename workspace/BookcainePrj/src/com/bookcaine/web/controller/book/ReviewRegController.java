@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 public class ReviewRegController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/view/books/reviewReg.jsp?id=${book.id}").forward(request, response);
+		String id = request.getParameter("id");
+		request.getRequestDispatcher("/WEB-INF/view/books/reviewReg.jsp?id="+id).forward(request, response);
 	}
+	
 }
