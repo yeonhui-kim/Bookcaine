@@ -46,14 +46,14 @@
     <div id="main">
 
         <div class="btn-box">
-            <a href="../feed/FeedReg.jsp">
+            <!-- <a href="../feed/FeedReg.jsp">
                 <img class="reg-img" src="../images/047add1_99902.png">
-            </a>
+            </a> -->
         </div>
         <article class="box">
             <div class="profile">
                 <img class="profile-image" src="../images/user.PNG">
-                <a class="user-name">초록색레고</a>
+                <a class="user-name">이동진</a>
                 <a class="date">2021-05-16</a>
             </div>
 
@@ -88,7 +88,7 @@
         <article class="box">
             <div class="profile">
                 <img class="profile-image" src="../images/user.PNG">
-                <a class="user-name">초록색레고</a>
+                <a class="user-name">이동진</a>
                 <a class="date">2021-05-16</a>
             </div>
 
