@@ -195,7 +195,7 @@ public int getCount(String field, String query) throws ClassNotFoundException, S
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");
-		Connection con = DriverManager.getConnection(url, "NEWLEC", "11111");
+		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setString(1, book.getTitle());
