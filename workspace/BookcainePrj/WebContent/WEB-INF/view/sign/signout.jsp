@@ -33,7 +33,7 @@
                         <ul>
                             <li><a href="../index">홈</a></li>
                             <li><a href="">도전방</a></li>
-                            <li class="profile"><a href="../profile/profile.jsp">프로필</a></li>
+                            <li class="profile"><a href="/profile">프로필</a></li>
                         </ul>
                     </nav>
                 </section>
@@ -55,7 +55,7 @@
 
 
     <main>
-        <form class="form">
+        <form class="form" method="post" action="/sign/signout">
             <section>
                 <h1 class="signout">회원탈퇴</h1>
             </section>
@@ -70,28 +70,29 @@
             </fieldset>
             
             
-            
-                <h1 class="title">본인 확인을 위해 비밀번호를 입력해주세요.</h1>
-                <input id="" class="password"  placeholder="비밀번호 재입력" type="password" name="password" value="비밀번호 입력">
-                
-           
-                <div class="full-aticle">
-                    <article class="article">
-                        <span  class="article-icon"></span> 
-                        <p class="p">탈퇴가 완료된 계정은 다시 복구할 수 없습니다.</p>
-                    </article>
-                </div>
+               <h1 class="title">본인 확인을 위해 비밀번호를 입력해주세요.</h1>
+               <input id="" class="password"  placeholder="비밀번호 재입력" type="password" name="password" value="비밀번호 입력">
+               
 
-                <fieldset class="fieldset2" >
-                    <legend class="Hidden-yes">회원탈퇴 동의</legend>
-                        <input type="checkbox">
-                    <label class="end-ckeckbox-txt">위 내용을 이해했으며, 모두 동의 합니다.</label>
-                </fieldset>
+               <div class="full-aticle">
+                   <article class="article">
+                       <span  class="article-icon"></span> 
+                       <p class="p">탈퇴가 완료된 계정은 다시 복구할 수 없습니다.</p>
+                   </article>
+               </div>
 
-                <div class="button-group">
-                    <button class="cancel-button">취소</button>
-                    <button class="out-button">회원탈퇴</button>
-                </div>  
+               <fieldset class="fieldset2" >
+                   <legend class="Hidden-yes">회원탈퇴 동의</legend>
+                       <input type="checkbox">
+                   <label class="end-ckeckbox-txt">위 내용을 이해했으며, 모두 동의 합니다.</label>
+               </fieldset>
+
+               <div class="button-group">
+                   <button class="cancel-button">취소</button>
+                   <a class="out-button" href="javascript:void(0);">
+                   		<button id="btnSignout" class="button" type="button">회원탈퇴</button>
+                   </a>
+               </div>  
             
         </form>
     </main>
