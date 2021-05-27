@@ -26,6 +26,7 @@ public class LoginController extends HttpServlet {
 		
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("pwd");
+		String returnURL = req.getParameter("returnURL");
 		
 		JdbcLoginService service = new JdbcLoginService();
 	
@@ -39,6 +40,10 @@ public class LoginController extends HttpServlet {
 			if(member != null){
 				session.setAttribute("loginMember", member);
 				msg = "../index.jsp";
+				if(returnURL != null) {
+					resp.sendRedirect(returnURL);
+					return;
+				}
 			}else if(member == null){//아이디,비번틀린경우
 				msg = "login.jsp?msg=0";
 			}
@@ -53,8 +58,7 @@ public class LoginController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		
 	}
 	
 	
