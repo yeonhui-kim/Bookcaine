@@ -37,8 +37,8 @@
 			            	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
 			            	<li><a href="logout"><input class="button" type="button" value="로그아웃"></a></li>
 			            <%} else { %>
-                        	<li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
-                        	<li><a href="/login/login.do"><input class="button" type="button" value="로그인"></a></li>
+                        	<li><a href="/Sign_up"><input class="button" type="button" value="회원가입"></a></li>
+                        	<li><a href="/login"><input class="button" type="button" value="로그인"></a></li>
                         <%} %>
                         <%-- <c:choose>
 	                        <c:when test="${member} != null" >

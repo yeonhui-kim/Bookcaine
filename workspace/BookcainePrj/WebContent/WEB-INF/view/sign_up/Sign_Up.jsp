@@ -9,11 +9,11 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>북카인 회원가입</title>
     <link href="../css/Sign_Up.css" type="text/css" rel="stylesheet">
-    <script src="Sign_up.js"></script>
+    <script src="../js/Sign_up.js"></script>
 </head>
 <body>
     <header id="header">
-        <a href="../index.jsp" title="메인화면">BookCaine</a>
+        <a href="/index" title="메인화면">BookCaine</a>
     </header>
 
     <div class="line">
