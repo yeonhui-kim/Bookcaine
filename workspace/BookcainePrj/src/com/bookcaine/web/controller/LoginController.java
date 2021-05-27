@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 			//로그인 성공한 경우 세션에 현재 아이디 세팅
 			if(member != null){
 				session.setAttribute("loginMember", member);
-				msg = "../index.jsp";
+				msg = "/index";
 				if(returnURL != null) {
 					resp.sendRedirect(returnURL);
 					return;

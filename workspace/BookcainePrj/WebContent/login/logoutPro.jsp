@@ -14,7 +14,7 @@
 
 <%
 	session.invalidate(); // 모든 세션정보 삭제
-	response.sendRedirect("/index.jsp"); // 메인으로 돌아감
+	response.sendRedirect("/index"); // 메인으로 돌아감
 %>
 
     
