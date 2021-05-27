@@ -40,7 +40,7 @@
                     <ul>
                         <li><a href="../index">홈</a></li>
                         <li><a href="">도전방</a></li>
-                        <li class="profile"><a href="profile/profile">프로필</a></li>
+                        <li class="profile"><a href="profile/main">프로필</a></li>
                     </ul>
                 </nav>
             </section>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.bookcaine.web.entity.Member;
 
-@WebServlet("/profile/profile")
+@WebServlet("/profile/main")
 public class ProfileController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,10 +21,10 @@ public class ProfileController extends HttpServlet {
 		Member member = (Member) req.getSession().getAttribute("loginMember");
 		//인증하고 오세요
 		if(member == null) {
-			resp.sendRedirect("/login/login.jsp?returnURL=/profile/profile");
+			resp.sendRedirect("/login/login.jsp?returnURL=/profile/main");
 			return;	
 		}
 		
-		resp.sendRedirect("/profile/profile.jsp");
+		resp.sendRedirect("/profile/main.jsp");
 	}
 }
