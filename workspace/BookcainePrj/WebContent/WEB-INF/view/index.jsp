@@ -33,24 +33,23 @@
                 <h1 class="d-none">헤더</h1>
                 <nav id="user">
                     <ul>
-                    	<%-- <c:if test="${member} != null" >
-                    	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
-			            	<li><a href="login/logoutPro.jsp"><input class="button" type="button" value="로그아웃"></a></li>
-                    	<c:otherwise>
-                    		<li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
-                        	<li><a href="login/login.jsp"><input class="button" type="button" value="로그인"></a></li>
-                    	</c:otherwise>
-                    	</c:if> --%>
-                    	
-                    	<%if (member != null ) { %>
+                    	<%-- <%if (member != null ) { %>
 			            	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
 			            	<li><a href="logout"><input class="button" type="button" value="로그아웃"></a></li>
 			            <%} else { %>
                         	<li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
                         	<li><a href="/login/login.do"><input class="button" type="button" value="로그인"></a></li>
-                        <%} %>
-                        
-                        
+                        <%} %> --%>
+                        <c:choose>
+	                        <c:when test="${member} != null" >
+				            	<li>환영합니다. ${sessionScope.loginMember.name } 님</li>
+				            	<li><a href="login/logoutPro.jsp"><input class="button" type="button" value="로그아웃"></a></li>
+				            </c:when>
+				            <c:otherwise>
+	                        	<li><a href="sign_up/Main_Sign_Up.html"><input class="button" type="button" value="회원가입"></a></li>
+	                        	<li><a href="login/login.jsp"><input class="button" type="button" value="로그인"></a></li>
+	                        </c:otherwise>
+                        </c:choose>
                     </ul>
                 </nav>
 
