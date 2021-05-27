@@ -5,12 +5,6 @@
 <%@page import="com.bookcaine.web.service.JdbcBookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	String id_ = request.getParameter("id");
-	int id = Integer.parseInt(id_);
- 	AuthorService authorService = new JdbcAuthorService();
- 	Author author = authorService.get(id);
-%>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -99,11 +93,11 @@
       
             <section id="book-details">
                 <h1 class="d-none">책 디테일</h1>
-                <textarea class="details" name="bookDetails">책 소개</textarea>
+                <textarea class="details" name="bookDetails">책 소개<br>${book.details}</textarea>
             </section>
             <section id="author-details">
                 <h1 class="d-none">저자 디테일</h1>
-                <textarea class="details" name="authorDetails">저자 소개<br><%=author.getDetails()%></textarea>
+                <textarea class="details" name="authorDetails">저자 소개<br>${author.details}</textarea>
             </section>
 
 			

@@ -67,18 +67,19 @@
         <section class="page-status mt-3">
             <h1 class="d-none">현재 페이지 정보</h1>
             <div>
-				 <c:set var="lastPage" value="${count/10 + (count%10==0?0:1)}"/> 
+				 <c:set var="lastPage" value="${count/5 + (count%10==0?0:1)}"/> 
 				 <c:set var="lastPage" value="${fn:substringBefore(lastPage,'.')}"/>
-            	<span class="text-strong">${empty param.p?1:param.p}</span> / ${lastPage} pages
+            	<span class="text-strong">${(empty param.p)?1:param.p}</span> / ${lastPage} pages
             </div>
         </section>
         <nav class="pager mt-3">
             <h1 class="d-none">페이저</h1>
             <div class="button">이전</div>
             <ul>
+            <c:set var="page" value="${empty param.p?1:param.p}"/>
            	<c:forEach var="num" begin="1" end="5">
            		<c:if test="${num <= lastPage}">
-                	<li><a class="${(page==num)?"text-strong":""}" href="total?p=${num}&f=${param.f}&q=${param.q}">${num}</a></li>
+                	<li><a class="${(page==num)?'text-strong':''}" href="total?p=${num}&f=${param.f}&q=${param.q}">${num}</a></li>
             	</c:if>
             </c:forEach>
             </ul>

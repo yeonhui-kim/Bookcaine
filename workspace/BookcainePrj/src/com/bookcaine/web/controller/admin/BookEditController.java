@@ -23,16 +23,16 @@ public class BookEditController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id_ = request.getParameter("id");
 		int id = Integer.parseInt(id_);
-		String bD = request.getParameter("bookDetails");
-		String aD = request.getParameter("authorDetails");
+//		String bD = request.getParameter("bookDetails");
+//		String aD = request.getParameter("authorDetails");
 	
 	    BookService bookService = new JdbcBookService();
 	    Book book = bookService.get(id); 
-	    book.setDetails(bD);
+//	    book.setDetails(bD);
 	    
 	    AuthorService authorService = new JdbcAuthorService();
 	    Author author = authorService.get(id);
-	    author.setDetails(aD);
+//	    author.setDetails(aD);
 	    
 	    request.setAttribute("book", book);
 	    request.setAttribute("author", author);
