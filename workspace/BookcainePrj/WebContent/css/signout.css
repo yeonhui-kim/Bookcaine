@@ -18,7 +18,7 @@ html,body{
 
 /* ------------------ header ------------------ */
 
-header{
+/* header{
     background-color: #ccee8ed2;
 }
 
@@ -28,9 +28,9 @@ header{
     text-align: center;
 }
 
-/* .book-search-form fieldset{
+.book-search-form fieldset{
     background-color: white;
-} */
+}
 
     .book-search-form input{
         width: 100%;
@@ -40,7 +40,7 @@ header{
 .quick-menu>ul{
     display: flex;
     justify-content: space-around;
-}
+} */
 
 
 /*---------------------------------------*/
