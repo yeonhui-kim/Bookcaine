@@ -18,11 +18,11 @@
 
 <body>
 
-    <form class="profile-form" action="profile.html">
+    <form class="profile-form" action="/profile">
         <h1 class="d-none">profile-edit</h1>
         <section>
             <h1 class="d-none">profile-edit-top</h1>
-            <a href="profile.jsp">취소</a>
+            <a href="/profile">취소</a>
             <span>프로필변경</span>
             <input class="submit" type="submit" value="확인">
         </section>
