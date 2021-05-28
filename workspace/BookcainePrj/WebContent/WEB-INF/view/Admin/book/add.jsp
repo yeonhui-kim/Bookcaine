@@ -22,14 +22,16 @@
         </header>
         <aside id="aside">
             <div class="font">
-                <p>도서관리> 도서리스트><b>도서등록관리</b></p>
+                <p>도서관리> <a href="/Admin/list/total">도서리스트</a>><b>도서등록관리</b></p>
             </div>
         </aside>
         <main id="main">
-            <form id="form" action="/Admin/book/add" method="post">
+            <form id="form" action="/Admin/book/add" method="post" enctype="multipart/form-data">
                 <div class="zero">
-                    <div class="w-1">이미지</div>
-                    <input class="m-1" type="file">
+                    <div class="w-1">이미지
+	                    <button>파일 선택</button>
+	                    <input type="file" name="file">
+                    </div>
                 </div> 
                 <div class="one">
                     <div class="w-1">분류 선택</div>
@@ -69,7 +71,7 @@
                         <option>N</option>
                     </select>
                 </div>
-	            <section>
+	            <section class="last">
                     <input type="button" value="미리보기">
                     <input type="submit" value="상품 등록">
 	            </section>
