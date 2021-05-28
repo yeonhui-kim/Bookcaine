@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html>
@@ -13,12 +13,12 @@
     <link href="../css/login.css" type="text/css" rel="stylesheet">
 	<script src="../js/login.js"></script>
 	 
-<%
+<%-- <%
 //아이디 비번 틀린 경우 화면에 메시지 표시
 
 	String msg = request.getParameter("msg");
 	
-%>
+%> --%>
  
 </head>
 
@@ -46,13 +46,13 @@
 	                    <input class="pwd-input" type="password" name="pwd" maxlength="50">
                     </div>
                 </form>
-                
-                <%if(msg != null && msg.equals("0")){%>
+                <c:if test="${not empty param.error }">
+                <%-- <%if(msg != null && msg.equals("0")){%> --%>
               		<script type="text/javascript">
               			alert("아이디, 비밀번호를 다시 확인해주세요");
 					</script>
-               	<%} %>
-                
+               	<%-- <%} %> --%>
+                </c:if>
             
                 <section>
                     <label class="login-check"><input type="checkbox"> 로그인 상태유지</label>
