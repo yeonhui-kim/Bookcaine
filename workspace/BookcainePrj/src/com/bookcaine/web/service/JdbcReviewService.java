@@ -18,7 +18,8 @@ public class JdbcReviewService implements ReviewService {
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT R.*, M.NICKNAME FROM REVIEW R LEFT JOIN MEMBER M ON R.WRITER_ID = M.ID WHERE BOOK_ID = " + bookId + " ORDER BY REGDATE DESC";
+		String sql = "SELECT R.*, M.NICKNAME FROM REVIEW R LEFT JOIN MEMBER M "
+				+ "ON R.WRITER_ID = M.ID WHERE BOOK_ID = " + bookId + " ORDER BY REGDATE DESC";
 
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");

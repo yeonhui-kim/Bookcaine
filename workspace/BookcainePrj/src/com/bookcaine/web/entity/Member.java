@@ -13,17 +13,6 @@ public class Member {
 	private String imageUrl;
 	private String joinDate;
 	
-//	private String birthdays[];
-	
-//	public String[] getBirthdays() {
-//		return birthdays;
-//	}
-
-//	public void setBirthdays(String[] birthdays) {
-//		this.birthdays = birthdays;
-//	}
-
-
 	public Member() {
 		// TODO Auto-generated constructor stub
 	}
@@ -97,8 +86,6 @@ public class Member {
 
 	@Override
 	public String toString() {
-//		return "Member [id=" + id + ", pwd=" + pwd + ", name=" + name + ", gender=" + gender + ", birthday=" + birthday
-//				+ ", phone=" + phone + ", email=" + email + "]";
 		return "{\"id\":" + id + ", \"pwd\":\"" + pwd + "\", \"name\":\"" + name + "\", \"gender\":\"" + gender
 	            + "\", \"birthday\":\"" + birthday + "\", \"phone\":" + phone + ", \"email\":\"" + email + "\"}";
 	}

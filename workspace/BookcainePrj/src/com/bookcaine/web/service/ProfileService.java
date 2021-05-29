@@ -15,3 +15,5 @@ public interface ProfileService {
 	int getReviewCount(String memberId);	
 
 }
+
+
