@@ -68,9 +68,9 @@ public class JdbcBookService implements BookService {
 		
 		String url	 = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		// 필터링, 정렬, 그룹핑, ... -> SQL에서 담당
-		String sql = "SELECT * FROM (SELECT * FROM TYPE_VIEW"
+		String sql = "SELECT * FROM (SELECT ROWNUM NUM, TYPE_VIEW.* FROM TYPE_VIEW"
 				+ " WHERE "+field+" LIKE '%"+query+"%')"
-				+ " WHERE ID BETWEEN "+startN+" AND " +endN;
+				+ " WHERE NUM BETWEEN "+startN+" AND " +endN; // ROWNUM으로 다시 
 
 			Class.forName("oracle.jdbc.OracleDriver");
 			Connection con = DriverManager.getConnection(url, "BOOK", "12345");
@@ -191,7 +191,7 @@ public int getCount(String field, String query) throws ClassNotFoundException, S
 	public int insert(Book book) throws ClassNotFoundException, SQLException {		
 		int result = 0;
 		
-		String sql = "INSERT INTO BOOK(TITLE, AUTHOR, DETAILS, YN, CATEGORY_ID) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO BOOK(TITLE, AUTHOR, DETAILS, YN, CATEGORY_ID, FILES) VALUES(?,?,?,?,?,?)";
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");
@@ -203,6 +203,7 @@ public int getCount(String field, String query) throws ClassNotFoundException, S
 		st.setString(3, book.getDetails());
 		st.setString(4, book.getYn());
 		st.setInt(5, book.getCategory_id());
+		st.setString(6, book.getFiles());
 		
 		result = st.executeUpdate(); // ex..Query():Select , ex..Update(): Update/Delete/Insert
 		

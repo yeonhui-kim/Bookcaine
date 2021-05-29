@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,11 @@ import com.bookcaine.web.service.JdbcBookService;
 import com.bookcaine.web.service.JdbcTypeViewService;
 
 @WebServlet("/Admin/book/add")
+@MultipartConfig(
+	    fileSizeThreshold = 1024*1024,
+	    maxFileSize = 1024*1024*50, 
+	    maxRequestSize = 1024*1024*50*5 
+	)
 public class BookAddController extends HttpServlet {
 
 	@Override
@@ -38,20 +44,23 @@ public class BookAddController extends HttpServlet {
 //		typeView.setName(name);
 //		typeVIewService.insert(typeView);
 		
-		
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
 		String bookDetails = request.getParameter("bookDetails");
 //		String authorDetails = request.getParameter("authorDetails");
 		String yn = request.getParameter("yn");
+		String files = request.getParameter("file");
 
 		BookService bookService = new JdbcBookService();
 		Book book = new Book();
+		
 		book.setCategory_id(category);
 		book.setTitle(title);
 		book.setAuthor(author);
 		book.setDetails(bookDetails);
 		book.setYn(yn);
+		book.setFiles(files);
+		
 		try {
 			bookService.insert(book);
 		} catch (ClassNotFoundException e) {
@@ -61,6 +70,8 @@ public class BookAddController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		System.out.println(book);
 		
 		
 		// 파일 부분

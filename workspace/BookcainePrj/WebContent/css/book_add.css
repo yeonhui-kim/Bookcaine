@@ -68,7 +68,7 @@ ul{
     display: flex;
     justify-content: center;
 }
-/*------아래 테이블은 삭제-------*/
+/*------�븘�옒 �뀒�씠釉붿� �궘�젣-------*/
 
 
 .table{
@@ -96,3 +96,8 @@ ul{
     text-align: left;
     
 } 
+
+.last{
+	margin-top:50px;
+	text-align:center;
+}
