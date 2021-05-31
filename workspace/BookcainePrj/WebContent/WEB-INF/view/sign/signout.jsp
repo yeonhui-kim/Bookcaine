@@ -10,6 +10,13 @@
     <link href="../css/signout.css" type="text/css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../header/header.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<%-- <%
+//비번 틀린 경우 화면에 메시지 표시
+
+	int x = Integer.parseInt(request.getParameter("x"));
+	
+%> --%>
+
 </head>
 <body>
     <header id="header">
@@ -71,7 +78,7 @@
             
             
                <h1 class="title">본인 확인을 위해 비밀번호를 입력해주세요.</h1>
-               <input id="" class="password"  placeholder="비밀번호 재입력" type="password"  value="">
+               <input id="" class="password"  placeholder="비밀번호 재입력" type="password"  value="${param.pwd }">
                
 
             <div class="full-aticle">
@@ -87,6 +94,11 @@
                 <label class="end-ckeckbox-txt">위 내용을 이해했으며, 모두 동의 합니다.</label>
             </fieldset>
 
+				<%-- <%if(x == 0){%>
+              		<script>
+              			alert("비밀번호가 틀립니다");
+					</script>
+               	<%} %> --%>
             <div class="button-group">
                 <button class="cancel-button">취소</button>
                 <a class="out-button" href="javascript:void(0);">

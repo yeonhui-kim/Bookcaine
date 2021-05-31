@@ -47,11 +47,9 @@
                     </div>
                 </form>
                 <c:if test="${not empty param.error }">
-                <%-- <%if(msg != null && msg.equals("0")){%> --%>
               		<script type="text/javascript">
               			alert("아이디, 비밀번호를 다시 확인해주세요");
 					</script>
-               	<%-- <%} %> --%>
                 </c:if>
             
                 <section>
@@ -62,6 +60,7 @@
             <div class="buttons">
                 <nav class="login-button">
                     <h1 class="d-none">로그인버튼</h1>
+                    <input type="hidden" name="returnURL" value="${param.returnURL}" />
                     <a class="login-button" href="javascript:void(0);"><button id="btnLogin" class="button" type="button">로그인</button></a>
                 </nav>
 

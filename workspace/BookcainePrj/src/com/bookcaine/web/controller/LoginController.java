@@ -30,35 +30,25 @@ public class LoginController extends HttpServlet {
 		
 		JdbcLoginService service = new JdbcLoginService();
 	
-		//String msg = ""; // url및 로그인관련 메시지
-		
 		try {
 			Member member = service.actionLogin(id, pwd);
-			
 			session.removeAttribute("loginMember");
 			//로그인 성공한 경우 세션에 현재 아이디 세팅
 			if(member != null){
 				session.setAttribute("loginMember", member);
 				
-				
 				if(returnURL != null && returnURL.equals("")) {
 					resp.sendRedirect(returnURL);
 					return;
-				}
-				resp.sendRedirect("/index");
-				return;	
-			}
-				
-			else if(member == null){//아이디,비번틀린경우
+				}resp.sendRedirect("/index");
+				 return;	
+			}else if(member == null){//아이디,비번틀린경우
 				resp.sendRedirect("login?error=1");
 			}
-			
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		
-		//resp.sendRedirect("/index");
-
 	}
 
 	@Override

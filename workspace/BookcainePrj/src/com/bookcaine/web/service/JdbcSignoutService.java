@@ -52,13 +52,8 @@ public class JdbcSignoutService {
 			}
 			return x;
 			
-		}catch (Exception sqle) {
-            try {
-                con.rollback(); // 오류시 롤백
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            throw new RuntimeException(sqle.getMessage());
+		}catch(Exception sqle) {
+			throw new RuntimeException(sqle.getMessage());
         } finally {
 			try {
 				if(st != null) { st.close(); st = null;}

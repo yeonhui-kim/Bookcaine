@@ -119,7 +119,6 @@ public class JdbcLoginService {
 	
 	//로그인 시 아이디, 비밀번호 체크 메서드 // 아이디 비밀번호 인자로 받음
 	public Member actionLogin(String id, String pwd) throws ClassNotFoundException, SQLException {
-		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		String sql = "SELECT * FROM MEMBER WHERE ID = ? AND PWD = ?";
 		Class.forName("oracle.jdbc.OracleDriver");
@@ -137,10 +136,9 @@ public class JdbcLoginService {
 			st.setString(2, pwd);
 			
 			rs = st.executeQuery();
-			
+		
 			if(rs.next()) {//입력된 아이디에 해당하는 비번 있을 경우
 				loginMember = new Member();
-				
 				loginMember.setId(rs.getString("ID"));
 				loginMember.setPwd(rs.getString("PWD"));
 				loginMember.setName(rs.getString("NAME"));
@@ -151,9 +149,7 @@ public class JdbcLoginService {
 				loginMember.setBirthday(rs.getString("BIRTHDAY"));
 				loginMember.setGender(rs.getString("GENDER"));
 				loginMember.setJoinDate(rs.getString("JOIN_DATE"));
-				
-			}
-				
+			}		
 		}catch(Exception sqle) {
 			throw new RuntimeException(sqle.getMessage());
 		}finally {
@@ -164,7 +160,6 @@ public class JdbcLoginService {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
-		
 		return loginMember;
 	}
 	
