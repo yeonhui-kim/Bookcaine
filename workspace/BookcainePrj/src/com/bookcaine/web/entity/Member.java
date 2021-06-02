@@ -12,6 +12,7 @@ public class Member {
 	private String gender;
 	private String imageUrl;
 	private String joinDate;
+	private String bio;
 	
 	public Member() {
 		// TODO Auto-generated constructor stub

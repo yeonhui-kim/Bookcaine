@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bookcaine.web.entity.Member;
 import com.bookcaine.web.entity.Review;
 
 public class JdbcReviewService implements ReviewService {
@@ -50,19 +51,28 @@ public class JdbcReviewService implements ReviewService {
 		return list;
 	}
 	
-	public int insert(Review review) throws ClassNotFoundException, SQLException {
+	public int insert(String id, String nickname, String bio) throws ClassNotFoundException, SQLException {
 		int result = 0;
-		
-		String sql = "INSERT INTO REVIEW(WRITER_ID, BOOK_ID, CONTENT) VALUES(?,?,?)";
 		
 		String url = "jdbc:oracle:thin:@hi.namoolab.com:1521/xepdb1";
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "BOOK", "12345");
 		
-		PreparedStatement st = con.prepareStatement(sql);
-		st.setString(1, review.getWriterId());
-		st.setInt(2, review.getBookId());
-		st.setString(3, review.getContent());
+		try {
+			con.setAutoCommit(false);
+			Statement st = con.createStatement();
+			
+			Savepoint savepoint1 = con.setSavepoint("Savepoint1");
+			String sql = "UPDATE MEMBER SET NICKNAME=" + nickname + " WHERE MEMBER='"+id+"'";
+			st.executeUpdate(SQL);
+			String sql2 = "UPDATE MEMBER SET bio=" + bio + " WHERE MEMBER='"+id+"'";
+			st.executeUpdate(SQL);
+			con.commit;
+
+		} catch(SQLException e) {
+			con.rollback(savepoint1);
+		}
+		
 		
 		result = st.executeUpdate(); // ex.Query():Select, ex.Update(): UPdate/Delete/Insert
 		// 업데이트된 개수를 반환
