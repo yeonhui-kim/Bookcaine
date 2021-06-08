@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.bookcaine.web.entity.Author;
-import com.bookcaine.web.entity.Book;
 
 public class JdbcAuthorService implements AuthorService {
 
