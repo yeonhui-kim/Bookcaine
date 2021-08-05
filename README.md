@@ -13,8 +13,10 @@ BookCaine은 책을 함께 읽을 수 있도록 도와주고 독서를 완료하
 - Eclipse
 
 ## ERD
-![북카인 ERD](https://user-images.githubusercontent.com/76443750/128331298-ffa5df4b-9435-4fcd-901d-4b682b172028.png)
 
+<img src="https://user-images.githubusercontent.com/76443750/128331298-ffa5df4b-9435-4fcd-901d-4b682b172028.png" width="650" height="390">
 
 ---
 ### Login Service
+
+<img src="https://user-images.githubusercontent.com/76443750/128333147-5b330ad8-33fc-4cc5-af24-a5eb428e5ce2.png" width="300" height="140">
