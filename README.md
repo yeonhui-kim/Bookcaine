@@ -26,16 +26,4 @@ BookCaine은 책을 함께 읽을 수 있도록 도와주고
 
 <img src="https://user-images.githubusercontent.com/76443750/128692555-fb7ab9a1-1f80-444e-9bed-f4891f238591.png" width="400" height="360">
 
-### Login Code
 
-- login.jsp
- 
-<img src="https://user-images.githubusercontent.com/76443750/129153554-d64e7558-ad5a-4db1-a659-b7bcd519a1f7.png" width="550" height="450">  
-
-- LoginController
-
-<img src="https://user-images.githubusercontent.com/76443750/129152908-7b1e4a08-a9ce-46c8-84da-0cd291aaf61f.png" width="550" height="500">  
-
-- jdbcLoginService
-
-<img src="https://user-images.githubusercontent.com/76443750/129154106-e354bb5c-e302-4895-bddd-3e7c7edd5308.png" width="600" height="570">  
